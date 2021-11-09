@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- 로고 있는 곳-->
-<a href="index3.html" class="brand-link"> <img src="./resources/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-	<span class="brand-text font-weight-light">TCAT</span>
+<a href="main" class="brand-link">
+	<span class="brand-text font-weight-light">TCAT <font size="2px">Management</font></span>
 </a>
 
 <div class="sidebar">
