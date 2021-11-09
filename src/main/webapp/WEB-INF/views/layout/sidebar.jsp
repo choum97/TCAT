@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- 로고 있는 곳-->
 <a href="main" class="brand-link">
-	<span class="brand-text font-weight-light">TCAT <font size="2px">Management</font></span>
+	<span class="brand-text font-weight-light">TCAT <font size="2px"></font></span>
 </a>
 
 <div class="sidebar">
@@ -32,7 +32,7 @@
 	<nav class="mt-2">
 		<ul class="nav nav-pills nav-sidebar flex-column"
 			data-widget="treeview" role="menu" data-accordion="false">
-			<li class="nav-item"><a href="./resources/pages/widgets.html" class="nav-link"> <i class="nav-icon fas fa-th"></i>
+			<li class="nav-item"><a href="main" class="nav-link"> <i class="nav-icon fas fa-th"></i>
 				<p>
 					Home
 				</p>
@@ -40,7 +40,7 @@
 			<li class="nav-item">
 				<a href="#" class="nav-link"> <i class="nav-icon fas fa-copy"></i>
 					<p>
-						출근 관리 <i class="fas fa-angle-left right"></i>
+						출근/퇴근 관리 <i class="fas fa-angle-left right"></i>
 					</p>
 				</a>
 				<ul class="nav nav-treeview">
