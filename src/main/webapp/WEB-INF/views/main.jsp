@@ -45,10 +45,8 @@
 			<!-- Main content -->
 			<section class="content">
 				<div class="container-fluid">
-					<!-- Small boxes (Stat box) -->
 					<div class="row">
 						<div class="col-lg-3 col-6">
-							<!-- small box -->
 							<div class="small-box bg-info">
 								<div class="inner">
 									<h3>150</h3>
@@ -58,31 +56,24 @@
 								<div class="icon">
 									<i class="ion ion-person"></i>
 								</div>
-								<a href="#" class="small-box-footer">More info <i
-									class="fas fa-arrow-circle-right"></i></a>
+								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
-						<!-- ./col -->
 						<div class="col-lg-3 col-6">
-							<!-- small box -->
 							<div class="small-box bg-success">
 								<div class="inner">
 									<h3>
 										53<sup style="font-size: 20px">%</sup>
 									</h3>
-
 									<p>외근</p>
 								</div>
 								<div class="icon">
-									<i class="ion ion-stats-bars"></i>
+									<i class="far fa-calendar-alt"></i>
 								</div>
-								<a href="#" class="small-box-footer">More info <i
-									class="fas fa-arrow-circle-right"></i></a>
+								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
-						<!-- ./col -->
 						<div class="col-lg-3 col-6">
-							<!-- small box -->
 							<div class="small-box bg-warning">
 								<div class="inner">
 									<h3>44</h3>
@@ -90,62 +81,42 @@
 									<p>휴가</p>
 								</div>
 								<div class="icon">
-									<i class="far fa-calendar-alt"></i>
+									<i class="icon fas fa-tree"></i>
 								</div>
-								<a href="#" class="small-box-footer">More info <i
-									class="fas fa-arrow-circle-right"></i></a>
+								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
-						<!-- ./col -->
 						<div class="col-lg-3 col-6">
-							<!-- small box -->
 							<div class="small-box bg-danger">
 								<div class="inner">
 									<h3>65</h3>
-
 									<p>출장</p>
 								</div>
 								<div class="icon">
 									<i class="ion ion-pie-graph"></i>
 								</div>
-								<a href="#" class="small-box-footer">More info <i
-									class="fas fa-arrow-circle-right"></i></a>
+								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
-						<!-- ./col -->
 					</div>
-					<!-- /.row -->
 					<!-- Main row -->
 					<hr>
 					<div>
 						<h3>일정</h3>
-								
 	 					<div id='calendar'></div>
 					</div>
-
-
 					<!-- /.row (main row) -->
 				</div>
-				<!-- /.container-fluid -->
 			</section>
-			<!-- /.content -->
 		</div>
-		<!-- /.content-wrapper -->
-		<footer class="main-footer">
-			<strong>Copyright &copy; 2014-2021 <a
-				href="https://adminlte.io">AdminLTE.io</a>.
-			</strong> All rights reserved.
-			<div class="float-right d-none d-sm-inline-block">
-				<b>Version</b> 3.1.0
-			</div>
-		</footer>
+		
+		<jsp:include page="layout/footer.jsp"/>
 	</div>
 	<!-- ./wrapper -->
 
 
 	<script>
-	$.widget.bridge('uibutton', $.ui.button)
-	
+	/*캘린더  */
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -165,10 +136,14 @@
 	       	dayMaxEvents: true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
 	       	locale: 'ko', // 한국어 설정
 
+	       	
+	       	
+	       	
         	end: 'today prev,next',
         });
         calendar.render();
     });
+	
   	</script>
 	
 	<!-- fullcalendar CDN -->

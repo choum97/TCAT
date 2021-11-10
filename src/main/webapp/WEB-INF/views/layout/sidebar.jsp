@@ -46,43 +46,21 @@
 				<ul class="nav nav-treeview">
 					<li class="nav-item"><a href="./resources/pages/layout/top-nav.html"
 						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>Top Navigation</p>
+							<p>기록 확인</p>
 					</a></li>
 					<li class="nav-item"><a
 						href="./resources/pages/layout/top-nav-sidebar.html" class="nav-link">
 							<i class="far fa-circle nav-icon"></i>
-							<p>Top Navigation + Sidebar</p>
+							<p>정정 신청</p>
 					</a></li>
 					<li class="nav-item"><a href="./resources/pages/layout/boxed.html"
 						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>Boxed</p>
+							<p>시간 설정</p>
 					</a></li>
 					<li class="nav-item"><a
 						href="./resources/pages/layout/fixed-sidebar.html" class="nav-link"> <i
 							class="far fa-circle nav-icon"></i>
-							<p>Fixed Sidebar</p>
-					</a></li>
-					<li class="nav-item"><a
-						href="./resources/pages/layout/fixed-sidebar-custom.html" class="nav-link">
-							<i class="far fa-circle nav-icon"></i>
-							<p>
-								Fixed Sidebar <small>+ Custom Area</small>
-							</p>
-					</a></li>
-					<li class="nav-item"><a
-						href="./resources/pages/layout/fixed-topnav.html" class="nav-link"> <i
-							class="far fa-circle nav-icon"></i>
-							<p>Fixed Navbar</p>
-					</a></li>
-					<li class="nav-item"><a
-						href="./resources/pages/layout/fixed-footer.html" class="nav-link"> <i
-							class="far fa-circle nav-icon"></i>
-							<p>Fixed Footer</p>
-					</a></li>
-					<li class="nav-item"><a
-						href="./resources/pages/layout/collapsed-sidebar.html" class="nav-link">
-							<i class="far fa-circle nav-icon"></i>
-							<p>Collapsed Sidebar</p>
+							<p>연장 근무</p>
 					</a></li>
 				</ul>
 			</li>
@@ -95,19 +73,11 @@
 				<ul class="nav nav-treeview">
 					<li class="nav-item"><a href="./resources/pages/charts/chartjs.html"
 						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>ChartJS</p>
+							<p>일정 목록</p>
 					</a></li>
 					<li class="nav-item"><a href="./resources/pages/charts/flot.html"
 						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>Flot</p>
-					</a></li>
-					<li class="nav-item"><a href="./resources/pages/charts/inline.html"
-						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>Inline</p>
-					</a></li>
-					<li class="nav-item"><a href="./resources/pages/charts/uplot.html"
-						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>uPlot</p>
+							<p>일정 작성</p>
 					</a></li>
 				</ul>
 			</li>
@@ -118,41 +88,22 @@
 				<ul class="nav nav-treeview">
 					<li class="nav-item"><a href="./resources/pages/UI/general.html"
 						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>General</p>
+							<p>휴가 신청</p>
 					</a></li>
 					<li class="nav-item"><a href="./resources/pages/UI/icons.html"
 						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>Icons</p>
+							<p>잔여 휴가</p>
 					</a></li>
 					<li class="nav-item"><a href="./resources/pages/UI/buttons.html"
 						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>Buttons</p>
-					</a></li>
-					<li class="nav-item"><a href="./resources/pages/UI/sliders.html"
-						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>Sliders</p>
-					</a></li>
-					<li class="nav-item"><a href="./resources/pages/UI/modals.html"
-						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>Modals & Alerts</p>
-					</a></li>
-					<li class="nav-item"><a href="./resources/pages/UI/navbar.html"
-						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>Navbar & Tabs</p>
-					</a></li>
-					<li class="nav-item"><a href="./resources/pages/UI/timeline.html"
-						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>Timeline</p>
-					</a></li>
-					<li class="nav-item"><a href="./resources/pages/UI/ribbons.html"
-						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>Ribbons</p>
+							<p>신청 내역</p>
 					</a></li>
 				</ul>
 			</li>
 		</ul>
 	</nav>
 </div>
-	<script>
-		$.widget.bridge('uibutton', $.ui.button)
-	</script>
+
+<script>
+	$.widget.bridge('uibutton', $.ui.button)
+</script>
