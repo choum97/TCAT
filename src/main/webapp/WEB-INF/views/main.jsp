@@ -7,15 +7,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>AdminLTE 3 | Dashboard</title>
-
+<title>TCAT Dashboard</title>
 
 <!-- fullcalendar CDN -->
 <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
 
-
-<!--  -->
-    
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -28,7 +24,7 @@
 			<jsp:include page="layout/sidebar.jsp"/>
 		</aside>
 
-		<div class="content-wrapper">
+		<div class="content-wrapper"> <!-- 파랑색배경 -->
 			<div class="content-header">
 				<div class="container-fluid">
 					<div class="row mb-2">
@@ -45,103 +41,77 @@
 			<!-- Main content -->
 			<section class="content">
 				<div class="container-fluid">
-					<!-- Small boxes (Stat box) -->
 					<div class="row">
 						<div class="col-lg-3 col-6">
-							<!-- small box -->
 							<div class="small-box bg-info">
 								<div class="inner">
-									<h3>150</h3>
+									<h3>150<sub style="font-size: 12px">명</sub></h3>
 
-									<p>New Orders</p>
+									<p>본사</p>
+								</div>
+								<div class="icon">
+									<i class="fas fa-users mr-2"></i>
+								</div>
+								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+						<div class="col-lg-3 col-6">
+							<div class="small-box bg-success">
+								<div class="inner">
+									<h3>53<sub style="font-size: 12px">명</sub></h3>
+									
+									<p>외근</p>
+								</div>
+								<div class="icon">
+									<i class="ion ion-person"></i>
+								</div>
+								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+						<div class="col-lg-3 col-6">
+							<div class="small-box bg-warning">
+								<div class="inner">
+									<h3>44<sub style="font-size: 12px">명</sub></h3>
+
+									<p>휴가</p>
+								</div>
+								<div class="icon">
+									<i class="icon fas fa-tree"></i>
+								</div>
+								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+						<div class="col-lg-3 col-6">
+							<div class="small-box bg-danger">
+								<div class="inner">
+									<h3>65<sub style="font-size: 12px">명</sub></h3>
+									<p>출장</p>
 								</div>
 								<div class="icon">
 									<i class="ion ion-bag"></i>
 								</div>
-								<a href="#" class="small-box-footer">More info <i
-									class="fas fa-arrow-circle-right"></i></a>
+								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
-						<!-- ./col -->
-						<div class="col-lg-3 col-6">
-							<!-- small box -->
-							<div class="small-box bg-success">
-								<div class="inner">
-									<h3>
-										53<sup style="font-size: 20px">%</sup>
-									</h3>
-
-									<p>Bounce Rate</p>
-								</div>
-								<div class="icon">
-									<i class="ion ion-stats-bars"></i>
-								</div>
-								<a href="#" class="small-box-footer">More info <i
-									class="fas fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-						<!-- ./col -->
-						<div class="col-lg-3 col-6">
-							<!-- small box -->
-							<div class="small-box bg-warning">
-								<div class="inner">
-									<h3>44</h3>
-
-									<p>User Registrations</p>
-								</div>
-								<div class="icon">
-									<i class="ion ion-person-add"></i>
-								</div>
-								<a href="#" class="small-box-footer">More info <i
-									class="fas fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-						<!-- ./col -->
-						<div class="col-lg-3 col-6">
-							<!-- small box -->
-							<div class="small-box bg-danger">
-								<div class="inner">
-									<h3>65</h3>
-
-									<p>Unique Visitors</p>
-								</div>
-								<div class="icon">
-									<i class="ion ion-pie-graph"></i>
-								</div>
-								<a href="#" class="small-box-footer">More info <i
-									class="fas fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-						<!-- ./col -->
 					</div>
-					<!-- /.row -->
 					<!-- Main row -->
-	 				<div id='calendar'></div>
-
-
-
+					<hr>
+					<div>
+						<h3>일정</h3>
+	 					<div id='calendar'></div>
+					</div>
 					<!-- /.row (main row) -->
 				</div>
-				<!-- /.container-fluid -->
 			</section>
-			<!-- /.content -->
 		</div>
-		<!-- /.content-wrapper -->
-		<footer class="main-footer">
-			<strong>Copyright &copy; 2014-2021 <a
-				href="https://adminlte.io">AdminLTE.io</a>.
-			</strong> All rights reserved.
-			<div class="float-right d-none d-sm-inline-block">
-				<b>Version</b> 3.1.0
-			</div>
-		</footer>
+		
+		<jsp:include page="layout/footer.jsp"/>
 	</div>
 	<!-- ./wrapper -->
 
 
 	<script>
-	$.widget.bridge('uibutton', $.ui.button)
-	
+	//캘린더
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -160,11 +130,12 @@
 	       	nowIndicator: true, // 현재 시간 마크
 	       	dayMaxEvents: true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
 	       	locale: 'ko', // 한국어 설정
-
+	       	
         	end: 'today prev,next',
         });
         calendar.render();
     });
+	
   	</script>
 	
 	<!-- fullcalendar CDN -->
