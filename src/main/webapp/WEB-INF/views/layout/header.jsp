@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +21,10 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -46,26 +51,31 @@
 		</ul>
 	</nav>
 	
+	
 	<aside class="control-sidebar control-sidebar-dark">
-		<div class="sidebar">
+		<div class="sidebar" >
+			<div class="user-panel mt-3 pb-1 mb-1 d-flex">
+				<h3>출퇴근 설정</h3>
+			</div>
+		
 			<form action="#">
-				<span class="brand-text font-weight-light"> <font size="5px">출퇴근 설정 </font></span>
-				<div>
-					<span class="brand-text font-weight-light"> <font size="3px">근무형태  </font></span><br>
-					<input type="radio" name="radio" value="본사" checked="checked"> <font size="1px">본사</font>
-					<input type="radio" name="radio" value="외근">  <font size="1px">외근</font>
-					<input type="radio" name="radio" value="출장">  <font size="1px">출장</font>
-					<div id="etc_view" style="display:none;"> <input type="text"></div>
-				</div>
-
-				
-				<hr>
-				
-				<div align="right"> 
-				
-					<button class="btn btn-primary" id="buttonNoLogin" onclick="#" >출근</button>
-					
-					<button class="btn btn-primary" id="buttonNoLogin" onclick="#" >퇴근</button>
+				<div class="user-panel mt-2 pb-1 mb-2 d-flex"><ul class="nav nav-pills nav-sidebar flex-column">
+					<li><font size="3px">근무형태  </font></li>
+					<li><input type="radio" name="radio" value="본사"><font size="1px">본사</font>
+					<input type="radio" name="radio" value="외근"><font size="1px">외근</font>
+					<input type="radio" name="radio" value="출장"><font size="1px">출장</font></li>
+					<li><div id="etc_view" style="display:none;">  
+						<font size="3px">근무지 </font><br>
+						<input type="text" width="10px"  placeholder="근무지를 입력해주세요.">
+					</div></li> 
+				</ul></div>
+				<div align="right">
+					<c:if test="${member eq null}">
+				 		<button class="btn btn-primary" id="buttonNoLogin" >출근하기</button>
+					</c:if> 
+				 	<c:if test="${member ne null}">
+				 		<button class="btn btn-primary" id="buttonNoLogin" >퇴근하기</button>
+					</c:if> 
 				</div>
 			</form>	
 		</div>
@@ -77,10 +87,8 @@
 $(document).ready(function(){
 	  $("input:radio[name=radio]").click(function(){
 	    if($("input[name=radio]:checked").val() == "본사"){
-	    	 $('#divId').hide();
 	    	 $('#etc_view').css('display','none');
 	    }else if($("input[name=radio]:checked").val() != "본사"){
-	    	$('#divId').show();
 	    	 $('#etc_view').css('display','block');
 	    }
 	  });
@@ -89,11 +97,6 @@ $(document).ready(function(){
 
 
 
-	<!-- /.navbar -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
 
 </body>
 </html>

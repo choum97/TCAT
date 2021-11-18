@@ -19,11 +19,6 @@
 					Home
 				</p>
 			</a></li>
-			<li class="nav-item"><a href="main" class="nav-link"> <i class="nav-icon fas fa-th"></i>
-				<p>
-					공지사항
-				</p>
-			</a></li>
 			<li class="nav-item">
 				<a href="#" class="nav-link"> <i class="nav-icon fas fa-copy"></i>
 					<p>
@@ -87,6 +82,11 @@
 					</a></li>
 				</ul>
 			</li>
+			<li class="nav-item"><a href="main" class="nav-link"> <i class="nav-icon fas fa-th"></i>
+				<p>
+					공지사항
+				</p>
+			</a></li>
 		</ul>
 	</nav>
 </div>
