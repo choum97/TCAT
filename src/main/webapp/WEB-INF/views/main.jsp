@@ -19,6 +19,7 @@
 .block ul,
 .block li {margin:0; padding:0; list-style:none;}
 .block li a {display:block; height:20px; line-height:20px; color:#555; text-decoration:none;}
+.unstyled-button {border: none; padding: 0; background: none;}
 </style>
 </head>
 
@@ -119,10 +120,8 @@
 								<li><a href="#"><span>9</span> 손연재</a></li>
 							</ul>
 							<div class="navi">
-								<span class="prev"> &#8593;</span>
-								<span class="next">&#8595;</span>
-								<button class="pause none">정지</button>
-								<button id="pause" class="">Pause</button>
+								<button class="unstyled-button"><span class="prev"> &#8593;</span></button>
+								<button class="unstyled-button"><span class="next">&#8595;</span></button>
 							</div>
 						</div><br>
 					</div>
