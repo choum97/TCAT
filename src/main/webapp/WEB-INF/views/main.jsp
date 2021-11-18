@@ -10,21 +10,13 @@
 
 <!-- fullcalendar CDN -->
 <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
-<!--공지사항 롤링 -->
-<style type="text/css">
-.none{display:none}
-#ticker{float:left;width:100px;}
-.navi{float:right;}
-.block {border:2px ; padding:0 5px; height:20px; overflow:hidden; background:#F6F6F6; width:100%; font-family:Gulim; font-size:12px;float:left;}
-.block ul,
-.block li {margin:0; padding:0; list-style:none;}
-.block li a {display:block; height:20px; line-height:20px; color:#555; text-decoration:none;}
-.unstyled-button {border: none; padding: 0; background: none;}
-</style>
+
+<!--공지사항 rolling css-->
+<link href='<c:url value="/resources/css/rolling.css"/>' rel='stylesheet' />
+
 </head>
 
-
-<body class="hold-transition sidebar-mini layout-fixed">
+<body>
 	<div class="wrapper">
 		<!-- 헤더 -->
 		<jsp:include page="layout/header.jsp"/>
