@@ -33,7 +33,7 @@
 			<jsp:include page="layout/sidebar.jsp"/>
 		</aside>
 
-		<div class="content-wrapper">
+		<div class="content-wrapper"> <!-- 파랑색배경 -->
 			<div class="content-header">
 				<div class="container-fluid">
 					<div class="row mb-2">
