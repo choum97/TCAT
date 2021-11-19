@@ -69,6 +69,7 @@
 				Messages</a>
 		</div>
 	
+	
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
@@ -98,7 +99,7 @@
 						<h3 class="card-title">신청내역</h3>
 						
 						<div class="card-tools">		
-							<button type="button" class="btn btn-primary">신청하기</button>
+							<button type="button" class="btn btn-success">신청하기</button>
 							<button type="button" class="btn btn-tool"
 								data-card-widget="collapse" title="Collapse">
 								<i class="fas fa-minus"></i>
@@ -106,24 +107,25 @@
 							
 						</div>
 					</div>
-					<div class="card-body p-0">
-						<table class="table table-striped projects">
+					<div class="card-body">
+						<table id="example2" class="table table-striped projects">
 							<thead>
 								<tr>
-									<th style="width: 1%">#</th>
-									<th style="width: 20%">Project Name</th>
-									<th style="width: 30%">Team Members</th>
-									<th>Project Progress</th>
-									<th style="width: 8%" class="text-center">Status</th>
-									<th style="width: 20%"></th>
+									<th style="width: 10%" class="text-center">Number</th>
+									<th style="width: 10%" class="text-center">시작일</th>
+									<th style="width: 10%" class="text-center">종료일</th>
+									<th style="width: 10%" class="text-center">종류</th>
+									<th style="width: 30%" class="text-center">비고</th>
+									<th style="width: 10%" class="text-center">상태</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>#</td>
-									<td><a> AdminLTE v3 </a> <br /> <small> Created
-											01.01.2019 </small></td>
-									<td>
+									<td class="text-center">1</td>
+									<td class="text-center">2021-11-19</td>
+									<td class="text-center">
+									2021-11-24
+										<!-- 
 										<ul class="list-inline">
 											<li class="list-inline-item"><img alt="Avatar"
 												class="table-avatar" src="../../dist/img/avatar.png">
@@ -138,309 +140,166 @@
 												class="table-avatar" src="../../dist/img/avatar4.png">
 											</li>
 										</ul>
+										
+																
+										 -->
 									</td>
-									<td class="project_progress">
-										<div class="progress progress-sm">
-											<div class="progress-bar bg-green" role="progressbar"
-												aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"
-												style="width: 57%"></div>
-										</div> <small> 57% Complete </small>
+									
+									<td class="text-center">월차</td>
+									<td class="text-center">19일 월차 사용</td>
+									<td class="text-center">처리중</td>
+									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
+									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
+									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
+									
 									</td>
-									<td class="project-state"><span
-										class="badge badge-success">Success</span></td>
-									<td class="project-actions text-right"><a
-										class="btn btn-primary btn-sm" href="#"> <i
-											class="fas fa-folder"> </i> View
-									</a> <a class="btn btn-info btn-sm" href="#"> <i
-											class="fas fa-pencil-alt"> </i> Edit
-									</a> <a class="btn btn-danger btn-sm" href="#"> <i
-											class="fas fa-trash"> </i> Delete
-									</a></td>
-								</tr>
-								<tr>
-									<td>#</td>
-									<td><a> AdminLTE v3 </a> <br /> <small> Created
-											01.01.2019 </small></td>
-									<td>
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar2.png">
-											</li>
-										</ul>
-									</td>
-									<td class="project_progress">
-										<div class="progress progress-sm">
-											<div class="progress-bar bg-green" role="progressbar"
-												aria-valuenow="47" aria-valuemin="0" aria-valuemax="100"
-												style="width: 47%"></div>
-										</div> <small> 47% Complete </small>
-									</td>
-									<td class="project-state"><span
-										class="badge badge-success">Success</span></td>
-									<td class="project-actions text-right"><a
-										class="btn btn-primary btn-sm" href="#"> <i
-											class="fas fa-folder"> </i> View
-									</a> <a class="btn btn-info btn-sm" href="#"> <i
-											class="fas fa-pencil-alt"> </i> Edit
-									</a> <a class="btn btn-danger btn-sm" href="#"> <i
-											class="fas fa-trash"> </i> Delete
-									</a></td>
-								</tr>
-								<tr>
-									<td>#</td>
-									<td><a> AdminLTE v3 </a> <br /> <small> Created
-											01.01.2019 </small></td>
-									<td>
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar2.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar3.png">
-											</li>
-										</ul>
-									</td>
-									<td class="project_progress">
-										<div class="progress progress-sm">
-											<div class="progress-bar bg-green" role="progressbar"
-												aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
-												style="width: 77%"></div>
-										</div> <small> 77% Complete </small>
-									</td>
-									<td class="project-state"><span
-										class="badge badge-success">Success</span></td>
-									<td class="project-actions text-right"><a
-										class="btn btn-primary btn-sm" href="#"> <i
-											class="fas fa-folder"> </i> View
-									</a> <a class="btn btn-info btn-sm" href="#"> <i
-											class="fas fa-pencil-alt"> </i> Edit
-									</a> <a class="btn btn-danger btn-sm" href="#"> <i
-											class="fas fa-trash"> </i> Delete
-									</a></td>
-								</tr>
-								<tr>
-									<td>#</td>
-									<td><a> AdminLTE v3 </a> <br /> <small> Created
-											01.01.2019 </small></td>
-									<td>
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar2.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar3.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar4.png">
-											</li>
-										</ul>
-									</td>
-									<td class="project_progress">
-										<div class="progress progress-sm">
-											<div class="progress-bar bg-green" role="progressbar"
-												aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-												style="width: 60%"></div>
-										</div> <small> 60% Complete </small>
-									</td>
-									<td class="project-state"><span
-										class="badge badge-success">Success</span></td>
-									<td class="project-actions text-right"><a
-										class="btn btn-primary btn-sm" href="#"> <i
-											class="fas fa-folder"> </i> View
-									</a> <a class="btn btn-info btn-sm" href="#"> <i
-											class="fas fa-pencil-alt"> </i> Edit
-									</a> <a class="btn btn-danger btn-sm" href="#"> <i
-											class="fas fa-trash"> </i> Delete
-									</a></td>
-								</tr>
-								<tr>
-									<td>#</td>
-									<td><a> AdminLTE v3 </a> <br /> <small> Created
-											01.01.2019 </small></td>
-									<td>
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar4.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar5.png">
-											</li>
-										</ul>
-									</td>
-									<td class="project_progress">
-										<div class="progress progress-sm">
-											<div class="progress-bar bg-green" role="progressbar"
-												aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"
-												style="width: 12%"></div>
-										</div> <small> 12% Complete </small>
-									</td>
-									<td class="project-state"><span
-										class="badge badge-success">Success</span></td>
-									<td class="project-actions text-right"><a
-										class="btn btn-primary btn-sm" href="#"> <i
-											class="fas fa-folder"> </i> View
-									</a> <a class="btn btn-info btn-sm" href="#"> <i
-											class="fas fa-pencil-alt"> </i> Edit
-									</a> <a class="btn btn-danger btn-sm" href="#"> <i
-											class="fas fa-trash"> </i> Delete
-									</a></td>
-								</tr>
-								<tr>
-									<td>#</td>
-									<td><a> AdminLTE v3 </a> <br /> <small> Created
-											01.01.2019 </small></td>
-									<td>
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar2.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar3.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar4.png">
-											</li>
-										</ul>
-									</td>
-									<td class="project_progress">
-										<div class="progress progress-sm">
-											<div class="progress-bar bg-green" role="progressbar"
-												aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"
-												style="width: 35%"></div>
-										</div> <small> 35% Complete </small>
-									</td>
-									<td class="project-state"><span
-										class="badge badge-success">Success</span></td>
-									<td class="project-actions text-right"><a
-										class="btn btn-primary btn-sm" href="#"> <i
-											class="fas fa-folder"> </i> View
-									</a> <a class="btn btn-info btn-sm" href="#"> <i
-											class="fas fa-pencil-alt"> </i> Edit
-									</a> <a class="btn btn-danger btn-sm" href="#"> <i
-											class="fas fa-trash"> </i> Delete
-									</a></td>
-								</tr>
-								<tr>
-									<td>#</td>
-									<td><a> AdminLTE v3 </a> <br /> <small> Created
-											01.01.2019 </small></td>
-									<td>
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar4.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar5.png">
-											</li>
-										</ul>
-									</td>
-									<td class="project_progress">
-										<div class="progress progress-sm">
-											<div class="progress-bar bg-green" role="progressbar"
-												aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"
-												style="width: 87%"></div>
-										</div> <small> 87% Complete </small>
-									</td>
-									<td class="project-state"><span
-										class="badge badge-success">Success</span></td>
-									<td class="project-actions text-right"><a
-										class="btn btn-primary btn-sm" href="#"> <i
-											class="fas fa-folder"> </i> View
-									</a> <a class="btn btn-info btn-sm" href="#"> <i
-											class="fas fa-pencil-alt"> </i> Edit
-									</a> <a class="btn btn-danger btn-sm" href="#"> <i
-											class="fas fa-trash"> </i> Delete
-									</a></td>
-								</tr>
-								<tr>
-									<td>#</td>
-									<td><a> AdminLTE v3 </a> <br /> <small> Created
-											01.01.2019 </small></td>
-									<td>
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar3.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar4.png">
-											</li>
-										</ul>
-									</td>
-									<td class="project_progress">
-										<div class="progress progress-sm">
-											<div class="progress-bar bg-green" role="progressbar"
-												aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
-												style="width: 77%"></div>
-										</div> <small> 77% Complete </small>
-									</td>
-									<td class="project-state"><span
-										class="badge badge-success">Success</span></td>
-									<td class="project-actions text-right"><a
-										class="btn btn-primary btn-sm" href="#"> <i
-											class="fas fa-folder"> </i> View
-									</a> <a class="btn btn-info btn-sm" href="#"> <i
-											class="fas fa-pencil-alt"> </i> Edit
-									</a> <a class="btn btn-danger btn-sm" href="#"> <i
-											class="fas fa-trash"> </i> Delete
-									</a></td>
-								</tr>
-								<tr>
-									<td>#</td>
-									<td><a> AdminLTE v3 </a> <br /> <small> Created
-											01.01.2019 </small></td>
-									<td>
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar3.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar4.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar5.png">
-											</li>
-										</ul>
-									</td>
-									<td class="project_progress">
-										<div class="progress progress-sm">
-											<div class="progress-bar bg-green" role="progressbar"
-												aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
-												style="width: 77%"></div>
-										</div> <small> 77% Complete </small>
-									</td>
-									<td class="project-state"><span
-										class="badge badge-success">Success</span></td>
-									<td class="project-actions text-right"><a
-										class="btn btn-primary btn-sm" href="#"> <i
-											class="fas fa-folder"> </i> View
-									</a> <a class="btn btn-info btn-sm" href="#"> <i
-											class="fas fa-pencil-alt"> </i> Edit
-									</a> <a class="btn btn-danger btn-sm" href="#"> <i
-											class="fas fa-trash"> </i> Delete
-									</a></td>
-								</tr>
+								</tr>				
 							</tbody>
+							<tbody>
+								<tr>
+									<td class="text-center">1</td>
+									<td class="text-center">2021-11-19</td>
+									<td class="text-center">
+									2021-11-24
+										<!-- 
+										<ul class="list-inline">
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar2.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar3.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar4.png">
+											</li>
+										</ul>
+										
+																
+										 -->
+									</td>
+									
+									<td class="text-center">월차</td>
+									<td class="text-center">19일 월차 사용</td>
+									<td class="text-center">처리중</td>
+									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
+									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
+									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
+									
+									</td>
+								</tr>				
+							</tbody><tbody>
+								<tr>
+									<td class="text-center">1</td>
+									<td class="text-center">2021-11-19</td>
+									<td class="text-center">
+									2021-11-24
+										<!-- 
+										<ul class="list-inline">
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar2.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar3.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar4.png">
+											</li>
+										</ul>
+										
+																
+										 -->
+									</td>
+									
+									<td class="text-center">월차</td>
+									<td class="text-center">19일 월차 사용</td>
+									<td class="text-center">처리중</td>
+									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
+									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
+									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
+									
+									</td>
+								</tr>				
+							</tbody><tbody>
+								<tr>
+									<td class="text-center">1</td>
+									<td class="text-center">2021-11-19</td>
+									<td class="text-center">
+									2021-11-24
+										<!-- 
+										<ul class="list-inline">
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar2.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar3.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar4.png">
+											</li>
+										</ul>
+										
+																
+										 -->
+									</td>
+									
+									<td class="text-center">월차</td>
+									<td class="text-center">19일 월차 사용</td>
+									<td class="text-center">처리중</td>
+									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
+									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
+									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
+									
+									</td>
+								</tr>				
+							</tbody>
+							<tbody>
+								<tr>
+									<td class="text-center">1</td>
+									<td class="text-center">2021-11-19</td>
+									<td class="text-center">
+									2021-11-24
+										<!-- 
+										<ul class="list-inline">
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar2.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar3.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="../../dist/img/avatar4.png">
+											</li>
+										</ul>
+										
+																
+										 -->
+									</td>
+									
+									<td class="text-center">월차</td>
+									<td class="text-center">19일 월차 사용</td>
+									<td class="text-center">처리중</td>
+									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
+									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
+									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
+									
+									</td>
+								</tr>				
+							</tbody>
+							
+							
+							
 						</table>
 					</div>
 					<!-- /.card-body -->

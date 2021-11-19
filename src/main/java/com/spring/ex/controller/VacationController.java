@@ -9,4 +9,5 @@ public class VacationController {
 	public String vacation() {
 		return ("/vacation");
 	}
+	
 }
