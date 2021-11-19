@@ -82,7 +82,7 @@
 					</a></li>
 				</ul>
 			</li>
-			<li class="nav-item"><a href="main" class="nav-link"> <i class="nav-icon fas fa-th"></i>
+			<li class="nav-item"><a href="noticeView" class="nav-link"> <i class="nav-icon fas fa-th"></i>
 				<p>
 					공지사항
 				</p>
