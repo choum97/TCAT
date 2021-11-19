@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>TCAT</title>
 
@@ -32,21 +31,17 @@
 		<!-- Left navbar links -->
 		<ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a></li>
-			<li class="nav-item d-none d-sm-inline-block">
-				<a href="main" class="nav-link">Home</a>
-			</li>
 		</ul>
 		
 	
 		<!-- Right navbar links -->
 		<ul class="navbar-nav ml-auto">
 	
-			<li class="nav-item"><a class="nav-link" data-widget="fullscreen" href="#" role="button"> <i
-					class="fas fa-expand-arrows-alt"></i>
-			</a></li>
-			<li class="nav-item">
-				<a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"> <i class="fas fa-th-large"></i>
-				</a>
+			<li class="nav-item"><a class="nav-link" data-widget="fullscreen" href="#" role="button">
+				<i class="fas fa-expand-arrows-alt"></i></a>
+			</li>
+			<li class="nav-item"><a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"> 
+				<i class="fas fa-th-large"></i></a>
 			</li>
 		</ul>
 	</nav>
@@ -57,7 +52,6 @@
 			<div class="user-panel mt-3 pb-1 mb-1 d-flex">
 				<h3>출퇴근 설정</h3>
 			</div>
-		
 			<form action="#">
 				<div class="user-panel mt-2 pb-1 mb-2 d-flex"><ul class="nav nav-pills nav-sidebar flex-column">
 					<li><font size="3px">근무형태  </font></li>
@@ -79,24 +73,18 @@
 				</div>
 			</form>	
 		</div>
-
  	</aside>
 
-<script>
-
-$(document).ready(function(){
-	  $("input:radio[name=radio]").click(function(){
-	    if($("input[name=radio]:checked").val() == "본사"){
-	    	 $('#etc_view').css('display','none');
-	    }else if($("input[name=radio]:checked").val() != "본사"){
-	    	 $('#etc_view').css('display','block');
-	    }
-	  });
-});
-</script>
-
-
-
-
+	<script>
+		$(document).ready(function() {
+			$("input:radio[name=radio]").click(function() {
+				if ($("input[name=radio]:checked").val() == "본사") {
+					$('#etc_view').css('display', 'none');
+				} else if ($("input[name=radio]:checked").val() != "본사") {
+					$('#etc_view').css('display', 'block');
+				}
+			});
+		});
+	</script>
 </body>
 </html>
