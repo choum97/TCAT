@@ -9,7 +9,6 @@ public class NoticeController {
 
 	@RequestMapping (value = "/noticeView")
 	public String notice() {
-		System.out.println("공지사항페이지");
 		return "information/notice";
 	}
 	
