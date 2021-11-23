@@ -1,26 +1,24 @@
-package com.spring.ex.admin.dao;
+package com.spring.ex.admin.service;
 
 import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
+import com.spring.ex.admin.dao.NoticeDAO;
 import com.spring.ex.vo.NoticeVO;
 
-@Repository
-public class NoticeDAOImpl implements NoticeDAO {
+@Service
+public class NoticeServiceImpl implements NoticeService {
 	
 	@Inject
-	private SqlSession sqlSession;
-	private static final String namespace = "com.spring.ex.NoticeMapper";
+	private NoticeDAO dao;
 	
 	//공지사항 출력
-	@Override
 	public List<NoticeVO> NoticeList(HashMap<String, Integer> map) throws Exception {
-		return sqlSession.selectList(namespace + ".NoticeListView", map);
+		return dao.NoticeList(map);
 	}
 	
 	//공지사항 등록
@@ -37,6 +35,6 @@ public class NoticeDAOImpl implements NoticeDAO {
 	
 	//공지사항 검색 게시물 총 갯수
 	public int getNoticeTotalCount() throws Exception {
-		return sqlSession.selectOne(namespace + ".getNoticeTotalCount");
+		return dao.getNoticeTotalCount();
 	}
 }

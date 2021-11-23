@@ -1,14 +1,15 @@
-package com.spring.ex.admin.dao;
+package com.spring.ex.admin.service;
 
 import java.util.HashMap;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.spring.ex.vo.NoticeVO;
 
-@Repository
-public interface NoticeDAO {
+@Service
+public interface NoticeService {
+	
 	//공지사항 출력
 	public List<NoticeVO> NoticeList(HashMap<String, Integer> map) throws Exception;
 	
