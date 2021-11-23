@@ -30,13 +30,23 @@ public class NoticeDAOImpl implements NoticeDAO {
 	//공지사항 삭제
 	
 	//공지사항 게시물 총 갯수
+	public int NoticeTotalCount() throws Exception {
+		return sqlSession.selectOne(namespace + ".NoticeTotalCount");
+	}
 	
 	//공지사항 게시글 내용
+	public NoticeVO NoticeDetailView(int notice_id) throws Exception {
+		return sqlSession.selectOne(namespace + ".NoticeDetailView", notice_id);
+	}
 	
 	//공지사항 검색
+	public List<NoticeVO> NoticeSearchList(HashMap<String, Object> map) throws Exception {
+		return sqlSession.selectList(namespace + ".NoticeSearchView", map);
+	}
 	
 	//공지사항 검색 게시물 총 갯수
-	public int getNoticeTotalCount() throws Exception {
-		return sqlSession.selectOne(namespace + ".getNoticeTotalCount");
+	public int NoticeSearchTotalCount(HashMap<String, String> searchMap) throws Exception {
+		return sqlSession.selectOne(namespace + ".NoticeSearchTotalCount", searchMap);
 	}
+
 }

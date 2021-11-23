@@ -6,20 +6,35 @@
 	
 	<!-- 공지사항 출력 -->
 	<select id="NoticeListView" resultType="NoticeVO">
-	<!--SELECT * FROM notice order BY nId DESC LIMIT #{Page}, #{PageSize}
-		(SELECT * FROM notice WHERE Important = 'Y') UNION (SELECT * FROM notice ORDER BY nId DESC LIMIT #{Page}, #{PageSize})
-	
-		SELECT * FROM notice ORDER BY nId DESC LIMIT #{Page}, #{PageSize}
-		
-		SELECT * FROM(SELECT * FROM notice UNION SELECT * FROM notice LIMIT #{Page}, #{PageSize}) AS a order BY Important = 'Y' DESC, nId DESC
-		(SELECT * FROM notice UNION SELECT * FROM notice order BY Important = 'Y' DESC, nId DESC LIMIT #{Page}, #{PageSize}) -->
-		
 		SELECT * FROM notice ORDER BY notice_id DESC LIMIT #{Page}, #{PageSize}
 	</select>
 	
+	<!-- 공지사항 게시글 내용 -->
+	<select id="NoticeDetailView" resultType="NoticeVO">
+		SELECT * FROM notice WHERE notice_id = #{notice_id}
+	</select>
+	
 	<!-- 공지사항 총 갯수 -->
-	<select id="getNoticeTotalCount" resultType="int">
+	<select id="NoticeTotalCount" resultType="int">
 		SELECT COUNT(*) FROM notice
 	</select>
+	
+	<!-- 공지사항 검색 -->
+	<select id="NoticeSearchView" resultType="NoticeVO">
+		SELECT * FROM notice <include refid="Search"></include> ORDER BY notice_id DESC LIMIT #{Page}, #{PageSize}
+	</select>
+	
+	<!-- 공지사항 검색 게시물 총 갯수 -->
+	<select id="NoticeSearchTotalCount" resultType="int">
+		SELECT COUNT(*) FROM notice <include refid="Search"></include>
+	</select>
+	
+	<sql id="Search">
+		<choose>
+			<when test="SearchType != null">
+				WHERE ${SearchType} LIKE CONCAT('%', #{Keyword}, '%')
+			</when>
+		</choose>
+	</sql>
 	
 </mapper>

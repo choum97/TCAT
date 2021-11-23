@@ -66,13 +66,13 @@
 							<c:forEach items="${NoticeList}" var="NoticeVO">
 								<tr>
 									<td>${NoticeVO.notice_id }</td>
-									<td><a href="noticeView?nId=${NoticeVO.notice_id }">${NoticeVO.title }</a></td>
+									<td><a href="noticeDetailView?notice_id=${NoticeVO.notice_id }">${NoticeVO.title }</a></td>
 									<td>${NoticeVO.reg_date }</td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
-										<!-- 게시글 페이징 처리(기준 10개) -->
+					<!-- 게시글 페이징 처리(기준 10개) -->
 					<nav aria-label="Page navigation">
 						<ul class="pagination justify-content-center">
 							<c:choose>

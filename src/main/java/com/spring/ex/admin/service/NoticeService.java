@@ -20,11 +20,15 @@ public interface NoticeService {
 	//공지사항 삭제
 	
 	//공지사항 게시물 총 갯수
+	public int NoticeTotalCount() throws Exception;
 	
 	//공지사항 게시글 내용
+	public NoticeVO NoticeDetailView(int notice_id) throws Exception;
 	
 	//공지사항 검색
+	public List<NoticeVO> NoticeSearchList(HashMap<String, Object> map) throws Exception;
 	
 	//공지사항 검색 게시물 총 갯수
-	public int getNoticeTotalCount() throws Exception;
+	public int NoticeSearchTotalCount(HashMap<String, String> searchMap) throws Exception;
+	
 }
