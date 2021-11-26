@@ -73,7 +73,7 @@
 								(주)<strong>포커스리더</strong>
 							</h2>
 							<br> <br>
-							<p class="lead mb-5">신청할 휴가를 작성해주세요.</p>
+							<p class="lead mb-5">신청한 휴가의 상세적인 내용입니다.</p>
 						</div>
 					</div>
 					<div class="col-7">
