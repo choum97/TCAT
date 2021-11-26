@@ -70,7 +70,7 @@ public class NoticeController {
 	//공지사항 검색
 	@RequestMapping(value = "/noticeSearch", method = RequestMethod.GET)
 	public String NoticeSearchView(NoticeVO vo, HttpServletRequest request, Model model) throws Exception {
-		String searchType = request.getParameter("searchType");
+		String searchType = request.getParameter("search");
 		String keyword = request.getParameter("keyword");
 		
 		HashMap<String, String> searchMap = new HashMap<String, String>();
@@ -78,14 +78,11 @@ public class NoticeController {
 		searchMap.put("Keyword", keyword);
 		
 		int totalCount = service.NoticeSearchTotalCount(searchMap);
-		System.out.println(totalCount);
 		int page = request.getParameter("page") == null ? 1 : Integer.parseInt(request.getParameter("page"));
-		
 		PagingVO paging = new PagingVO();
 		paging.setPageNo(page);
 		paging.setPageSize(10);
 		paging.setTotalCount(totalCount);
-		
 		page = (page - 1) * 10;
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
@@ -95,12 +92,8 @@ public class NoticeController {
 		map.put("Keyword", keyword);
 		
 		List<NoticeVO> List = service.NoticeSearchList(map);
-		System.out.println(List);
-		
 		model.addAttribute("NoticeList", List);
 		model.addAttribute("Paging", paging);
-		model.addAttribute("search", searchType);
-		model.addAttribute("keyword", keyword);
 		
 		return "information/notice";
 	}

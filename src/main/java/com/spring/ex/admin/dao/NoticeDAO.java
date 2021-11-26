@@ -12,6 +12,9 @@ public interface NoticeDAO {
 	//공지사항 출력
 	public List<NoticeVO> NoticeList(HashMap<String, Integer> map) throws Exception;
 	
+	//공지사항 메인 한줄 출력
+	public List<NoticeVO> NoticeList() throws Exception;
+	
 	//공지사항 등록
 	
 	//공지사항 수정

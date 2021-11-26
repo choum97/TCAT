@@ -20,6 +20,10 @@ public class NoticeServiceImpl implements NoticeService {
 	public List<NoticeVO> NoticeList(HashMap<String, Integer> map) throws Exception {
 		return dao.NoticeList(map);
 	}
+	//공지사항 메인 한줄 출력
+	public List<NoticeVO> NoticeList() throws Exception {
+		return dao.NoticeList();
+	}
 	
 	//공지사항 등록
 	

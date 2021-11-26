@@ -9,6 +9,11 @@
 		SELECT * FROM notice ORDER BY notice_id DESC LIMIT #{Page}, #{PageSize}
 	</select>
 	
+	<!-- 공지사항 메인 한줄 출력 -->
+	<select id="NoticeMainListView" resultType="NoticeVO">
+		SELECT * FROM notice ORDER BY notice_id DESC LIMIT 0, 10
+	</select>
+	
 	<!-- 공지사항 게시글 내용 -->
 	<select id="NoticeDetailView" resultType="NoticeVO">
 		SELECT * FROM notice WHERE notice_id = #{notice_id}

@@ -38,6 +38,7 @@
 							<form action="noticeSearch" method="GET" class="form-inline">
 								<select class="form-control" id="search" name="search">
 									<option value="title">제목</option>
+									<option value="content">내용</option>
 								</select>
 								<input type="text" id="keyword" name="keyword" class="form-control ml-1 mr-1" placeholder="검색어를 입력해주세요" required>
 								<button type="submit" class="btn px-3 btn-primary">

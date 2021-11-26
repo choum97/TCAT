@@ -23,6 +23,12 @@ public class NoticeDAOImpl implements NoticeDAO {
 		return sqlSession.selectList(namespace + ".NoticeListView", map);
 	}
 	
+	//공지사항 메인 한줄 출력
+	@Override
+	public List<NoticeVO> NoticeList() throws Exception {
+		return sqlSession.selectList(namespace + ".NoticeMainListView");
+	}
+	
 	//공지사항 등록
 	
 	//공지사항 수정

@@ -100,16 +100,12 @@
 					<div>
 						<h4>공지사항</h4>
 						<div class="block">
-							<ul id="ticker">
-								<li><a href="#"><span>1</span> 김연아</a></li>
-								<li><a href="#"><span>2</span> 손연재</a></li>
-								<li><a href="#"><span>3</span> 유아니</a></li>
-								<li><a href="#"><span>4</span> 차승원</a></li>
-								<li><a href="#"><span>5</span> 전지현</a></li>
-								<li><a href="#"><span>6</span> 유이</a></li>
-								<li><a href="#"><span>7</span> 손연재</a></li>
-								<li><a href="#"><span>8</span> 손연재</a></li>
-								<li><a href="#"><span>9</span> 손연재</a></li>
+							<ul id="ticker" style="width:50%;">
+								<c:forEach items="${NoticeList}" var="NoticeVO">
+									<li><a href="noticeDetailView?notice_id=${NoticeVO.notice_id }">  
+										${NoticeVO.reg_date}&emsp;${NoticeVO.title }
+									</a></li>
+								</c:forEach>
 							</ul>
 							<div class="navi">
 								<button class="unstyled-button"><span class="prev"> &#8593;</span></button>
@@ -126,6 +122,7 @@
 				</div>
 			</section>
 		</div>
+		
 		
 		<jsp:include page="layout/footer.jsp"/>
 	</div>
