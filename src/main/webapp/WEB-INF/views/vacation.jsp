@@ -17,14 +17,17 @@
 </head>
 <body>
 
-	<jsp:include page="layout/header.jsp" />
-
-	<div class="wrapper">
+	<!-- 헤더 -->
+		<jsp:include page="layout/header.jsp"/>
 
 		<!-- 사이드 바 -->
 		<aside class="main-sidebar sidebar-dark-primary elevation-4">
-			<jsp:include page="layout/sidebar.jsp" />
+			<jsp:include page="layout/sidebar.jsp"/>
 		</aside>
+
+	<div class="wrapper">
+
+	
 
 
 
@@ -310,7 +313,7 @@
 			<!-- /.content -->
 		</div>
 		<!-- /.content-wrapper -->
-
+	
 
 
 		<!-- Control Sidebar -->
@@ -320,6 +323,8 @@
 		<!-- /.control-sidebar -->
 	</div>
 	<!-- ./wrapper -->
+	
+	<jsp:include page="layout/footer.jsp"/>
 
 	<!-- jQuery -->
 	<script src="../../plugins/jquery/jquery.min.js"></script>
@@ -331,17 +336,9 @@
 	<script src="../../dist/js/demo.js"></script>
 
 
+	
 
 
-
-
-
-
-
-
-
-
-	<jsp:include page="layout/footer.jsp" />
 
 </body>
 </html>
