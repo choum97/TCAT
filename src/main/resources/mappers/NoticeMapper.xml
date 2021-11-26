@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.ex.NoticeMapper">
+
+	
+	<!-- 공지사항 출력 -->
+	<select id="NoticeListView" resultType="NoticeVO">
+		SELECT * FROM notice ORDER BY notice_id DESC LIMIT #{Page}, #{PageSize}
+	</select>
+	
+	<!-- 공지사항 메인 한줄 출력 -->
+	<select id="NoticeMainListView" resultType="NoticeVO">
+		SELECT * FROM notice ORDER BY notice_id DESC LIMIT 0, 10
+	</select>
+	
+	<!-- 공지사항 게시글 내용 -->
+	<select id="NoticeDetailView" resultType="NoticeVO">
+		SELECT * FROM notice WHERE notice_id = #{notice_id}
+	</select>
+	
+	<!-- 공지사항 총 갯수 -->
+	<select id="NoticeTotalCount" resultType="int">
+		SELECT COUNT(*) FROM notice
+	</select>
+	
+	<!-- 공지사항 검색 -->
+	<select id="NoticeSearchView" resultType="NoticeVO">
+		SELECT * FROM notice <include refid="Search"></include> ORDER BY notice_id DESC LIMIT #{Page}, #{PageSize}
+	</select>
+	
+	<!-- 공지사항 검색 게시물 총 갯수 -->
+	<select id="NoticeSearchTotalCount" resultType="int">
+		SELECT COUNT(*) FROM notice <include refid="Search"></include>
+	</select>
+	
+	<sql id="Search">
+		<choose>
+			<when test="SearchType != null">
+				WHERE ${SearchType} LIKE CONCAT('%', #{Keyword}, '%')
+			</when>
+		</choose>
+	</sql>
+	
+</mapper>
