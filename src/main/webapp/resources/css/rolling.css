@@ -1,5 +1,5 @@
 .none{display:none}
-#ticker{float:left;width:100px;}
+#ticker{float:left;width:500px;}
 .navi{float:right;}
 .block {border:2px ; padding:0 5px; height:20px; overflow:hidden; background:#F6F6F6; width:100%; font-family:Gulim; font-size:12px;float:left;}
 .block ul,
