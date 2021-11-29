@@ -11,29 +11,29 @@
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <!-- Font Awesome -->
 <link rel="stylesheet"
-	href="../../plugins/fontawesome-free/css/all.min.css">
+	href="./resources/plugins/fontawesome-free/css/all.min.css">
 <!-- Theme style -->
-<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+<link rel="stylesheet" href="./resources/dist/css/adminlte.min.css">
 </head>
 <body>
 
+	
+		<!-- 헤더 -->
 	<jsp:include page="layout/header.jsp" />
 
+	<!-- 사이드 바 -->
+	<aside class="main-sidebar sidebar-dark-primary elevation-4">
+		<jsp:include page="layout/sidebar.jsp" />
+	</aside>
+	
+	
+
 	<div class="wrapper">
-
-		<!-- 사이드 바 -->
-		<aside class="main-sidebar sidebar-dark-primary elevation-4">
-			<jsp:include page="layout/sidebar.jsp" />
-		</aside>
-
-
-
 		<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-
 			<div class="dropdown-divider"></div>
 			<a href="#" class="dropdown-item"> <!-- Message Start -->
 				<div class="media">
-					<img src="../../dist/img/user8-128x128.jpg" alt="User Avatar"
+					<img src="./resources/dist/img/user8-128x128.jpg" alt="User Avatar"
 						class="img-size-50 img-circle mr-3">
 					<div class="media-body">
 						<h3 class="dropdown-item-title">
@@ -50,7 +50,7 @@
 			<div class="dropdown-divider"></div>
 			<a href="#" class="dropdown-item"> <!-- Message Start -->
 				<div class="media">
-					<img src="../../dist/img/user3-128x128.jpg" alt="User Avatar"
+					<img src="./resources/dist/img/user3-128x128.jpg" alt="User Avatar"
 						class="img-size-50 img-circle mr-3">
 					<div class="media-body">
 						<h3 class="dropdown-item-title">
@@ -128,122 +128,16 @@
 										<!-- 
 										<ul class="list-inline">
 											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar.png">
+												class="table-avatar" src="./resources/dist/img/avatar.png">
 											</li>
 											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar2.png">
+												class="table-avatar" src="./resources/dist/img/avatar2.png">
 											</li>
 											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar3.png">
+												class="table-avatar" src="./resources/dist/img/avatar3.png">
 											</li>
 											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar4.png">
-											</li>
-										</ul>
-										
-																
-										 -->
-									</td>
-									
-									<td class="text-center">월차</td>
-									<td class="text-center">19일 월차 사용</td>
-									<td class="text-center">처리중</td>
-									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
-									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
-									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
-									
-									</td>
-								</tr>				
-							</tbody>
-							<tbody>
-								<tr>
-									<td class="text-center">1</td>
-									<td class="text-center">2021-11-19</td>
-									<td class="text-center">
-									2021-11-24
-										<!-- 
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar2.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar3.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar4.png">
-											</li>
-										</ul>
-										
-																
-										 -->
-									</td>
-									
-									<td class="text-center">월차</td>
-									<td class="text-center">19일 월차 사용</td>
-									<td class="text-center">처리중</td>
-									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
-									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
-									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
-									
-									</td>
-								</tr>				
-							</tbody><tbody>
-								<tr>
-									<td class="text-center">1</td>
-									<td class="text-center">2021-11-19</td>
-									<td class="text-center">
-									2021-11-24
-										<!-- 
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar2.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar3.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar4.png">
-											</li>
-										</ul>
-										
-																
-										 -->
-									</td>
-									
-									<td class="text-center">월차</td>
-									<td class="text-center">19일 월차 사용</td>
-									<td class="text-center">처리중</td>
-									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
-									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
-									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
-									
-									</td>
-								</tr>				
-							</tbody><tbody>
-								<tr>
-									<td class="text-center">1</td>
-									<td class="text-center">2021-11-19</td>
-									<td class="text-center">
-									2021-11-24
-										<!-- 
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar2.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar3.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar4.png">
+												class="table-avatar" src="./resources/dist/img/avatar4.png">
 											</li>
 										</ul>
 										
@@ -270,16 +164,122 @@
 										<!-- 
 										<ul class="list-inline">
 											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar.png">
+												class="table-avatar" src="./resources/dist/img/avatar.png">
 											</li>
 											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar2.png">
+												class="table-avatar" src="./resources/dist/img/avatar2.png">
 											</li>
 											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar3.png">
+												class="table-avatar" src="./resources/dist/img/avatar3.png">
 											</li>
 											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="../../dist/img/avatar4.png">
+												class="table-avatar" src="./resources/dist/img/avatar4.png">
+											</li>
+										</ul>
+										
+																
+										 -->
+									</td>
+									
+									<td class="text-center">월차</td>
+									<td class="text-center">19일 월차 사용</td>
+									<td class="text-center">처리중</td>
+									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
+									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
+									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
+									
+									</td>
+								</tr>				
+							</tbody><tbody>
+								<tr>
+									<td class="text-center">1</td>
+									<td class="text-center">2021-11-19</td>
+									<td class="text-center">
+									2021-11-24
+										<!-- 
+										<ul class="list-inline">
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="./resources/dist/img/avatar.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="./resources/dist/img/avatar2.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="./resources/dist/img/avatar3.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="./resources/dist/img/avatar4.png">
+											</li>
+										</ul>
+										
+																
+										 -->
+									</td>
+									
+									<td class="text-center">월차</td>
+									<td class="text-center">19일 월차 사용</td>
+									<td class="text-center">처리중</td>
+									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
+									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
+									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
+									
+									</td>
+								</tr>				
+							</tbody><tbody>
+								<tr>
+									<td class="text-center">1</td>
+									<td class="text-center">2021-11-19</td>
+									<td class="text-center">
+									2021-11-24
+										<!-- 
+										<ul class="list-inline">
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="./resources/dist/img/avatar.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="./resources/dist/img/avatar2.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="./resources/dist/img/avatar3.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="./resources/dist/img/avatar4.png">
+											</li>
+										</ul>
+										
+																
+										 -->
+									</td>
+									
+									<td class="text-center">월차</td>
+									<td class="text-center">19일 월차 사용</td>
+									<td class="text-center">처리중</td>
+									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
+									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
+									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
+									
+									</td>
+								</tr>				
+							</tbody>
+							<tbody>
+								<tr>
+									<td class="text-center">1</td>
+									<td class="text-center">2021-11-19</td>
+									<td class="text-center">
+									2021-11-24
+										<!-- 
+										<ul class="list-inline">
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="./resources/dist/img/avatar.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="./resources/dist/img/avatar2.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="./resources/dist/img/avatar3.png">
+											</li>
+											<li class="list-inline-item"><img alt="Avatar"
+												class="table-avatar" src="./resources/dist/img/avatar4.png">
 											</li>
 										</ul>
 										
@@ -310,38 +310,28 @@
 			<!-- /.content -->
 		</div>
 		<!-- /.content-wrapper -->
+	
 
 
-
-		<!-- Control Sidebar -->
-		<aside class="control-sidebar control-sidebar-dark">
-			<!-- Control sidebar content goes here -->
-		</aside>
-		<!-- /.control-sidebar -->
+		
 	</div>
 	<!-- ./wrapper -->
+	
+	<jsp:include page="layout/footer.jsp"/>
 
 	<!-- jQuery -->
-	<script src="../../plugins/jquery/jquery.min.js"></script>
+	<script src="./resources/plugins/jquery/jquery.min.js"></script>
 	<!-- Bootstrap 4 -->
-	<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="./resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- AdminLTE App -->
-	<script src="../../dist/js/adminlte.min.js"></script>
+	<script src="./resources/dist/js/adminlte.min.js"></script>
 	<!-- AdminLTE for demo purposes -->
-	<script src="../../dist/js/demo.js"></script>
+	<script src="./resources/dist/js/demo.js"></script>
 
 
+	
 
 
-
-
-
-
-
-
-
-
-	<jsp:include page="layout/footer.jsp" />
 
 </body>
 </html>
