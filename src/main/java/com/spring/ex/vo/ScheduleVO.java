@@ -11,6 +11,7 @@ public class ScheduleVO {
 	 * 공유여부
 	 * 일정색상 
 	 */
+	
 	private int schedule_id;
 	private String member_id;
 	private String schedule_writer;
