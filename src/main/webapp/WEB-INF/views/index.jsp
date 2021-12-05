@@ -10,7 +10,7 @@
 
 <body>
 <%
-    response.sendRedirect("main");    
+    response.sendRedirect("title");    
 %>
 
 
