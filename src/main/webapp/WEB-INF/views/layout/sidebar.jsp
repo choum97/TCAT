@@ -22,11 +22,11 @@
 			<li class="nav-item">
 				<a href="#" class="nav-link"> <i class="nav-icon fas fa-copy"></i>
 					<p>
-						출근/퇴근 관리 <i class="fas fa-angle-left right"></i>
+						출근/퇴근 <i class="fas fa-angle-left right"></i>
 					</p>
 				</a>
 				<ul class="nav nav-treeview">
-					<li class="nav-item"><a href="./resources/pages/layout/top-nav.html"
+					<li class="nav-item"><a href="timeCardList"
 						class="nav-link"> <i class="far fa-circle nav-icon"></i>
 							<p>기록 확인</p>
 					</a></li>
@@ -46,46 +46,14 @@
 					</a></li>
 				</ul>
 			</li>
-			<li class="nav-item">
-				<a href="#" class="nav-link"> <i class="nav-icon fas fa-chart-pie"></i>
-					<p>
-						근무일정 관리 <i class="right fas fa-angle-left"></i>
-					</p>
-				</a>
-				<ul class="nav nav-treeview">
-					<li class="nav-item"><a href="./resources/pages/charts/chartjs.html"
-						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>일정 목록</p>
-					</a></li>
-					<li class="nav-item"><a href="./resources/pages/charts/flot.html"
-						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>일정 작성</p>
-					</a></li>
-				</ul>
-			</li>
-			<li class="nav-item">
-				<a href="#" class="nav-link"> 
-					<i class="nav-icon fas fa-tree"></i><p>휴가/신청 관리 <i class="fas fa-angle-left right"></i></p>
-				</a>
-				<ul class="nav nav-treeview">
-					<li class="nav-item"><a href="./resources/pages/UI/general.html"
-						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>휴가 신청</p>
-					</a></li>
-					<li class="nav-item"><a href="./resources/pages/UI/icons.html"
-						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>잔여 휴가</p>
-					</a></li>
-					<li class="nav-item"><a href="./resources/pages/UI/buttons.html"
-						class="nav-link"> <i class="far fa-circle nav-icon"></i>
-							<p>신청 내역</p>
-					</a></li>
-				</ul>
-			</li>
+			<li class="nav-item"><a href="scheduleView" class="nav-link"><i class="nav-icon fas fa-chart-pie"></i>
+				<p>일정관리</p>
+			</a></li>
+			<li class="nav-item"><a href="vacation" class="nav-link"><i class="nav-icon fas fa-tree"></i>
+				<p>휴가/신청</p>
+			</a></li>
 			<li class="nav-item"><a href="noticeView" class="nav-link"> <i class="nav-icon fas fa-th"></i>
-				<p>
-					공지사항
-				</p>
+				<p>공지사항</p>
 			</a></li>
 		</ul>
 	</nav>
