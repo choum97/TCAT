@@ -1,9 +1,11 @@
 package com.spring.ex.controller;
 
+
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +21,7 @@ import com.spring.ex.vo.ScheduleVO;
 public class MainController {
 	@Inject NoticeService serviceNotice;
 	@Inject ScheduleService serviceSchedule;
-
+	
 	@RequestMapping (value = "/main", method = RequestMethod.GET )
 	public String main(NoticeVO vo, HttpServletRequest request, Model model) throws Exception {
 		List<NoticeVO> List = serviceNotice.NoticeList();
