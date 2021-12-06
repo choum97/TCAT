@@ -34,7 +34,6 @@
 	
 		<!-- Right navbar links -->
 		<ul class="navbar-nav ml-auto">
-	
 			<li class="nav-item"><a class="nav-link" data-widget="fullscreen" href="#" role="button">
 				<i class="fas fa-expand-arrows-alt"></i></a>
 			</li>
@@ -51,16 +50,20 @@
 				<h3>출퇴근 설정</h3>
 			</div>
 			<form action="#">
-				<div class="user-panel mt-2 pb-1 mb-2 d-flex"><ul class="nav nav-pills nav-sidebar flex-column">
-					<li><font size="3px">근무형태  </font></li>
-					<li><input type="radio" name="radio" value="본사"><font size="1px">본사</font>
-					<input type="radio" name="radio" value="외근"><font size="1px">외근</font>
-					<input type="radio" name="radio" value="출장"><font size="1px">출장</font></li>
-					<li><div id="etc_view" style="display:none;">  
-						<font size="3px">근무지 </font><br>
-						<input type="text" width="10px"  placeholder="근무지를 입력해주세요.">
-					</div></li> 
-				</ul></div>
+				<div class="user-panel mt-2 pb-1 mb-2 d-flex">
+					<c:if test="${member eq null}">
+						<ul class="nav nav-pills nav-sidebar flex-column">
+							<li><font size="3px">근무형태  </font></li>
+							<li><input type="radio" name="radio" value="본사"><font size="1px">본사</font>
+							<input type="radio" name="radio" value="외근"><font size="1px">외근</font>
+							<input type="radio" name="radio" value="출장"><font size="1px">출장</font></li>
+							<li><div id="etc_view" style="display:none;">  
+								<font size="3px">근무지 </font><br>
+								<input type="text" width="10px"  placeholder="근무지를 입력해주세요.">
+							</div></li> 
+						</ul>
+					</c:if>
+				</div>
 				<div align="right">
 					<c:if test="${member eq null}">
 				 		<button class="btn btn-primary" id="buttonNoLogin" >출근하기</button>

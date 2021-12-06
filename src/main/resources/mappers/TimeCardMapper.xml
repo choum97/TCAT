@@ -1,11 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.spring.ex.TimeCardMapper">
 
 	
-	<!-- 일정 출력 -->
-	<select id="" resultType="TimeCardVO">
-		SELECT * FROM time_card
+	<!-- 본사 -->
+	<select id="getTimeCardCommandCount" resultType="int">
+		SELECT COUNT(*) FROM time_card WHERE work_pattern = "본사" AND work_day_start = CURDATE()
 	</select>
+	
+	<!-- 외근 -->
+	<select id="getTimeCardOutsideCount" resultType="int">
+		SELECT COUNT(*) FROM time_card WHERE work_pattern = "외근" AND work_day_start = CURDATE()
+	</select>
+	
+	<!-- 출장 -->
+	<select id="getTimeCardTripCount" resultType="int">
+		SELECT COUNT(*) FROM time_card WHERE work_pattern = "출장" AND work_day_start = CURDATE()
+	</select>
+	
 </mapper>

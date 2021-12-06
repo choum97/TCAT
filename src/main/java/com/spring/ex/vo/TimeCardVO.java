@@ -8,6 +8,8 @@ public class TimeCardVO {
 	private String work_place;
 	private Object work_day_start;
 	private Object work_day_end;
+	private Object work_time_start;
+	private Object work_time_end;
 	private String work_note;
 	public int getTime_card_id() {
 		return time_card_id;
@@ -50,6 +52,18 @@ public class TimeCardVO {
 	}
 	public void setWork_note(String work_note) {
 		this.work_note = work_note;
+	}
+	public Object getWork_time_start() {
+		return work_time_start;
+	}
+	public void setWork_time_start(Object work_time_start) {
+		this.work_time_start = work_time_start;
+	}
+	public Object getWork_time_end() {
+		return work_time_end;
+	}
+	public void setWork_time_end(Object work_time_end) {
+		this.work_time_end = work_time_end;
 	}
 
 

@@ -31,6 +31,9 @@
 </head>
 
 <body>
+<%
+    response.sendRedirect("title");    
+%>
 
 	<input type="date" class="form-control" value="<%=beginMonth %>-01" id="start_date" name="start_date" max="<%=now %>">
 	<div class="input-group-addon">&nbsp;~&nbsp;</div>

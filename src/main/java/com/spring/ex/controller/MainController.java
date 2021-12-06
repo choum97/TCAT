@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.spring.ex.admin.service.NoticeService;
 import com.spring.ex.admin.service.ScheduleService;
+import com.spring.ex.admin.service.TimeCardService;
 import com.spring.ex.vo.NoticeVO;
 import com.spring.ex.vo.ScheduleVO;
 
@@ -20,15 +21,21 @@ import com.spring.ex.vo.ScheduleVO;
 public class MainController {
 	@Inject NoticeService serviceNotice;
 	@Inject ScheduleService serviceSchedule;
+	@Inject TimeCardService serviceTimeCard;
 	
 	@RequestMapping (value = "/main", method = RequestMethod.GET )
 	public String main(NoticeVO vo, HttpServletRequest request, Model model) throws Exception {
 		List<NoticeVO> List = serviceNotice.NoticeList();
 		List<ScheduleVO> scheduleList = serviceSchedule.ScheduleList();
-		System.out.println(scheduleList);
+		int commandCenterCount = serviceTimeCard.getTimeCardCommandCount();
+		int outsideCount = serviceTimeCard.getTimeCardOutsideCount();
+		int tripCount = serviceTimeCard.getTimeCardTripCount();
 		
 		model.addAttribute("NoticeList", List);
 		model.addAttribute("ScheduleList", scheduleList);
+		model.addAttribute("commandCenterList", commandCenterCount);
+		model.addAttribute("outsideCount", outsideCount);
+		model.addAttribute("tripCount", tripCount);
 		
 		return "main";
 	}

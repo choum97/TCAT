@@ -17,6 +17,9 @@
 </head>
 
 <body>
+	<c:if test="${member == null}">
+		<c:redirect url="title"/>
+	</c:if>
 	<div class="wrapper">
 		<!-- 헤더 -->
 		<jsp:include page="layout/header.jsp"/>
@@ -45,7 +48,7 @@
 						<div class="col-lg-3 col-6">
 							<div class="small-box bg-info">
 								<div class="inner">
-									<h3>150<sub style="font-size: 12px">명</sub></h3>
+									<h3>${commandCenterList}<sub style="font-size: 12px">명</sub></h3>
 
 									<p>본사</p>
 								</div>
@@ -58,7 +61,7 @@
 						<div class="col-lg-3 col-6">
 							<div class="small-box bg-success">
 								<div class="inner">
-									<h3>53<sub style="font-size: 12px">명</sub></h3>
+									<h3>${outsideCount }<sub style="font-size: 12px">명</sub></h3>
 									
 									<p>외근</p>
 								</div>
@@ -84,7 +87,7 @@
 						<div class="col-lg-3 col-6">
 							<div class="small-box bg-danger">
 								<div class="inner">
-									<h3>65<sub style="font-size: 12px">명</sub></h3>
+									<h3>${tripCount }<sub style="font-size: 12px">명</sub></h3>
 									<p>출장</p>
 								</div>
 								<div class="icon">
