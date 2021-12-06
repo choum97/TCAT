@@ -213,13 +213,9 @@
 			<!-- 이전, 수정 버튼 -->
 			<div align="right">
 				<hr>
-				<button type="button" class="btn btn-primary" onclick="">수정</button>
 				<button type="button" class="btn btn-primary" onclick="">등록</button>
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
 	        </div>
-	        			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			</div>
 		</form>
 	</div>
 	

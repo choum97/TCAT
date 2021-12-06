@@ -74,7 +74,7 @@
 						<div class="col-lg-3 col-6">
 							<div class="small-box bg-warning">
 								<div class="inner">
-									<h3>44<sub style="font-size: 12px">명</sub></h3>
+									<h3>${vacationCount }<sub style="font-size: 12px">명</sub></h3>
 
 									<p>휴가</p>
 								</div>

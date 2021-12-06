@@ -96,7 +96,7 @@
 			  	eventClick: function(info) {
 			  		
 			  		 let scheduleId = info.event.id;
-/* 			  		 let memberId = info.event.memberId;
+			  		 let memberId = info.event.memberId;
 			  		 let title = info.event.title; 
 			  		 let start = getFormatDate(info.event.start);
 			  		 let end = getFormatDate(info.event.end);
@@ -110,7 +110,7 @@
 			  		 $("#title").val(title);
 			  		 $("#content").val(content);
 			  		 $("#datetimepicker").val(start);
-			  		 $("#datetimepicker2").val(end); */
+			  		 $("#datetimepicker2").val(end); 
 			  		 $("#modal").modal('show');
 				},
 			});

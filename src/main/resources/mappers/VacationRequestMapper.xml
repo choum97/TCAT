@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.ex.VacationRequestMapper">
+
+	
+	<!-- 메인 휴가자 집계 -->
+	<select id="getVacationMainCount" resultType="int">
+		SELECT COUNT(*) FROM vacation_request WHERE vacation_ok = 1 AND CURDATE() BETWEEN vacation_start_day AND vacation_end_day
+	</select>
+	
+</mapper>

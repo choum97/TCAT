@@ -3,7 +3,10 @@ package com.spring.ex.admin.dao;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.dao.support.DaoSupport;
 import org.springframework.stereotype.Repository;
+
+import com.spring.ex.vo.TimeCardVO;
 
 @Repository
 public class TimeCardDAOImpl implements TimeCardDAO {
@@ -25,6 +28,18 @@ public class TimeCardDAOImpl implements TimeCardDAO {
 	@Override
 	public int getTimeCardTripCount() throws Exception {
 		return sqlSession.selectOne(namespace + ".getTimeCardTripCount");
+	}
+
+	//출근하기
+	@Override
+	public int timeCardAttendanceOn(TimeCardVO vo) throws Exception {
+		return sqlSession.insert(namespace + ".timeCardAttendanceOn", vo);
+	}
+
+	//퇴근하기
+	@Override
+	public int timeCardAttendanceOff(TimeCardVO vo) throws Exception {
+		return sqlSession.update(namespace + ".timeCardAttendanceOff", vo);
 	}
 	
 	
