@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class TitleController {
-	@RequestMapping ("/")
+	@RequestMapping ("/title")
 	public String title() {
 		return ("/title");
 	}
