@@ -5,5 +5,6 @@
 	<typeAliases>
 		<typeAlias type="com.spring.ex.vo.NoticeVO" alias="NoticeVO"/>
 		<typeAlias type="com.spring.ex.vo.ScheduleVO" alias="ScheduleVO"/>
+		<typeAlias type="com.spring.ex.vo.TimeCardVO" alias="TimeCardVO"/>
 	</typeAliases>
 </configuration>
