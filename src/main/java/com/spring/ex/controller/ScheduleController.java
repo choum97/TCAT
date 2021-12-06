@@ -17,20 +17,16 @@ import com.spring.ex.vo.NoticeVO;
 import com.spring.ex.vo.ScheduleVO;
 
 @Controller
-public class MainController {
-	@Inject NoticeService serviceNotice;
+public class ScheduleController {
 	@Inject ScheduleService serviceSchedule;
 	
-	@RequestMapping (value = "/main", method = RequestMethod.GET )
-	public String main(NoticeVO vo, HttpServletRequest request, Model model) throws Exception {
-		List<NoticeVO> List = serviceNotice.NoticeList();
+	@RequestMapping (value = "/scheduleView", method = RequestMethod.GET )
+	public String scheduleView(HttpServletRequest request, Model model) throws Exception {
 		List<ScheduleVO> scheduleList = serviceSchedule.ScheduleList();
-		System.out.println(scheduleList);
 		
-		model.addAttribute("NoticeList", List);
 		model.addAttribute("ScheduleList", scheduleList);
 		
-		return "main";
+		return "schedule";
 	}
 	
 

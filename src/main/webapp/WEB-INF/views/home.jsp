@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.time.format.DateTimeFormatter"%>
+<%@ page import="java.time.LocalDateTime"%>
+<%
+	//현재시간 구해서 String으로 formating
+	LocalDateTime nowTime = LocalDateTime.now();
+	
+	DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	DateTimeFormatter dateTimeFormatter2 = DateTimeFormatter.ofPattern("yyyy-MM");
+	String now = nowTime.format(dateTimeFormatter);
+	String beginMonth = nowTime.format(dateTimeFormatter2);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,32 +32,9 @@
 
 <body>
 
-<a href="#" data-toggle="modal" data-target="#myModal">이미지 모달띄우기</a>
-
-
-<div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">사진제목</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-            <img class="card-img-top rounded img-fluid" src="images/research/research-1.jpg">
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-        
-      </div>
-    </div>
-</div>
+	<input type="date" class="form-control" value="<%=beginMonth %>-01" id="start_date" name="start_date" max="<%=now %>">
+	<div class="input-group-addon">&nbsp;~&nbsp;</div>
+	<input type="date" class="form-control" value="<%=now %>" id="end_date" name="end_date" max="<%=now %>">
 
 </body>
 </html>
