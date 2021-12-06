@@ -14,7 +14,6 @@ public class ScheduleVO {
 	
 	private int schedule_id;
 	private String member_id;
-	private String schedule_writer;
 	private String schedule_title;
 	private String schedule_content;
 	private Object schedule_start_day;
@@ -33,12 +32,6 @@ public class ScheduleVO {
 	}
 	public void setMember_id(String member_id) {
 		this.member_id = member_id;
-	}
-	public String getSchedule_writer() {
-		return schedule_writer;
-	}
-	public void setSchedule_writer(String schedule_writer) {
-		this.schedule_writer = schedule_writer;
 	}
 	public String getSchedule_title() {
 		return schedule_title;

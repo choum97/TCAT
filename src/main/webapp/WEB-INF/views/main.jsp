@@ -155,7 +155,8 @@
 						{
 							title : '${ScheduleVO.schedule_title}',
 							start : '${ScheduleVO.schedule_start_day}',
-							end : '${ScheduleVO.schedule_end_day}'
+							end : '${ScheduleVO.schedule_end_day}',
+							color : '${ScheduleVO.schedule_color}'
 						},
 					</c:forEach>
 				   {
