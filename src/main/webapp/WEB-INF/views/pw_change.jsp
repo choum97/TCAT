@@ -43,7 +43,7 @@
           </div>
         </div>
           <div class="input-group mb-3">           
-          <input type="password" class="form-control" placeholder="Confirm New Password">   
+          <input type="password" class="form-control" placeholder="Confirm New password">   
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -52,7 +52,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <button type="button" class="btn btn-primary btn-block" onclick="location.href='email'">변경하기</button>
+            <button type="button" class="btn btn-primary btn-block" onclick="location.href='title'">변경하기</button>
           </div>
           <!-- /.col -->
         </div>
