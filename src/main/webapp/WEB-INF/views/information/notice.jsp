@@ -73,99 +73,101 @@
 							</c:forEach>
 						</tbody>
 					</table>
-					<!-- 게시글 페이징 처리(기준 10개) -->
-					<nav aria-label="Page navigation">
-						<ul class="pagination justify-content-center">
-							<c:choose>
-								<c:when test="${search ne null && keyword ne null }">
-									<!-- 첫 페이지면 Disabled 아니라면 Enabled -->
-									<c:choose>
-										<c:when test="${Paging.pageNo eq Paging.firstPageNo }">
-											<li class="page-item disabled">
-												<a class="page-link" href="noticeSearch?search=${search}&keyword=${keyword}&page=${Paging.prevPageNo}">Previus</a>
-											</li>
-										</c:when>
-										<c:otherwise>
-											<li class="page-item">
-												<a class="page-link" href="noticeSearch?search=${search}&keyword=${keyword}&page=${Paging.prevPageNo}">Previus</a>
-											</li>
-										</c:otherwise>
-									</c:choose>
-									<!-- 페이지 갯수만큼 버튼 생성 -->
-									<c:forEach var="i" begin="${Paging.startPageNo }" end="${Paging.endPageNo }" step="1">
+					<div align="center">
+						<!-- 게시글 페이징 처리(기준 10개) -->
+						<nav aria-label="Page navigation">
+							<ul class="pagination justify-content-center">
+								<c:choose>
+									<c:when test="${search ne null && keyword ne null }">
+										<!-- 첫 페이지면 Disabled 아니라면 Enabled -->
 										<c:choose>
-											<c:when test="${i eq Paging.pageNo }">
+											<c:when test="${Paging.pageNo eq Paging.firstPageNo }">
 												<li class="page-item disabled">
-													<a class="page-link" href="noticeSearch?search=${search}&keyword=${keyword}&page=${i}"><c:out value="${i }"/></a>
+													<a class="page-link" href="noticeSearch?search=${search}&keyword=${keyword}&page=${Paging.prevPageNo}">Previus</a>
 												</li>
 											</c:when>
 											<c:otherwise>
 												<li class="page-item">
-													<a class="page-link" href="noticeSearch?search=${search}&keyword=${keyword}&page=${i}"><c:out value="${i }"/></a>
+													<a class="page-link" href="noticeSearch?search=${search}&keyword=${keyword}&page=${Paging.prevPageNo}">Previus</a>
 												</li>
 											</c:otherwise>
 										</c:choose>
-									</c:forEach>
-									<!-- 마지막 페이지면 Disabled 아니라면 Enabled -->
-									<c:choose>
-										<c:when test="${Paging.pageNo eq Paging.finalPageNo }">
-											<li class="page-item disabled">
-												<a class="page-link" href="noticeSearch?search=${search}&keyword=${keyword}&page=${Paging.nextPageNo}">Next</a>
-											</li>
-										</c:when>
-										<c:otherwise>
-											<li class="page-item">
-												<a class="page-link" href="noticeSearch?search=${search}&keyword=${keyword}&page=${Paging.nextPageNo}">Next</a>
-											</li>
-										</c:otherwise>
-									</c:choose>
-								</c:when>
-								<c:otherwise>
-									<!-- 첫 페이지면 Disabled 아니라면 Enabled -->
-									<c:choose>
-										<c:when test="${Paging.pageNo eq Paging.firstPageNo }">
-											<li class="page-item disabled">
-												<a class="page-link" href="noticeView?page=${Paging.prevPageNo}">Previus</a>
-											</li>
-										</c:when>
-										<c:otherwise>
-											<li class="page-item">
-												<a class="page-link" href="noticeView?page=${Paging.prevPageNo}">Previus</a>
-											</li>
-										</c:otherwise>
-									</c:choose>
-									<!-- 페이지 갯수만큼 버튼 생성 -->
-									<c:forEach var="i" begin="${Paging.startPageNo }" end="${Paging.endPageNo }" step="1">
+										<!-- 페이지 갯수만큼 버튼 생성 -->
+										<c:forEach var="i" begin="${Paging.startPageNo }" end="${Paging.endPageNo }" step="1">
+											<c:choose>
+												<c:when test="${i eq Paging.pageNo }">
+													<li class="page-item disabled">
+														<a class="page-link" href="noticeSearch?search=${search}&keyword=${keyword}&page=${i}"><c:out value="${i }"/></a>
+													</li>
+												</c:when>
+												<c:otherwise>
+													<li class="page-item">
+														<a class="page-link" href="noticeSearch?search=${search}&keyword=${keyword}&page=${i}"><c:out value="${i }"/></a>
+													</li>
+												</c:otherwise>
+											</c:choose>
+										</c:forEach>
+										<!-- 마지막 페이지면 Disabled 아니라면 Enabled -->
 										<c:choose>
-											<c:when test="${i eq Paging.pageNo }">
+											<c:when test="${Paging.pageNo eq Paging.finalPageNo }">
 												<li class="page-item disabled">
-													<a class="page-link" href="noticeView?page=${i}"><c:out value="${i }"/></a>
+													<a class="page-link" href="noticeSearch?search=${search}&keyword=${keyword}&page=${Paging.nextPageNo}">Next</a>
 												</li>
 											</c:when>
 											<c:otherwise>
 												<li class="page-item">
-													<a class="page-link" href="noticeView?page=${i}"><c:out value="${i }"/></a>
+													<a class="page-link" href="noticeSearch?search=${search}&keyword=${keyword}&page=${Paging.nextPageNo}">Next</a>
 												</li>
 											</c:otherwise>
 										</c:choose>
-									</c:forEach>
-									<!-- 마지막 페이지면 Disabled 아니라면 Enabled -->
-									<c:choose>
-										<c:when test="${Paging.pageNo eq Paging.finalPageNo }">
-											<li class="page-item disabled">
-												<a class="page-link" href="noticeView?page=${Paging.nextPageNo}">Next</a>
-											</li>
-										</c:when>
-										<c:otherwise>
-											<li class="page-item">
-												<a class="page-link" href="noticeView?page=${Paging.nextPageNo}">Next</a>
-											</li>
-										</c:otherwise>
-									</c:choose>
-								</c:otherwise>
-							</c:choose>
-						</ul>
-					</nav>
+									</c:when>
+									<c:otherwise>
+										<!-- 첫 페이지면 Disabled 아니라면 Enabled -->
+										<c:choose>
+											<c:when test="${Paging.pageNo eq Paging.firstPageNo }">
+												<li class="page-item disabled">
+													<a class="page-link" href="noticeView?page=${Paging.prevPageNo}">Previus</a>
+												</li>
+											</c:when>
+											<c:otherwise>
+												<li class="page-item">
+													<a class="page-link" href="noticeView?page=${Paging.prevPageNo}">Previus</a>
+												</li>
+											</c:otherwise>
+										</c:choose>
+										<!-- 페이지 갯수만큼 버튼 생성 -->
+										<c:forEach var="i" begin="${Paging.startPageNo }" end="${Paging.endPageNo }" step="1">
+											<c:choose>
+												<c:when test="${i eq Paging.pageNo }">
+													<li class="page-item disabled">
+														<a class="page-link" href="noticeView?page=${i}"><c:out value="${i }"/></a>
+													</li>
+												</c:when>
+												<c:otherwise>
+													<li class="page-item">
+														<a class="page-link" href="noticeView?page=${i}"><c:out value="${i }"/></a>
+													</li>
+												</c:otherwise>
+											</c:choose>
+										</c:forEach>
+										<!-- 마지막 페이지면 Disabled 아니라면 Enabled -->
+										<c:choose>
+											<c:when test="${Paging.pageNo eq Paging.finalPageNo }">
+												<li class="page-item disabled">
+													<a class="page-link" href="noticeView?page=${Paging.nextPageNo}">Next</a>
+												</li>
+											</c:when>
+											<c:otherwise>
+												<li class="page-item">
+													<a class="page-link" href="noticeView?page=${Paging.nextPageNo}">Next</a>
+												</li>
+											</c:otherwise>
+										</c:choose>
+									</c:otherwise>
+								</c:choose>
+							</ul>
+						</nav>
+					</div>
 				</div>
 			</section>
 			

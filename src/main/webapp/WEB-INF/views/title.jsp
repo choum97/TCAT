@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +16,7 @@
   <link rel="stylesheet" href="./resources/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="./resources/dist/css/adminlte.min.css">
+ 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -28,7 +30,7 @@
 
       <form method="post">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="ID">
+          <input type="text" class="form-control" placeholder="ID" id="member_id" name="member_id">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -36,7 +38,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" placeholder="Password" id="member_pw" name="member_pw">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -56,7 +58,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="button" class="btn btn-primary btn-block" onclick="location.href='main'">로그인</button>
+         	 <input class="btn btn-primary btn-block" type="button" value="로그인"  id="submitBtn">
           </div>
           <!-- /.col -->
         </div>
@@ -76,11 +78,32 @@
 <!-- /.login-box -->
 
 <!-- jQuery -->
-<script src="./resources/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-
 
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$('#submitBtn').click(function() {
+				var param = {'member_id':$("#member_id").val(), 'member_pw': $("#member_pw").val()};
+				$.ajax({
+					url: "login",
+					type: "POST",
+					data: param,
+					success: function(data) {
+						if (data != 1) {
+							alert('잘못된 아이디이거나, 비밀번호가 틀렸습니다.');
+						}
+						else {
+							alert('환영합니다 ' + $('#member_id').val() + '님');
+							location.href = "main";
+						}
+					}
+				});
+			})
+		})
+	
+	</script>
 </body>
 </html>

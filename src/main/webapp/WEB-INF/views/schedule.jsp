@@ -1,14 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="java.time.format.DateTimeFormatter"%>
-<%@ page import="java.time.LocalDateTime"%>
-<%
-   //현재시간 구해서 String으로 formating
-   LocalDateTime nowTime = LocalDateTime.now();
-   
-   DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-   String now = nowTime.format(dateTimeFormatter);
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,31 +7,10 @@
 <title>TCAT Dashboard</title>
 <!-- fullcalendar CDN -->
 <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
-<style>
-/* The Modal (background) */
-.searchModal {
-display: none; /* Hidden by default */
-position: fixed; /* Stay in place */
-z-index: 10; /* Sit on top */
-left: 0;
-top: 0;
-width: 100%; /* Full width */
-height: 100%; /* Full height */
-overflow: auto; /* Enable scroll if needed */
-background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-/* Modal Content/Box */
-.search-modal-content {
-background-color: #fefefe;
-margin: 15% auto; /* 15% from the top and centered */
-padding: 20px;
-border: 1px solid #888;
-width: 50%; /* Could be more or less, depending on screen size */
-}
-</style>
-
+<!--일정 모달 css-->
+<link href='<c:url value="/resources/css/scheduleModal.css"/>' rel='stylesheet' />
 </head>
+
 <body>
 	<div class="wrapper">
 		<!-- 헤더 -->
@@ -78,7 +48,6 @@ width: 50%; /* Could be more or less, depending on screen size */
 	</div>
 	<!-- ./wrapper -->
 
-
 	<script>
 		//캘린더
 		document.addEventListener('DOMContentLoaded', function() {
@@ -95,8 +64,8 @@ width: 50%; /* Could be more or less, depending on screen size */
 				customButtons: {
 				    myCustomButton: {
 				      text: '일정추가',
-				      click: function() {
-		    			  $("#modal").show();
+				      click: function(info) {
+				    	  $("#modal").modal('show');
 				      }
 				    }
 				 },
@@ -110,9 +79,14 @@ width: 50%; /* Could be more or less, depending on screen size */
 				events: [
 					<c:forEach items="${ScheduleList}" var="ScheduleVO">
 						{
+							id :'${ScheduleVO.schedule_id}',
+							memberId : '${ScheduleVO.member_id}',
 							title : '${ScheduleVO.schedule_title}',
+							content : '${ScheduleVO.schedule_content}',
 							start : '${ScheduleVO.schedule_start_day}',
-							end : '${ScheduleVO.schedule_end_day}'
+							end : '${ScheduleVO.schedule_end_day}',
+							share : '${ScheduleVO.schedule_share}',
+							color : '${ScheduleVO.schedule_color}'
 						},
 					</c:forEach>
 				   {
@@ -120,95 +94,52 @@ width: 50%; /* Could be more or less, depending on screen size */
 				   }
 				],
 			  	eventClick: function(info) {
-					alert('Event: ' + info.event.title);
+			  		
+			  		 let scheduleId = info.event.id;
+			  		 let memberId = info.event.memberId;
+			  		 let title = info.event.title; 
+			  		 let start = getFormatDate(info.event.start);
+			  		 let end = getFormatDate(info.event.end);
+			  		 let share = ${ScheduleList.get(scheduleId).schedule_share};
+			  		 console.log(scheduleId);
+			  		 console.log(memberId);
+			  		 let color = "${ScheduleList.get(scheduleId).schedule_color}";
+			  		 let content = "${ScheduleList.get(scheduleId).schedule_content}";
+			  		 $("#flag").val(share).prop("selected", true);
+			  		 $("#colorSelect").val(color).prop("selected", true);
+			  		 $("#title").val(title);
+			  		 $("#content").val(content);
+			  		 $("#datetimepicker").val(start);
+			  		 $("#datetimepicker2").val(end); 
+			  		 $("#modal").modal('show');
 				},
-				dayClick: function(info) {
-					alert('Event:as ');
-				}
 			});
 			calendar.render();
 		});
 		
-		  function closeModal() {
-    		  $('.searchModal').hide();
-    		  };
+		//날짜 변환 d에서 yyyy-mm-dd hh:mm?형태로
+		function getFormatDate(date){
+			date.setHours(date.getHours() + 9); 
+			return date.toISOString().replace('T', ' ').substring(0, 16);
+		}
 		
+	  	function closeModal() {
+	  		$("#title").val("");
+	  		
+			$("#datetimepicker").val("");
+			$("#datetimepicker2").val("");
+	  		$("#modal").modal('hide');
+ 		};
+ 	
+ 		
 	</script>
 	
-	<div id="modal" class="searchModal">
-		<div class="search-modal-content">
-			<form>		
-				<div class="page-header">
-					<h3>일정추가</h3><hr>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-7 col-md-7">
-						<div class="input-group my-2 mb-1">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><b>시작일</b></span>
-								
-							</div>
-							<input type="date" class="form-control" value="<%=now%>" id="start_date" name="start_date" min="<%=now %>">
-						</div>
-					</div>
-					<div class="col-xs-5 col-md-5">
-						<div class="input-group my-2 mb-1">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><b>시간</b></span>
-							</div>
-							<input type="time">
-						</div>
-					</div>
-					<div class="col-xs-7 col-md-7">
-						<div class="input-group my-2 mb-1">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><b>종료일</b></span>
-							</div>
-							<input type="date" class="form-control" value="<%=now %>" id="end_date" name="end_date" min="<%=now %>">
-						</div>
-					</div>
-					<div class="col-xs-5 col-md-5">
-						<div class="input-group my-2 mb-1">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><b>시간</b></span>
-							</div>
-							<input type="time">
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-6">
-						<div class="input-group my-2 mb-1">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><b>제목</b></span>
-							</div>
-							<input type="text" value="" class="form-control" >
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-6">
-						<div class="input-group my-2 mb-1">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><b>공유여부</b></span>
-								
-							</div>
-							<input type="text" value="" class="form-control" >
-						</div>
-					</div>
-					<div class="container">
-						<label for="content" class="form-label"><strong>내용</strong></label>
-						<textarea class="form-control h-25" rows="10" id="b_content" name="b_content"></textarea>
-					</div>
-				</div>
-				<!-- 이전, 수정 버튼 -->
-				<div align="right">
-					<hr>
-					<button type="button" class="btn btn-primary" onclick="#">등록</button>
-					<button type="button" class="btn btn-primary" onclick="closeModal();">취소</button>
-		        </div>
-			</form>
-		</div>
-	</div>
+	
 	<!-- fullcalendar CDN -->
 	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
 	<!-- fullcalendar 언어 CDN -->
 	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
+	<script type="text/javascript">
+	</script>
 </body>
 </html>
