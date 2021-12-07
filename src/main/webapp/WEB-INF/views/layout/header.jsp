@@ -118,7 +118,7 @@
 			})
 			
 			$('#submitBtn2').click(function() {
-				var param = {'member_id':$("#member_id").val(), 'work_pattern': $("#work_pattern").val(), 'work_place': $("#work_place").val()};
+				var param = {'member_id':$("#member_id").val(), 'work_note': $("#work_note").val()};
 				$.ajax({
 					url: "timeCardAttendanceOff",
 					type: "GET",
