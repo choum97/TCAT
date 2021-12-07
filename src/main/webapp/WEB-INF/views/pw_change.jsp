@@ -26,11 +26,27 @@
     <div class="card-body">
       <p class="login-box-msg">인증이 확인되었습니다. 비밀번호를 변경해주세요</p>
       <form action="recover-password.html" method="post">
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+        <div class="input-group mb-3">           
+          <input type="password" class="form-control" placeholder="Password">   
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">           
+          <input type="password" class="form-control" placeholder="New Password">   
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+          <div class="input-group mb-3">           
+          <input type="password" class="form-control" placeholder="Confirm New Password">   
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
@@ -57,6 +73,6 @@
 
 
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="./resources/dist/js/adminlte.min.js"></script>
 </body>
 </html>
