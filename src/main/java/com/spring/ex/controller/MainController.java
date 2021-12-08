@@ -69,10 +69,15 @@ public class MainController {
 	}
 	
 	//퇴근
-	@RequestMapping(value = "/timeCardAttendanceOff", method = RequestMethod.GET)
-	public void timeCardAttendanceOut(TimeCardVO vo , HttpSession session, HttpServletResponse response) throws Exception {
-		session.invalidate();
-		serviceTimeCard.timeCardAttendanceOff(vo);
+	@RequestMapping(value = "/timeCardAttendanceOff", method = RequestMethod.POST)
+	public @ResponseBody int timeCardAttendanceOut(TimeCardVO vo , HttpSession session, HttpServletResponse response) throws Exception {
+		int result = 0;
+		int timCardOff= serviceTimeCard.timeCardAttendanceOff(vo);
+		if (timCardOff == 1) {
+			session.removeAttribute("timeCardChcek");
+			result = 1;
+		}
+		return result;
 	}
 	
 }

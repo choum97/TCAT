@@ -65,7 +65,7 @@
 							<li>
 								<div id="etc_view" style="display:none;">  
 									<font size="3px">근무지 </font><br>
-									<input type="text" width="10px" id="work_place" name="work_place" placeholder="근무지를 입력해주세요.">
+									<input type="text" width="10px" id="work_place" name="work_place" placeholder="근무지를 입력해주세요." >
 								</div>
 							</li> 
 						</ul>
@@ -118,18 +118,18 @@
 			})
 			
 			$('#submitBtn2').click(function() {
-				var param = {'member_id':$("#member_id").val(), 'work_pattern': $("#work_pattern").val(), 'work_place': $("#work_place").val()};
+				var param = {'member_id':$("#member_id").val(), 'work_note': $("#work_note").val()};
 				$.ajax({
 					url: "timeCardAttendanceOff",
-					type: "GET",
+					type: "POST",
 					data: param,
 					success: function(data) {
-						if (data != 1) {
-							alert('에러 : 관리자에게 문의해주세요.');
-						}
-						else {
+						if (data == 1) {
 							alert('퇴근되었습니다.');
 							location.href = "main";
+						}
+						else {
+							alert('에러 : 관리자에게 문의해주세요.');
 						}
 					}
 				});
