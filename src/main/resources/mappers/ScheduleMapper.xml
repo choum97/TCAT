@@ -3,7 +3,7 @@
 
 <mapper namespace="com.spring.ex.ScheduleMapper">
 
-	
+	<!--author 김요한  -->
 	<!-- 일정 출력 -->
 	<select id="ScheduleList" resultType="ScheduleVO">
 		SELECT * FROM schedule
@@ -13,4 +13,5 @@
 	<select id="ScheduleDetailView" parameterType="int" resultType="ScheduleVO">
 		SELECT * FROM schedule WHERE schedule_id = #{schedule_id}
 	</select>
+	<!--/  -->
 </mapper>

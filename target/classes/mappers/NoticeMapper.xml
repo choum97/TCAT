@@ -3,7 +3,7 @@
 
 <mapper namespace="com.spring.ex.NoticeMapper">
 
-	
+	<!-- author 김요한 -->
 	<!-- 공지사항 출력 -->
 	<select id="NoticeListView" resultType="NoticeVO">
 		SELECT * FROM notice ORDER BY notice_id DESC LIMIT #{Page}, #{PageSize}

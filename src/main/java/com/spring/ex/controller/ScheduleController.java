@@ -19,6 +19,7 @@ import com.spring.ex.vo.ScheduleVO;
 public class ScheduleController {
 	@Inject ScheduleService serviceSchedule;
 	
+	//author 김요한	
 	@RequestMapping (value = "/scheduleView", method = RequestMethod.GET )
 	public String scheduleView(HttpServletRequest request, Model model) throws Exception {
 		List<ScheduleVO> scheduleList = serviceSchedule.ScheduleList();
@@ -28,7 +29,7 @@ public class ScheduleController {
 		return "schedule";
 	}
 	
-
+	//author 김요한
 	//게시글 조회 - 상세페이지 출력
 	@RequestMapping(value = "/ScheduleDetailView", method = RequestMethod.GET)
 	public @ResponseBody int ScheduleDetailView(Model model, HttpServletRequest request)  throws Exception {

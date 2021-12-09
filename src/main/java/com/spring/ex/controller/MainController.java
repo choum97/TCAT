@@ -23,6 +23,7 @@ import com.spring.ex.vo.NoticeVO;
 import com.spring.ex.vo.ScheduleVO;
 import com.spring.ex.vo.TimeCardVO;
 
+//author 김요한
 @Controller
 public class MainController {
 	@Inject NoticeService serviceNotice;

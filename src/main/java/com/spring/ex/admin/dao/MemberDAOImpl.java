@@ -14,11 +14,12 @@ public class MemberDAOImpl implements MemberDAO {
 	private SqlSession sqlSession;
 	private static final String namespace = "com.spring.ex.MemberMapper";
 	
-
+	//author 김요한
 	//회원 로그인
 	@Override
 	public MemberVO Login(MemberVO vo) throws Exception {
 		return sqlSession.selectOne(namespace + ".MemberLogin", vo);
 	}
 	
+	// /author 김요한
 }

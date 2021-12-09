@@ -1,5 +1,8 @@
 package com.spring.ex.admin.service;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -37,6 +40,21 @@ public class TimeCardServiceImpl implements TimeCardService {
 	@Override
 	public int timeCardAttendanceOff(TimeCardVO vo) throws Exception {
 		return dao.timeCardAttendanceOff(vo);
+	}
+
+	@Override
+	public List<TimeCardVO> getTimeCardCommand(HashMap<String, Integer> map) throws Exception {
+		return dao.getTimeCardCommand(map);
+	}
+
+	@Override
+	public List<TimeCardVO> getTimeCardOutside(HashMap<String, Integer> map) throws Exception {
+		return dao.getTimeCardOutside(map);
+	}
+
+	@Override
+	public List<TimeCardVO> getTimeCardTrip(HashMap<String, Integer> map) throws Exception {
+		return dao.getTimeCardTrip(map);
 	}
 	
 }

@@ -1,5 +1,8 @@
 package com.spring.ex.admin.dao;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -40,6 +43,21 @@ public class TimeCardDAOImpl implements TimeCardDAO {
 	@Override
 	public int timeCardAttendanceOff(TimeCardVO vo) throws Exception {
 		return sqlSession.update(namespace + ".timeCardAttendanceOff", vo);
+	}
+
+	@Override
+	public List<TimeCardVO> getTimeCardCommand(HashMap<String, Integer> map) throws Exception {
+		return sqlSession.selectList(namespace + ".getTimeCardCommand",map);
+	}
+
+	@Override
+	public List<TimeCardVO> getTimeCardOutside(HashMap<String, Integer> map) throws Exception {
+		return sqlSession.selectList(namespace + ".getTimeCardOutside",map);
+	}
+
+	@Override
+	public List<TimeCardVO> getTimeCardTrip(HashMap<String, Integer> map) throws Exception {
+		return sqlSession.selectList(namespace + ".getTimeCardTrip",map);
 	}
 	
 	

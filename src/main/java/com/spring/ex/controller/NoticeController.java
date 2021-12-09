@@ -17,6 +17,7 @@ import com.spring.ex.admin.service.NoticeService;
 import com.spring.ex.vo.NoticeVO;
 import com.spring.ex.vo.PagingVO;
 
+//author 김요한
 @Controller
 public class NoticeController {
 	@Inject

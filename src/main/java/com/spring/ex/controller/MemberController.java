@@ -19,7 +19,7 @@ public class MemberController {
 	@Inject
 	private MemberService service;
 	
-	
+	//author 김요한
 	//로그인 실행
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public @ResponseBody int Login(MemberVO vo, Model model, HttpServletRequest request) throws Exception {
@@ -38,7 +38,7 @@ public class MemberController {
 		}
 		return result;
 	}
-	
+	//author 김요한
 	//로그아웃
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public void logout(HttpSession session, HttpServletResponse response) throws Exception {
