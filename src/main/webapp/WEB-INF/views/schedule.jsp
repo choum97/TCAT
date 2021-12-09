@@ -8,7 +8,6 @@
 <!-- fullcalendar CDN -->
 <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
 <!--일정 모달 css-->
-<link href='<c:url value="/resources/css/scheduleModal.css"/>' rel='stylesheet' />
 </head>
 
 <body>
@@ -59,13 +58,14 @@
 				headerToolbar : {
 					left : 'prev,next today',
 					center : 'title',
-					right : 'myCustomButton dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+					//right : 'myCustomButton dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+					right : 'myCustomButton dayGridMonth,listWeek'
 				},
 				customButtons: {
 				    myCustomButton: {
 				      text: '일정추가',
 				      click: function(info) {
-				    	  $("#modal").modal('show');
+				    	  $("#myModal5").modal('show');
 				      }
 				    }
 				 },
@@ -80,12 +80,11 @@
 					<c:forEach items="${ScheduleList}" var="ScheduleVO">
 						{
 							id :'${ScheduleVO.schedule_id}',
-							memberId : '${ScheduleVO.member_id}',
+							//memberId : '${ScheduleVO.member_id}',
 							title : '${ScheduleVO.schedule_title}',
-							content : '${ScheduleVO.schedule_content}',
+							//content : '${ScheduleVO.schedule_content}',
 							start : '${ScheduleVO.schedule_start_day}',
 							end : '${ScheduleVO.schedule_end_day}',
-							share : '${ScheduleVO.schedule_share}',
 							color : '${ScheduleVO.schedule_color}'
 						},
 					</c:forEach>
@@ -94,52 +93,78 @@
 				   }
 				],
 			  	eventClick: function(info) {
-			  		
-			  		 let scheduleId = info.event.id;
-			  		 let memberId = info.event.memberId;
+			  		 console.log(info);
+			  		 scheduleId = info.event.id;
+			  		 //sessionStorage.setItem("scheduleId", scheduleId);
+			  		 //console.log(scheduleId);
+			  		 //console.log( sessionStorage.getItem("scheduleId"));
+			  	 	 
+			  		 
+			  		 //let memberId = info.event.memberId;
 			  		 let title = info.event.title; 
-			  		 let start = getFormatDate(info.event.start);
-			  		 let end = getFormatDate(info.event.end);
-			  		 let share = ${ScheduleList.get(scheduleId).schedule_share};
+			  		 //let start = getFormatDate(info.event.start);
+			  		 //let end = getFormatDate(info.event.end);
+			  		 let start = info.event.start;
+			  		 let end = info.event.end;
+			  		 //let share = ${ScheduleList.get(scheduleId).schedule_share};
 			  		 console.log(scheduleId);
-			  		 console.log(memberId);
+			  		 //console.log(memberId);
 			  		 let color = "${ScheduleList.get(scheduleId).schedule_color}";
 			  		 let content = "${ScheduleList.get(scheduleId).schedule_content}";
-			  		 $("#flag").val(share).prop("selected", true);
+			  		 console.log(content);
+			  		 //$("#flag").val(share).prop("selected", true);
 			  		 $("#colorSelect").val(color).prop("selected", true);
 			  		 $("#title").val(title);
 			  		 $("#content").val(content);
-			  		 $("#datetimepicker").val(start);
-			  		 $("#datetimepicker2").val(end); 
-			  		 $("#modal").modal('show');
+			  		 $("#start_date").val(start);
+			  		 $("#end_date").val(end); 
+			  		 $("#myModal5").modal('show');
+			  		 //scheduleModalView();
 				},
 			});
 			calendar.render();
 		});
 		
 		//날짜 변환 d에서 yyyy-mm-dd hh:mm?형태로
+		/*
 		function getFormatDate(date){
 			date.setHours(date.getHours() + 9); 
 			return date.toISOString().replace('T', ' ').substring(0, 16);
+		}*/
+		
+		function scheduleModalView() {
+			var param = {'schedule_id':sessionStorage.getItem("scheduleId")};
+			$.ajax({
+				url: "ScheduleDetailView",
+				type: "GET",
+				data: param,
+				success: function(data) {
+					//console.log(data);
+					$("#myModal5").modal('show');
+ 					if (data == 1) {
+						 $("#myModal5").modal('show');
+					}
+					else {
+						alert('오류 : 관리자에게 문의해주세요.');
+					}
+				}
+			});
 		}
 		
 	  	function closeModal() {
 	  		$("#title").val("");
-	  		
+	  		$("#content").val("");
 			$("#datetimepicker").val("");
 			$("#datetimepicker2").val("");
-	  		$("#modal").modal('hide');
+	  		$("#myModal5").modal('hide');
  		};
  	
- 		
+	
 	</script>
-	
-	
+	<jsp:include page="modal/detailModalView.jsp"/>
 	<!-- fullcalendar CDN -->
 	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
 	<!-- fullcalendar 언어 CDN -->
 	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
-	<script type="text/javascript">
-	</script>
 </body>
 </html>

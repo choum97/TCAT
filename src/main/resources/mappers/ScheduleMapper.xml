@@ -8,4 +8,9 @@
 	<select id="ScheduleList" resultType="ScheduleVO">
 		SELECT * FROM schedule
 	</select>
+	
+	<!-- 일정 조회  -->
+	<select id="ScheduleDetailView" parameterType="int" resultType="ScheduleVO">
+		SELECT * FROM schedule WHERE schedule_id = #{schedule_id}
+	</select>
 </mapper>

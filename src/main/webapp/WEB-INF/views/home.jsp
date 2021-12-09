@@ -31,10 +31,14 @@
 </head>
 
 <body>
-<%
+<jsp:include page="layout/header.jsp"/>
+<%-- <%
     response.sendRedirect("title");    
-%>
-
+%> --%>
+	<a href="ScheduleDetailView?schedule_id=2">모달~</a>
+	<a href="#" class="small-box-footer" data-toggle="modal" data-target="#myModal5">More info <i class="fas fa-arrow-circle-right"></i></a>
+	
+	
 	<input type="date" class="form-control" value="<%=beginMonth %>-01" id="start_date" name="start_date" max="<%=now %>">
 	<div class="input-group-addon">&nbsp;~&nbsp;</div>
 	<input type="date" class="form-control" value="<%=now %>" id="end_date" name="end_date" max="<%=now %>">

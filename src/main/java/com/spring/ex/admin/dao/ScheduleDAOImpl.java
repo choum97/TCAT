@@ -16,10 +16,16 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 	private SqlSession sqlSession;
 	private static final String namespace = "com.spring.ex.ScheduleMapper";
 	
-	//공지사항 출력
+	//일정 출력
 	@Override
 	public List<ScheduleVO> ScheduleList() throws Exception {
 		return sqlSession.selectList(namespace + ".ScheduleList");
+	}
+
+	//일정 조회
+	@Override
+	public ScheduleVO ScheduleDetailView(int schedule_id) throws Exception {
+		return sqlSession.selectOne(namespace + ".ScheduleDetailView", schedule_id);
 	}
 	
 }

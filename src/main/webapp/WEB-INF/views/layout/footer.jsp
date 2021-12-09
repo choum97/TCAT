@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.time.format.DateTimeFormatter"%>
 <%@ page import="java.time.LocalDateTime"%>
 <%
@@ -8,17 +9,8 @@
    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
    String now = nowTime.format(dateTimeFormatter);
 %>
-<!-- bootstrap -->
-<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-<!-- moment -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.3/moment.min.js" ></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.3/moment-with-locales.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.3/locale/ko.js"></script>
-<!-- bootstrap datetimepicker -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
+<body>
 <footer class="main-footer">
 	<strong>Copyright &copy; 2014-2021 <a
 		href="https://adminlte.io">TCAT</a>.
@@ -114,109 +106,4 @@
 			</div>
 		</div>
 	</div>
-</div>
-
-<div id="modal"  class="modal fade" data-backdrop="static" data-keyboard="false">
-	<div class="search-modal-content">
-		<form>		
-			<div class="page-header">
-				<h3>일정추가</h3><hr>
-			</div>
-			<div class="form-group row">
-				<div class="col-xs-6 col-md-6">
-					<div class="input-group my-2 mb-1">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><b>시작일</b></span>
-							
-						</div>
-						<div class="form-group">
-			                <div class='input-group date' >
-			                    <input type='text' class="form-control" id='datetimepicker'/>
-			                    <span class="input-group-addon">
-			                        <span class="glyphicon glyphicon-calendar"></span>
-			                    </span>
-			                </div>
-			        	</div>
-				        <script type="text/javascript">
-				            $(function () {
-				                $('#datetimepicker').datetimepicker();
-				            });
-				        </script>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-6">
-					<div class="input-group my-2 mb-1">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><b>종료일</b></span>
-						</div>
-						<div class="form-group">
-			                <div class='input-group date' >
-			                	<input type='text' class="form-control" id='datetimepicker2'/>
-			                    <span class="input-group-addon">
-			                        <span class="glyphicon glyphicon-calendar"></span>
-			                    </span>
-			                </div>
-			        	</div>
-				        <script type="text/javascript">
-				            $(function () {
-				                $('#datetimepicker2').datetimepicker();
-				            });
-				        </script>
-					</div>
-				</div>
-                <div class="col-xs-8 col-md-8">
-					<div class="input-group my-2 mb-1">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><b>색상</b></span>
-						</div>
-						<select class="form-control" name="colorSelect" id="colorSelect">
-			                <option value="#D25565" style="color:#D25565;">빨간색</option>
-		                    <option value="#9775fa" style="color:#9775fa;">보라색</option>
-		                    <option value="#ffa94d" style="color:#ffa94d;">주황색</option>
-		                    <option value="#74c0fc" style="color:#74c0fc;">파란색</option>
-		                    <option value="#f06595" style="color:#f06595;">핑크색</option>
-		                    <option value="#63e6be" style="color:#63e6be;">연두색</option>
-		                    <option value="#a9e34b" style="color:#a9e34b;">초록색</option>
-		                    <option value="#4d638c" style="color:#4d638c;">남색</option>
-		                    <option value="#495057" style="color:#495057;">검정색</option>
-               			</select>
-					</div>
-                  </div>
-				<div class="col-xs-4 col-md-4">
-					<div class="input-group my-2 mb-1">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><b>공유여부</b></span>
-						</div>
-						<select class="form-control" id="flag" name="flag">
-							<option value="1">O</option>
-							<option value="0">X</option>
-						</select>
-					</div>
-				</div>
-				<div class="col-xs-12 col-md-12">
-					<div class="input-group my-2 mb-1">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><b>제목</b></span>
-						</div>
-						<input type="text" id="title" value="" class="form-control" >
-					</div>
-				</div>
-				<div class="container">
-					<label for="content" class="form-label"><strong>내용</strong></label>
-					<textarea class="form-control h-25" rows="10" id="content" name="content"></textarea>
-				</div>
-			</div>
-			<div class="container">
-			    <div class="row">
-			    </div>
-			</div>
-			<!-- 이전, 수정 버튼 -->
-			<div align="right">
-				<hr>
-				<button type="button" class="btn btn-primary" onclick="">등록</button>
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-	        </div>
-		</form>
-	</div>
-	
 </div>
