@@ -89,7 +89,7 @@
 	       	locale: 'ko', // 한국어 설정
         	end: 'today prev,next',
         	events: [
-                {
+                /* {
                   title          : '출근',
                   start          : '2021-11-01',
                   allDay         : true,
@@ -109,14 +109,18 @@
                     allDay         : true,
                     backgroundColor: 'red',
                     borderColor    : 'red',
-                  },
-                {
-                    title          : '휴가',
-                    start          : '2021-11-22',
+                  }, */
+                  {
+                	title          : ${timeCardList.work_pattern},
+                    start          : ${timeCardList.work_day_start},
+                    end			   : ${timeCardList.work_day_end},
                     allDay         : true,
                     backgroundColor: 'blue',
                     borderColor    : 'blue',
                   },
+                  {
+                	  title: ''
+                  }
               ],
               eventClick: function(info) {
             	  if(info.event.title == '출근'){

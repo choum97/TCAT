@@ -1,5 +1,7 @@
 package com.spring.ex.admin.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -37,6 +39,13 @@ public class TimeCardServiceImpl implements TimeCardService {
 	@Override
 	public int timeCardAttendanceOff(TimeCardVO vo) throws Exception {
 		return dao.timeCardAttendanceOff(vo);
+	}
+	
+	
+	//근태기록 조회
+	@Override
+	public List timeCardList() throws Exception {	  
+		return dao.timeCardList();
 	}
 	
 }

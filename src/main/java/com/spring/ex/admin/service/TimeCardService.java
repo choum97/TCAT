@@ -1,5 +1,7 @@
 package com.spring.ex.admin.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.spring.ex.vo.MemberVO;
@@ -19,5 +21,8 @@ public interface TimeCardService {
 	
 	//퇴근하기
 	public int timeCardAttendanceOff(TimeCardVO vo) throws Exception;
+	
+	//근태기록 조회
+	public List<TimeCardVO> timeCardList() throws Exception;
 	
 }

@@ -1,5 +1,7 @@
 package com.spring.ex.admin.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -42,5 +44,11 @@ public class TimeCardDAOImpl implements TimeCardDAO {
 		return sqlSession.update(namespace + ".timeCardAttendanceOff", vo);
 	}
 	
+	//근태기록 조회
+	@Override
+	public List timeCardList() throws Exception { 
+		  
+		return sqlSession.selectList(namespace + ".getTimeCardList");
+	}
 	
 }

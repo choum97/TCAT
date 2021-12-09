@@ -15,13 +15,5 @@ public class TestController {
 	@RequestMapping ("/update_myInfo")
 	public String update_myInfo() {
 		return "update_myInfo";
-	}
-	
-	@RequestMapping ("/timeCardList")
-	public String timeCardList() {
-		return "timeCardList";
-	}
-	
-
-	
+	}	
 }

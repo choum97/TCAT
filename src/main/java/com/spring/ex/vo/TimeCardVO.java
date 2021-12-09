@@ -9,6 +9,8 @@ public class TimeCardVO {
 	private Object work_day_start;
 	private Object work_day_end;
 	private String work_note;
+	
+	
 	public int getTime_card_id() {
 		return time_card_id;
 	}
