@@ -1,6 +1,9 @@
 package com.spring.ex.admin.dao;
 
+<<<<<<< HEAD
 import java.util.HashMap;
+=======
+>>>>>>> branch 'master' of https://github.com/choum97/TCAT
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -20,9 +23,14 @@ public interface TimeCardDAO {
 	//퇴근하기
 	public int timeCardAttendanceOff(TimeCardVO vo) throws Exception;
 	
+<<<<<<< HEAD
 	//인원 리스트 출력
 	public List<TimeCardVO> getTimeCardCommand(HashMap<String, Integer> map) throws Exception;
 	public List<TimeCardVO> getTimeCardOutside(HashMap<String, Integer> map) throws Exception;
 	public List<TimeCardVO> getTimeCardTrip(HashMap<String, Integer> map) throws Exception;
+=======
+	//근태기록 조회
+	public List<TimeCardVO> timeCardList() throws Exception;
+>>>>>>> branch 'master' of https://github.com/choum97/TCAT
 
 }

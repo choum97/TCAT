@@ -1,6 +1,9 @@
 package com.spring.ex.admin.service;
 
+<<<<<<< HEAD
 import java.util.HashMap;
+=======
+>>>>>>> branch 'master' of https://github.com/choum97/TCAT
 import java.util.List;
 
 import javax.inject.Inject;
@@ -55,6 +58,13 @@ public class TimeCardServiceImpl implements TimeCardService {
 	@Override
 	public List<TimeCardVO> getTimeCardTrip(HashMap<String, Integer> map) throws Exception {
 		return dao.getTimeCardTrip(map);
+	}
+	
+	
+	//근태기록 조회
+	@Override
+	public List timeCardList() throws Exception {	  
+		return dao.timeCardList();
 	}
 	
 }

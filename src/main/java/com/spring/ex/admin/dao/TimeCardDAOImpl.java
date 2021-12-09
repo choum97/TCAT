@@ -1,6 +1,9 @@
 package com.spring.ex.admin.dao;
 
+<<<<<<< HEAD
 import java.util.HashMap;
+=======
+>>>>>>> branch 'master' of https://github.com/choum97/TCAT
 import java.util.List;
 
 import javax.inject.Inject;
@@ -60,5 +63,11 @@ public class TimeCardDAOImpl implements TimeCardDAO {
 		return sqlSession.selectList(namespace + ".getTimeCardTrip",map);
 	}
 	
+	//근태기록 조회
+	@Override
+	public List timeCardList() throws Exception { 
+		  
+		return sqlSession.selectList(namespace + ".getTimeCardList");
+	}
 	
 }
