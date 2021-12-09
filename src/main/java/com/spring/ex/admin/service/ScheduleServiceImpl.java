@@ -21,4 +21,10 @@ public class ScheduleServiceImpl implements ScheduleService {
 		return dao.ScheduleList();
 	}
 
+	//일정 조회
+	@Override
+	public ScheduleVO ScheduleDetailView(int schedule_id) throws Exception {
+		return dao.ScheduleDetailView(schedule_id);
+	}
+
 }
