@@ -1,9 +1,6 @@
 package com.spring.ex.admin.service;
 
-<<<<<<< HEAD
 import java.util.HashMap;
-=======
->>>>>>> branch 'master' of https://github.com/choum97/TCAT
 import java.util.List;
 
 import javax.inject.Inject;

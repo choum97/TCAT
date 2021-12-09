@@ -57,9 +57,6 @@
 		WHERE member_id = #{member_id} AND date_format(work_day_start, '%Y-%m-%d') = CURDATE() AND work_off_check = 0
  	</update>
  	
-<<<<<<< HEAD
- 	<!--/author 김요한  -->
-=======
  	
  	
  	<!-- 근태기록 -->
@@ -68,5 +65,4 @@
  		FROM time_card
  		WHERE member_id = 1
  	</select>
->>>>>>> branch 'master' of https://github.com/choum97/TCAT
 </mapper>
