@@ -1,6 +1,7 @@
 package com.spring.ex.controller;
 
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -20,6 +21,7 @@ import com.spring.ex.admin.service.TimeCardService;
 import com.spring.ex.admin.service.VacationRequestService;
 import com.spring.ex.vo.MemberVO;
 import com.spring.ex.vo.NoticeVO;
+import com.spring.ex.vo.PagingVO;
 import com.spring.ex.vo.ScheduleVO;
 import com.spring.ex.vo.TimeCardVO;
 
@@ -39,6 +41,24 @@ public class MainController {
 		int outsideCount = serviceTimeCard.getTimeCardOutsideCount();
 		int tripCount = serviceTimeCard.getTimeCardTripCount();
 		int vacationCount = serviceVacation.getVacationMainCount();
+		
+		
+		int page = request.getParameter("page") == null ? 1 : Integer.parseInt(request.getParameter("page"));
+		
+		PagingVO paging = new PagingVO();
+		paging.setPageNo(page);
+		paging.setPageSize(10);
+		paging.setTotalCount(commandCenterCount);
+		
+		page = (page - 1) * 10;
+		
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		map.put("Page", page);
+		map.put("PageSize", paging.getPageSize());
+		List<TimeCardVO> timeCardList = serviceTimeCard.getTimeCardCommand(map);
+		model.addAttribute("timeCardList", timeCardList);
+		System.out.println(timeCardList);
+		model.addAttribute("Paging", paging);
 		
 		model.addAttribute("NoticeList", List);
 		model.addAttribute("ScheduleList", scheduleList);

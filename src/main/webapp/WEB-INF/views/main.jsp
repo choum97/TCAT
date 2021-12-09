@@ -50,8 +50,7 @@
 							<div class="small-box bg-info">
 								<div class="inner">
 									<h3>${commandCenterList}<sub style="font-size: 12px">명</sub></h3>
-
-									<p>본사</p>
+									<p>본사  </p>
 								</div>
 								<div class="icon">
 									<i class="fas fa-users mr-2"></i>
