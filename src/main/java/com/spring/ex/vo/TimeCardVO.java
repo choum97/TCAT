@@ -4,25 +4,23 @@ package com.spring.ex.vo;
 public class TimeCardVO {
 	
 	private int time_card_id;
-	private String member_id;
+	private int member_no;
 	private String work_pattern;
 	private String work_place;
 	private Object work_day_start;
 	private Object work_day_end;
 	private String work_note;
-	
-	
 	public int getTime_card_id() {
 		return time_card_id;
 	}
 	public void setTime_card_id(int time_card_id) {
 		this.time_card_id = time_card_id;
 	}
-	public String getMember_id() {
-		return member_id;
+	public int getMember_no() {
+		return member_no;
 	}
-	public void setMember_id(String member_id) {
-		this.member_id = member_id;
+	public void setMember_no(int member_no) {
+		this.member_no = member_no;
 	}
 	public String getWork_pattern() {
 		return work_pattern;
@@ -54,6 +52,7 @@ public class TimeCardVO {
 	public void setWork_note(String work_note) {
 		this.work_note = work_note;
 	}
+	
 
 
 }

@@ -2,6 +2,7 @@ package com.spring.ex.admin.service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -16,6 +17,7 @@ public class TimeCardServiceImpl implements TimeCardService {
 	@Inject
 	private TimeCardDAO dao;
 
+	//author 김요한
 	@Override
 	public int getTimeCardCommandCount() throws Exception {
 		return dao.getTimeCardCommandCount();
@@ -44,20 +46,11 @@ public class TimeCardServiceImpl implements TimeCardService {
 	}
 
 	@Override
-	public List<TimeCardVO> getTimeCardCommand(HashMap<String, Integer> map) throws Exception {
-		return dao.getTimeCardCommand(map);
+	public List<Map<String, Object>> getTimeCardCommand() throws Exception {
+		return dao.getTimeCardCommand();
 	}
 
-	@Override
-	public List<TimeCardVO> getTimeCardOutside(HashMap<String, Integer> map) throws Exception {
-		return dao.getTimeCardOutside(map);
-	}
-
-	@Override
-	public List<TimeCardVO> getTimeCardTrip(HashMap<String, Integer> map) throws Exception {
-		return dao.getTimeCardTrip(map);
-	}
-	
+	///author 김요한
 	
 	//근태기록 조회
 	@Override

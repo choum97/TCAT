@@ -2,6 +2,7 @@ package com.spring.ex.admin.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -15,10 +16,12 @@ import com.spring.ex.vo.TimeCardVO;
 @Repository
 public class TimeCardDAOImpl implements TimeCardDAO {
 	
+	
 	@Inject
 	private SqlSession sqlSession;
 	private static final String namespace = "com.spring.ex.TimeCardMapper";
 
+	//author 김요한
 	@Override
 	public int getTimeCardCommandCount() throws Exception {
 		return sqlSession.selectOne(namespace + ".getTimeCardCommandCount");
@@ -47,19 +50,11 @@ public class TimeCardDAOImpl implements TimeCardDAO {
 	}
 
 	@Override
-	public List<TimeCardVO> getTimeCardCommand(HashMap<String, Integer> map) throws Exception {
-		return sqlSession.selectList(namespace + ".getTimeCardCommand",map);
+	public List<Map<String, Object>> getTimeCardCommand() throws Exception {
+		return sqlSession.selectList(namespace + ".getTimeCardCommand");
 	}
 
-	@Override
-	public List<TimeCardVO> getTimeCardOutside(HashMap<String, Integer> map) throws Exception {
-		return sqlSession.selectList(namespace + ".getTimeCardOutside",map);
-	}
-
-	@Override
-	public List<TimeCardVO> getTimeCardTrip(HashMap<String, Integer> map) throws Exception {
-		return sqlSession.selectList(namespace + ".getTimeCardTrip",map);
-	}
+	//author 김요한
 	
 	//근태기록 조회
 	@Override

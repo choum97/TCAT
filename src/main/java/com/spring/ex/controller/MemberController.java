@@ -33,7 +33,7 @@ public class MemberController {
 		
 		if (member != null) {
 			session.setAttribute("member", member);
-			//System.out.println(member.getM_userId());
+			
 			result = 1;
 		}
 		return result;

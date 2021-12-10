@@ -9,7 +9,7 @@ import com.spring.ex.vo.ScheduleVO;
 //author 손호영
 @Service
 public interface ScheduleService {
-	
+	//author 김요한
 	//일정 출력
 	public List<ScheduleVO> ScheduleList() throws Exception;
 	

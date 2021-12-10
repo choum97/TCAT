@@ -22,7 +22,6 @@ import com.spring.ex.vo.PagingVO;
 public class NoticeController {
 	@Inject
 	NoticeService service;
-	
 	//공지사항 게시글 리스트
 	@RequestMapping (value = "/noticeView", method = RequestMethod.GET )
 	public String notice(HttpServletRequest request, Model model) throws Exception {
@@ -99,5 +98,5 @@ public class NoticeController {
 		return "information/notice";
 	}
 
-	
+	///author 김요한
 }
