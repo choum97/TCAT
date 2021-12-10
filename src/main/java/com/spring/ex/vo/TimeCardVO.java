@@ -1,6 +1,5 @@
 package com.spring.ex.vo;
 
-//author 빈현욱
 public class TimeCardVO {
 	
 	private int time_card_id;
