@@ -15,6 +15,25 @@
   <link rel="stylesheet" href="./resources/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="./resources/dist/css/adminlte.min.css">
+  
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script>
+	$(function(){
+		$("#findBtn").click(function(){
+			$.ajax({
+				url : "/find_pw",
+				type : "POST",
+				data : {
+					id : $("#member_id").val(),
+					email : $("#member_email").val()
+				},
+				success : function(result) {
+					alert(result);
+				},
+			})
+		});
+	})
+</script>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -28,7 +47,7 @@
       
       <form action="recover-password.html" method="post">
          <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="ID">
+          <input type="text" class="form-control" placeholder="ID" id="member_id" name="member_id">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -37,7 +56,7 @@
         </div>
         
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control" placeholder="Email" id="member_email" name="member_email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -46,7 +65,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <button type="button" class="btn btn-primary btn-block" onclick="location.href='email'">인증메일 발송</button>
+            <button type="button" id="findBtn" class="btn btn-primary btn-block" onclick="location.href='email'">인증메일 발송</button>
           </div>
           <!-- /.col -->
         </div>

@@ -67,7 +67,7 @@
     
 
       <p class="mb-1">
-        <a href="/email_request">비밀번호를 잊으셨나요?</a>
+        <a href="find_pw">비밀번호를 잊으셨나요?</a>
       </p>
       
     </div>
