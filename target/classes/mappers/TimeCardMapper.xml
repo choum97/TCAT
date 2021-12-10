@@ -61,7 +61,7 @@
    </insert>
    
    	<!-- 퇴근 -->
-	<update id="timeCardAttendanceOff" parameterType="TimeCardVO">
+	<update id="timeCardAttendanceOff">
 		UPDATE time_card 
 		SET work_day_end = SYSDATE(), work_note = #{work_note}, work_off_check = 1
 		WHERE member_no = #{member_no} AND date_format(work_day_start, '%Y-%m-%d') = CURDATE() AND work_off_check = 0
