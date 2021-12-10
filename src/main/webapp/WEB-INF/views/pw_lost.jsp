@@ -24,8 +24,18 @@
     <div class="card-header text-center">
     </div>
     <div class="card-body">
-      <p class="login-box-msg">비밀번호를 잊으셨나요? 본인의 이메일을 적어주세요</p>
+      <p class="login-box-msg">비밀번호를 잊으셨나요? 본인의 아이디와 이메일을 적어주세요</p>
+      
       <form action="recover-password.html" method="post">
+         <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="ID">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
