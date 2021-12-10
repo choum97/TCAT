@@ -75,29 +75,14 @@ public class MainController {
 
 	// 출근
 	@RequestMapping(value = "/timeCardAttendanceOn", method = RequestMethod.POST)
-	public @ResponseBody int timeCardAttendanceOn(TimeCardVO vo, Model model, HttpServletRequest request)
-			throws Exception {
+	public @ResponseBody int timeCardAttendanceOn(TimeCardVO vo, Model model, HttpServletRequest request) throws Exception {
 
 		HttpSession session = request.getSession();
 		int result = 0;
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/choum97/TCAT
-		System.out.println(request.getParameter("member"));
-		System.out.println(vo);
-		// vo.setMember_id(request.getParameter("member"));
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/choum97/TCAT
+		
 		int timeCardChcek = serviceTimeCard.timeCardAttendanceOn(vo);
 		if (timeCardChcek != 0) {
 			session.setAttribute("timeCardChcek", timeCardChcek);
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/choum97/TCAT
 			result = 1;
 		}
 		return result;
@@ -105,8 +90,7 @@ public class MainController {
 
 	// 퇴근
 	@RequestMapping(value = "/timeCardAttendanceOff", method = RequestMethod.POST)
-	public @ResponseBody int timeCardAttendanceOut(TimeCardVO vo, HttpSession session, HttpServletResponse response)
-			throws Exception {
+	public @ResponseBody int timeCardAttendanceOut(TimeCardVO vo, HttpSession session, HttpServletResponse response) throws Exception {
 		int result = 0;
 		int timCardOff = serviceTimeCard.timeCardAttendanceOff(vo);
 		if (timCardOff == 1) {
