@@ -32,7 +32,7 @@ public class MemberController {
 		MemberVO member = service.Login(vo);
 		
 		if (member != null) {
-			session.setAttribute("member", request.getParameter("member_id"));
+			session.setAttribute("member", member);
 			
 			result = 1;
 		}

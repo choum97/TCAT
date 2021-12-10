@@ -49,17 +49,14 @@
 		<div class="sidebar" >
 			<div class="user-panel mt-3 pb-1 mb-1 d-flex">
 				<h3>출퇴근 설정</h3>
-					<c:if test="${member != null}">
-						ㅁㄴㅇㅁㄴㅇㄴㅁㅇ
-					</c:if>
 			</div>
 			<form action="#">
+				<input type="hidden" id="member_no" name="member_no" value="${member.member_no}">
 				<div class="user-panel mt-2 pb-1 mb-2 d-flex">
 					<c:if test="${timeCardChcek eq null}">
 						<ul class="nav nav-pills nav-sidebar flex-column">
-							<li><input type="hidden" id="member_no" name="member_no" value="${member_number}"></li>
 							<li>
-								<font size="3px">근무형태 </font>
+								<font size="3px">근무형태  ${member.member_no}</font>
 							</li>
 							<li>
 								<input type="radio" name="work_pattern" id="work_pattern" value="본사"><font size="1px">본사</font>
@@ -96,8 +93,7 @@
 		$(document).ready(function() {
 			$("input:radio[name=work_pattern]").click(function() {
 				if ($("input[name=work_pattern]:checked").val() == "본사") {
-					$("#etc_view").val("본사 근무입니다.");
-					$('#etc_view').css('display', 'block');
+					$('#etc_view').css('display', 'none');
 				} else if ($("input[name=work_pattern]:checked").val() != "본사") {
 					$('#etc_view').css('display', 'block');
 				}
@@ -106,7 +102,7 @@
 		
 		$(document).ready(function() {
 			$('#submitBtn').click(function() {
-				var param = {'member_id':$("#member_id").val(), 'work_pattern': $("#work_pattern").val(), 'work_place': $("#work_place").val()};
+				var param = {'member_no':$("#member_no").val(), 'work_pattern': $("#work_pattern").val(), 'work_place': $("#work_place").val()};
 				$.ajax({
 					url: "timeCardAttendanceOn",
 					type: "POST",
@@ -124,7 +120,7 @@
 			})
 			
 			$('#submitBtn2').click(function() {
-				var param = {'member_id':$("#member_id").val(), 'work_note': $("#work_note").val()};
+				var param = {'member_no':$("#member_no").val(), 'work_note': $("#work_note").val()};
 				$.ajax({
 					url: "timeCardAttendanceOff",
 					type: "POST",
