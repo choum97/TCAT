@@ -153,7 +153,41 @@
 
 			<!-- Modal body -->
 			<div class="modal-body">
-				<img class="card-img-top rounded img-fluid" src="https://pds.joins.com/news/component/htmlphoto_mmdata/201702/10/htm_2017021010519781328.jpg">
+				<table class="table table-hover table-white">
+					<colgroup>
+						<col width="7%">
+						<col width="7%">
+						<col width="7%">
+						<col width="7%">
+						<col width="7%">
+						<col width="10%">
+					</colgroup>
+					<thead>
+						<tr align="center">
+							<th>사원번호</th>
+							<th>사원명</th>
+							<th>직급</th>
+							<th>휴가종류</th>
+							<th>시작일</th>
+							<th>종료일</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${vacationList}" var="vacationListVO">
+							<tr align="center">
+								<td>${vacationListVO.member_no}</td>
+								<td>${vacationListVO.member_name}</td>
+								<td>${vacationListVO.member_class}</td>
+								<td>${vacationListVO.vacation_kind}</td>
+								<td>${vacationListVO.vacation_start_day}</td>
+								<td>${vacationListVO.vacation_end_day}</td>
+							</tr>
+								
+						</c:forEach>
+					</tbody>
+				</table>
+			
+			
 			</div>
 			<!-- Modal footer -->
 			<div class="modal-footer">

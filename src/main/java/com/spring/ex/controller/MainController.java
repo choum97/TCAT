@@ -37,8 +37,8 @@ public class MainController {
 		
 		model.addAttribute("ScheduleList", serviceSchedule.ScheduleList()); 				//일정출력
 		
-		model.addAttribute("timeCardList", serviceTimeCard.getTimeCardCommand());			//인원 리스트 출력
-		
+		model.addAttribute("timeCardList", serviceTimeCard.getTimeCardCommand());			//인원 리스트 출력 - 본사 외근 출장
+		model.addAttribute("vacationList", serviceVacation.getVacationList());				//인원 리스트 출력 - 휴가자
 		
 		model.addAttribute("commandCenterList",  serviceTimeCard.getTimeCardCommandCount());//본사 인원 수
 		model.addAttribute("outsideCount", serviceTimeCard.getTimeCardOutsideCount());		//외근 인원 수
