@@ -18,7 +18,7 @@ import com.spring.ex.admin.service.VacationRequestService;
 import com.spring.ex.vo.NoticeVO;
 import com.spring.ex.vo.TimeCardVO;
 
-//author 김요한
+
 @Controller
 public class MainController {
 	@Inject
@@ -29,7 +29,8 @@ public class MainController {
 	TimeCardService serviceTimeCard;
 	@Inject
 	VacationRequestService serviceVacation;
-
+	
+	//author 김요한
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main(NoticeVO vo, HttpServletRequest request, Model model) throws Exception {
 		model.addAttribute("NoticeList",  serviceNotice.NoticeList());						//한줄공지사항
@@ -73,5 +74,6 @@ public class MainController {
 		}
 		return result;
 	}
+	// /author 김요한
 
 }
