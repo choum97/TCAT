@@ -62,7 +62,6 @@
 							<div class="small-box bg-success">
 								<div class="inner">
 									<h3>${outsideCount }<sub style="font-size: 12px">명</sub></h3>
-									
 									<p>외근</p>
 								</div>
 								<div class="icon">
@@ -75,7 +74,6 @@
 							<div class="small-box bg-warning">
 								<div class="inner">
 									<h3>${vacationCount }<sub style="font-size: 12px">명</sub></h3>
-
 									<p>휴가</p>
 								</div>
 								<div class="icon">

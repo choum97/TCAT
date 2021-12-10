@@ -49,19 +49,10 @@ public class TimeCardDAOImpl implements TimeCardDAO {
 	}
 
 	@Override
-	public List<Map<String, Object>> getTimeCardCommand(HashMap<String, Integer> map) throws Exception {
-		return sqlSession.selectList(namespace + ".getTimeCardCommand",map);
+	public List<Map<String, Object>> getTimeCardCommand() throws Exception {
+		return sqlSession.selectList(namespace + ".getTimeCardCommand");
 	}
 
-	@Override
-	public List<TimeCardVO> getTimeCardOutside(HashMap<String, Integer> map) throws Exception {
-		return sqlSession.selectList(namespace + ".getTimeCardOutside",map);
-	}
-
-	@Override
-	public List<TimeCardVO> getTimeCardTrip(HashMap<String, Integer> map) throws Exception {
-		return sqlSession.selectList(namespace + ".getTimeCardTrip",map);
-	}
 	//author 김요한
 	
 	//근태기록 조회

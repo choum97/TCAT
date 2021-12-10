@@ -56,7 +56,7 @@
 					<c:if test="${timeCardChcek eq null}">
 						<ul class="nav nav-pills nav-sidebar flex-column">
 							<li>
-								<font size="3px">근무형태  ${member.member_no}</font>
+								<font size="3px">근무형태 </font>
 							</li>
 							<li>
 								<input type="radio" name="work_pattern" id="work_pattern" value="본사"><font size="1px">본사</font>

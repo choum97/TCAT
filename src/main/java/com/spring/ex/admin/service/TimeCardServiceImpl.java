@@ -45,19 +45,10 @@ public class TimeCardServiceImpl implements TimeCardService {
 	}
 
 	@Override
-	public List<Map<String, Object>> getTimeCardCommand(HashMap<String, Integer> map) throws Exception {
-		return dao.getTimeCardCommand(map);
+	public List<Map<String, Object>> getTimeCardCommand() throws Exception {
+		return dao.getTimeCardCommand();
 	}
 
-	@Override
-	public List<TimeCardVO> getTimeCardOutside(HashMap<String, Integer> map) throws Exception {
-		return dao.getTimeCardOutside(map);
-	}
-
-	@Override
-	public List<TimeCardVO> getTimeCardTrip(HashMap<String, Integer> map) throws Exception {
-		return dao.getTimeCardTrip(map);
-	}
 	///author 김요한
 	
 	//근태기록 조회

@@ -40,35 +40,15 @@ public class MainController {
 
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main(NoticeVO vo, HttpServletRequest request, Model model) throws Exception {
-		List<NoticeVO> List = serviceNotice.NoticeList();
-		List<ScheduleVO> scheduleList = serviceSchedule.ScheduleList();
-		int commandCenterCount = serviceTimeCard.getTimeCardCommandCount();
-		int outsideCount = serviceTimeCard.getTimeCardOutsideCount();
-		int tripCount = serviceTimeCard.getTimeCardTripCount();
-		int vacationCount = serviceVacation.getVacationMainCount();
+		List<Map<String, Object>> timeCardList = serviceTimeCard.getTimeCardCommand();
+		model.addAttribute("timeCardList", timeCardList); //인원 리스트 출력
 
-		int page = request.getParameter("page") == null ? 1 : Integer.parseInt(request.getParameter("page"));
-
-		PagingVO paging = new PagingVO();
-		paging.setPageNo(page);
-		paging.setPageSize(10);
-		paging.setTotalCount(commandCenterCount);
-
-		page = (page - 1) * 10;
-
-		HashMap<String, Integer> map = new HashMap<String, Integer>();
-		map.put("Page", page);
-		map.put("PageSize", paging.getPageSize());
-		List<Map<String, Object>> timeCardList = serviceTimeCard.getTimeCardCommand(map);
-		model.addAttribute("timeCardList", timeCardList);
-		model.addAttribute("Paging", paging);
-
-		model.addAttribute("NoticeList", List);
-		model.addAttribute("ScheduleList", scheduleList);
-		model.addAttribute("commandCenterList", commandCenterCount);
-		model.addAttribute("outsideCount", outsideCount);
-		model.addAttribute("tripCount", tripCount);
-		model.addAttribute("vacationCount", vacationCount);
+		model.addAttribute("NoticeList",  serviceNotice.NoticeList());						//한줄공지사항
+		model.addAttribute("ScheduleList", serviceSchedule.ScheduleList()); 				//일정출력
+		model.addAttribute("commandCenterList",  serviceTimeCard.getTimeCardCommandCount());//본사 인원 수
+		model.addAttribute("outsideCount", serviceTimeCard.getTimeCardOutsideCount());		//외근 인원 수
+		model.addAttribute("tripCount", serviceTimeCard.getTimeCardTripCount());			//출장 인원 수
+		model.addAttribute("vacationCount", serviceVacation.getVacationMainCount());		//휴가 인원수
 
 		return "main";
 	}
