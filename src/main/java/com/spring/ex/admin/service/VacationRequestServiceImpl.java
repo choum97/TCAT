@@ -1,5 +1,8 @@
 package com.spring.ex.admin.service;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -7,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.spring.ex.admin.dao.TimeCardDAO;
 import com.spring.ex.admin.dao.VacationRequestDAO;
 
+//author 손호영
 @Service
 public class VacationRequestServiceImpl implements VacationRequestService {
 	@Inject
@@ -17,6 +21,10 @@ public class VacationRequestServiceImpl implements VacationRequestService {
 	public int getVacationMainCount() throws Exception {
 		return dao.getVacationMainCount();
 	}
+	//휴가 리스트 출력
+	@Override
+	public List<Map<String, Object>> getVacationList() throws Exception {
+		return dao.getVacationList();
+	}
 	///author 김요한
-	
 }

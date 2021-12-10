@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.spring.ex.admin.dao.ScheduleDAO;
 import com.spring.ex.vo.ScheduleVO;
 
+//author 손호영
 @Service
 public class ScheduleServiceImpl implements ScheduleService {
 	

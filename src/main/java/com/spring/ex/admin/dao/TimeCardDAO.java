@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.spring.ex.vo.TimeCardVO;
 
+//author 빈현욱
 @Repository
 public interface TimeCardDAO {
 	//author 김요한
@@ -23,9 +24,7 @@ public interface TimeCardDAO {
 	public int timeCardAttendanceOff(TimeCardVO vo) throws Exception;
 	
 	//인원 리스트 출력
-	public List<Map<String, Object>> getTimeCardCommand(HashMap<String, Integer> map) throws Exception;
-	public List<TimeCardVO> getTimeCardOutside(HashMap<String, Integer> map) throws Exception;
-	public List<TimeCardVO> getTimeCardTrip(HashMap<String, Integer> map) throws Exception;
+	public List<Map<String, Object>> getTimeCardCommand() throws Exception;
 	////author 김요한
 	
 	//근태기록 조회

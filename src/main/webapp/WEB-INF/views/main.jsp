@@ -1,8 +1,8 @@
-<!--author 김요한-->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
+<!--author 김요한-->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,7 +62,6 @@
 							<div class="small-box bg-success">
 								<div class="inner">
 									<h3>${outsideCount }<sub style="font-size: 12px">명</sub></h3>
-									
 									<p>외근</p>
 								</div>
 								<div class="icon">
@@ -75,7 +74,6 @@
 							<div class="small-box bg-warning">
 								<div class="inner">
 									<h3>${vacationCount }<sub style="font-size: 12px">명</sub></h3>
-
 									<p>휴가</p>
 								</div>
 								<div class="icon">

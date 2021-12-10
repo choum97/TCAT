@@ -1,5 +1,6 @@
 package com.spring.ex.vo;
 
+//author 김요한
 public class NoticeVO {
 	private int notice_id;
 	private String title;

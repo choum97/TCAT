@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 
+<!--author 빈현욱   -->
 <title>TCAT</title>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -56,7 +57,7 @@
 					<c:if test="${timeCardChcek eq null}">
 						<ul class="nav nav-pills nav-sidebar flex-column">
 							<li>
-								<font size="3px">근무형태  ${member.member_no}</font>
+								<font size="3px">근무형태 </font>
 							</li>
 							<li>
 								<input type="radio" name="work_pattern" id="work_pattern" value="본사"><font size="1px">본사</font>

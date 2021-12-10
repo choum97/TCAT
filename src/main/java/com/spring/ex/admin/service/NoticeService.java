@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.ex.vo.NoticeVO;
 
+//author 김요한
 @Service
 public interface NoticeService {
 	

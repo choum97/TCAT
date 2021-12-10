@@ -3,7 +3,7 @@
 
 <mapper namespace="com.spring.ex.TimeCardMapper">
 
-	<!-- author 김요한 -->
+	<!-- author 빈현욱 -->
 	<!-- 본사 메인화면 인원-->
 	<select id="getTimeCardCommandCount" resultType="int">
 		SELECT COUNT(*) FROM time_card WHERE work_off_check = 0 AND work_pattern = "본사" AND date_format(work_day_start, '%Y-%m-%d') = CURDATE()
@@ -19,7 +19,7 @@
 		SELECT COUNT(*) FROM time_card WHERE work_off_check = 0 AND work_pattern = "출장" AND date_format(work_day_start, '%Y-%m-%d') = CURDATE()
 	</select>
 	
-	<!-- 본사 인원 리스트-->
+	<!-- 인원 리스트-->
 	<select id="getTimeCardCommand" resultType="hashMap">
 		SELECT
 			T.`time_card_id`,
@@ -31,17 +31,7 @@
 		    M.`member_class`
 		FROM time_card T
 		INNER JOIN member M ON T.member_no = M.member_no
-		WHERE T.work_off_check = 0 AND T.work_pattern = "본사" AND DATE_FORMAT(T.work_day_start, '%Y-%m-%d') = CURDATE()
-	</select>
-	
-	<!-- 외근  인원 리스트-->
-	<select id="getTimeCardOutside" resultType="TimeCardVO">
-		SELECT * FROM time_card WHERE work_off_check = 0 AND work_pattern = "외근" AND date_format(work_day_start, '%Y-%m-%d') = CURDATE()
-	</select>
-	
-	<!-- 출장  인원 리스트-->
-	<select id="getTimeCardTrip" resultType="TimeCardVO">
-		SELECT * FROM time_card WHERE work_off_check = 0 AND work_pattern = "출장" AND date_format(work_day_start, '%Y-%m-%d') = CURDATE()
+		WHERE T.work_off_check = 0 AND DATE_FORMAT(T.work_day_start, '%Y-%m-%d') = CURDATE()
 	</select>
 	
 	<!--출근-->
@@ -71,7 +61,7 @@
  	
  	<!-- 근태기록 -->
  	<select id="getTimeCardList" resultType="com.spring.ex.vo.TimeCardVO">
- 		SELECT member_id, work_pattern, work_day_start, work_day_end, work_time_start, work_time_end
+ 		SELECT member_id, work_pattern, work_day_start, work_day_end
  		FROM time_card
  		WHERE member_id = 1
  	</select>

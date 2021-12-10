@@ -3,10 +3,25 @@
 
 <mapper namespace="com.spring.ex.VacationRequestMapper">
 
-	<!-- author 김요한 -->
+	<!-- author 손호영 -->
 	<!-- 메인 휴가자 집계 -->
 	<select id="getVacationMainCount" resultType="int">
 		SELECT COUNT(*) FROM vacation_request WHERE vacation_ok = 1 AND CURDATE() BETWEEN vacation_start_day AND vacation_end_day
+	</select>
+	
+	<select id="getVacationList" resultType="hashMap">
+		SELECT
+			V.`vacation_id`,
+			V.`member_no`,
+			V.`vacation_kind`,
+			V.`vacation_reason`,
+			V.`vacation_start_day`,
+			V.`vacation_end_day`,
+		    M.`member_name`,
+		    M.`member_class`
+		FROM vacation_request V
+		INNER JOIN member M ON V.member_no = M.member_no
+		WHERE vacation_ok = 1 AND CURDATE() BETWEEN V.vacation_start_day AND V.vacation_end_day
 	</select>
 	<!--//////  -->
 </mapper>
