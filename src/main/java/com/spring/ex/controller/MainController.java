@@ -80,12 +80,24 @@ public class MainController {
 
 		HttpSession session = request.getSession();
 		int result = 0;
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/choum97/TCAT
 		System.out.println(request.getParameter("member"));
 		System.out.println(vo);
 		// vo.setMember_id(request.getParameter("member"));
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/choum97/TCAT
 		int timeCardChcek = serviceTimeCard.timeCardAttendanceOn(vo);
 		if (timeCardChcek != 0) {
 			session.setAttribute("timeCardChcek", timeCardChcek);
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/choum97/TCAT
 			result = 1;
 		}
 		return result;
