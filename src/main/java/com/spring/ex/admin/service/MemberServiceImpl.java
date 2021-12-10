@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.spring.ex.admin.dao.MemberDAO;
 import com.spring.ex.vo.MemberVO;
 
+//author 김요한
 @Service
 public class MemberServiceImpl implements MemberService {
 	@Inject

@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+//author 손호영
 @Repository
 public class VacationRequestDAOImpl implements VacationRequestDAO {
 	

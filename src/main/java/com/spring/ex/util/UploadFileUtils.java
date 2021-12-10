@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.util.FileCopyUtils;
 
+//author 김요한
 public class UploadFileUtils {
 	public static String fileUpload(String uploadPath, String fileName, byte[] fileData) throws Exception {
 

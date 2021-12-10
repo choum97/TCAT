@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.spring.ex.admin.dao.NoticeDAO;
 import com.spring.ex.vo.NoticeVO;
 
+//author 김요한
 @Service
 public class NoticeServiceImpl implements NoticeService {
 	

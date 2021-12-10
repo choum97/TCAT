@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.spring.ex.vo.TimeCardVO;
 
+//author 빈현욱
 @Repository
 public class TimeCardDAOImpl implements TimeCardDAO {
 	

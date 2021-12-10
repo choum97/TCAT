@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.spring.ex.admin.dao.TimeCardDAO;
 import com.spring.ex.vo.TimeCardVO;
 
+//author 빈현욱
 @Service
 public class TimeCardServiceImpl implements TimeCardService {
 	@Inject

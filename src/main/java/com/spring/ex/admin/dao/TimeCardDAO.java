@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.spring.ex.vo.TimeCardVO;
 
+//author 빈현욱
 @Repository
 public interface TimeCardDAO {
 	//메인 인원 카운트

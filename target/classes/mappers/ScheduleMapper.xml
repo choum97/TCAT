@@ -3,7 +3,7 @@
 
 <mapper namespace="com.spring.ex.ScheduleMapper">
 
-	<!--author 김요한  -->
+	<!--author 손호영  -->
 	<!-- 일정 출력 -->
 	<select id="ScheduleList" resultType="ScheduleVO">
 		SELECT * FROM schedule

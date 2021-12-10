@@ -2,6 +2,7 @@ package com.spring.ex.vo;
 
 import java.sql.Date;
 
+//author 김요한
 public class MemberVO {
 	
 	private int member_no;

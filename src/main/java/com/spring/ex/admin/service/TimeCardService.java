@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.ex.vo.TimeCardVO;
 
+//author 빈현욱
 @Service
 public interface TimeCardService {
 	

@@ -1,5 +1,6 @@
 package com.spring.ex.vo;
 
+//author 손호영
 public class PagingVO {
 	// Member Variable
 	private int pageSize;		//게시글 수

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.spring.ex.vo.NoticeVO;
 
+//author 김요한
 @Repository
 public interface NoticeDAO {
 	//공지사항 출력
