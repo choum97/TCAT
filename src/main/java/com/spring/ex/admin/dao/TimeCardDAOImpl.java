@@ -2,6 +2,7 @@ package com.spring.ex.admin.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -48,7 +49,7 @@ public class TimeCardDAOImpl implements TimeCardDAO {
 	}
 
 	@Override
-	public List<TimeCardVO> getTimeCardCommand(HashMap<String, Integer> map) throws Exception {
+	public List<Map<String, Object>> getTimeCardCommand(HashMap<String, Integer> map) throws Exception {
 		return sqlSession.selectList(namespace + ".getTimeCardCommand",map);
 	}
 

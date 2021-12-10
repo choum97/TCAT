@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,12 +49,15 @@
 		<div class="sidebar" >
 			<div class="user-panel mt-3 pb-1 mb-1 d-flex">
 				<h3>출퇴근 설정</h3>
+					<c:if test="${member != null}">
+						ㅁㄴㅇㅁㄴㅇㄴㅁㅇ
+					</c:if>
 			</div>
 			<form action="#">
-				<input type="hidden" id="member_id" name="member_id" value="${member.member_id}">
 				<div class="user-panel mt-2 pb-1 mb-2 d-flex">
 					<c:if test="${timeCardChcek eq null}">
 						<ul class="nav nav-pills nav-sidebar flex-column">
+							<li><input type="hidden" id="member_no" name="member_no" value="${member_number}"></li>
 							<li>
 								<font size="3px">근무형태 </font>
 							</li>
@@ -71,6 +75,7 @@
 						</ul>
 					</c:if>
 					<c:if test="${timeCardChcek ne null}">
+						
 						<label for="content" class="form-label"><strong>비고</strong></label>
 						<textarea class="form-control h-25" rows="10" id="work_note" name="work_note"></textarea>
 					</c:if>
@@ -91,7 +96,8 @@
 		$(document).ready(function() {
 			$("input:radio[name=work_pattern]").click(function() {
 				if ($("input[name=work_pattern]:checked").val() == "본사") {
-					$('#etc_view').css('display', 'none');
+					$("#etc_view").val("본사 근무입니다.");
+					$('#etc_view').css('display', 'block');
 				} else if ($("input[name=work_pattern]:checked").val() != "본사") {
 					$('#etc_view').css('display', 'block');
 				}

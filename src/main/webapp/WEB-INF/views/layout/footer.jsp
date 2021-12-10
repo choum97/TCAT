@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page import="java.time.format.DateTimeFormatter"%>
 <%@ page import="java.time.LocalDateTime"%>
 <%
@@ -32,17 +33,42 @@
 
 			<!-- Modal body -->
 			<div class="modal-body">
+				<table class="table table-hover table-white">
+					<colgroup>
+						<col width="7%">
+						<col width="7%">
+						<col width="7%">
+						<col width="7%">
+						<col width="7%">
+						<col width="10%">
+					</colgroup>
+					<thead>
+						<tr align="center">
+							<th>사원번호</th>
+							<th>사원명</th>
+							<th>직급</th>
+							<th>근무형태</th>
+							<th>근무지</th>
+							<th>출근시간</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${timeCardList}" var="timeCardListVO">
+							<%-- <c:when test="${timeCardListVO.work_pattern} == 본사">
+							
+							</c:when> --%>
+							<tr align="center">
+								<td >${timeCardListVO.member_no}</td>
+								<td>${timeCardListVO.member_name}</td>
+								<td>${timeCardListVO.member_class}</td>
+								<td>${timeCardListVO.work_pattern}</td>
+								<td>${timeCardListVO.work_place}</td>
+								<td>${fn:replace(fn:replace(timeCardListVO.work_start, 'PM', '오후'), 'AM', '오전')}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 			
-				<c:forEach items="${timeCardList}" var="timeCardListVO">
-					<%-- <c:when test="${timeCardListVO.work_pattern} == 본사">
-					
-					</c:when> --%>
-					<tr>
-						<td>${timeCardListVO.member_id}</td>
-						<td>${timeCardListVO.work_pattern}</td>
-						<td>${timeCardListVO.work_place}</td>
-					</tr>
-				</c:forEach>
 			
 			</div>
 			<!-- Modal footer -->

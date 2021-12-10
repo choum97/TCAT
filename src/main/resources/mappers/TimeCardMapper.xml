@@ -20,8 +20,18 @@
 	</select>
 	
 	<!-- 본사 인원 리스트-->
-	<select id="getTimeCardCommand" resultType="TimeCardVO">
-		SELECT * FROM time_card WHERE work_off_check = 0 AND work_pattern = "본사" AND date_format(work_day_start, '%Y-%m-%d') = CURDATE()
+	<select id="getTimeCardCommand" resultType="hashMap">
+		SELECT
+			T.`time_card_id`,
+			T.`member_no`,
+			T.`work_pattern`,
+			T.`work_place`,
+			DATE_FORMAT(T.`work_day_start`, '%r') as work_start, 
+		    M.`member_name`,
+		    M.`member_class`
+		FROM time_card T
+		INNER JOIN member M ON T.member_no = M.member_no
+		WHERE T.work_off_check = 0 AND T.work_pattern = "본사" AND DATE_FORMAT(T.work_day_start, '%Y-%m-%d') = CURDATE()
 	</select>
 	
 	<!-- 외근  인원 리스트-->
@@ -37,13 +47,13 @@
 	<!--출근-->
 	<insert id="timeCardAttendanceOn">
 		INSERT INTO time_card(
-			member_id,
+			member_no,
 			work_pattern,
 			work_place,
 			work_day_start,
 			work_off_check)
 		VALUES(
-			#{member_id},
+			#{member_no},
 			#{work_pattern},
 			#{work_place},
 			SYSDATE(),
@@ -54,7 +64,7 @@
 	<update id="timeCardAttendanceOff" parameterType="TimeCardVO">
 		UPDATE time_card 
 		SET work_day_end = SYSDATE(), work_note = #{work_note}, work_off_check = 1
-		WHERE member_id = #{member_id} AND date_format(work_day_start, '%Y-%m-%d') = CURDATE() AND work_off_check = 0
+		WHERE member_no = #{member_no} AND date_format(work_day_start, '%Y-%m-%d') = CURDATE() AND work_off_check = 0
  	</update>
  	<!--//////  -->
  	

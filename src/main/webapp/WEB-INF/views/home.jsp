@@ -32,9 +32,9 @@
 
 <body>
 <jsp:include page="layout/header.jsp"/>
-<%-- <%
+<%
     response.sendRedirect("title");    
-%> --%>
+%>
 	<a href="ScheduleDetailView?schedule_id=2">모달~</a>
 	<a href="#" class="small-box-footer" data-toggle="modal" data-target="#myModal5">More info <i class="fas fa-arrow-circle-right"></i></a>
 	

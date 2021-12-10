@@ -32,8 +32,8 @@ public class MemberController {
 		MemberVO member = service.Login(vo);
 		
 		if (member != null) {
-			session.setAttribute("member", member);
-			//System.out.println(member.getM_userId());
+			session.setAttribute("member", request.getParameter("member_id"));
+			
 			result = 1;
 		}
 		return result;

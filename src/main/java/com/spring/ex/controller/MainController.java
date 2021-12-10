@@ -3,6 +3,7 @@ package com.spring.ex.controller;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -55,9 +56,8 @@ public class MainController {
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		map.put("Page", page);
 		map.put("PageSize", paging.getPageSize());
-		List<TimeCardVO> timeCardList = serviceTimeCard.getTimeCardCommand(map);
+		List<Map<String, Object>> timeCardList = serviceTimeCard.getTimeCardCommand(map);
 		model.addAttribute("timeCardList", timeCardList);
-		System.out.println(timeCardList);
 		model.addAttribute("Paging", paging);
 		
 		model.addAttribute("NoticeList", List);
@@ -76,14 +76,9 @@ public class MainController {
 		
 		HttpSession session = request.getSession();
 		int result = 0;
-		System.out.println(request.getParameter("member"));
-		System.out.println(vo);
-		//vo.setMember_id(request.getParameter("member"));
 		int timeCardChcek = serviceTimeCard.timeCardAttendanceOn(vo);
-		System.out.println(timeCardChcek);
 		if (timeCardChcek != 0) {
 			session.setAttribute("timeCardChcek", timeCardChcek);
-			//System.out.println(member.getM_userId());
 			result = 1;
 		}
 		return result;
