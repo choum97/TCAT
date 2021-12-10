@@ -17,6 +17,14 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="./resources/dist/css/adminlte.min.css">
  	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+ 	<script>
+ 		$(function() {
+			$("#find_pw_btn").click(function() {
+				location.href='find_pw';
+			});
+		})
+ 	
+ 	</script>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -63,11 +71,8 @@
           <!-- /.col -->
         </div>
       </form>
-
-    
-
       <p class="mb-1">
-        <a href="find_pw">비밀번호를 잊으셨나요?</a>
+        <a id="find_pw_btn">비밀번호를 잊으셨나요?</a>
       </p>
       
     </div>

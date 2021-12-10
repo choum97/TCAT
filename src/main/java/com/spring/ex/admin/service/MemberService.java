@@ -17,15 +17,22 @@ public interface MemberService {
 	public void logout(HttpServletResponse response) throws Exception;
 
 	/// author 김요한
-
+	
+	
+	
+	
+	// author 손호영
 	public MemberVO login(MemberVO vo, HttpServletResponse response) throws Exception;
-
+	
+	// author 손호영
 	// 이메일발송
 	public void sendEmail(MemberVO vo, String div) throws Exception;
-
+	
+	// author 손호영
 	// 비밀번호찾기
 	public void find_pw(HttpServletResponse response, MemberVO vo) throws Exception;
-
+	
+	// author 손호영
 	// 아이디 중복검사
 	public void check_id(String id, HttpServletResponse response) throws Exception;
 

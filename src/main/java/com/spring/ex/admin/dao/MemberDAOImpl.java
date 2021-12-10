@@ -22,23 +22,25 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	// /author 김요한
-
+	
+	
+	// author 손호영
 	// 로그인 검사
 	@Override
 	public MemberVO login(String id) throws Exception {
 		return sqlSession.selectOne(namespace + ".login", id);
 	}
-
+	// author 손호영
 	// 로그인 접속일자 변경
 	@Override
 	public int update_log(String id) throws Exception {
 		return sqlSession.update(namespace + ".update_log", id);
 	}
-
+	// author 손호영
 	// 비밀번호변경
 	@Override
 	public int update_pw(MemberVO vo) throws Exception {
-		return sqlSession.update(namespace + ".updatePw", vo);
+		return sqlSession.update(namespace + ".update_pw", vo);
 	}
 
 	// author 손호영
