@@ -7,7 +7,8 @@
 <div class="sidebar">
 	<div class="user-panel mt-3 pb-3 mb-3 d-flex">
 		<div class="info" class="col-sm-9">
-			<a href="myInfo" class="d-block">${member.member_id }님</a> 
+			<a href="myInfo" class="d-block">${member.member_id }님 </a>
+			
 		</div>
 		<div class="col-sm-3" align="left">
 		<a href="logout"> <i class="fas fa-door-open"></i></a>

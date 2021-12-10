@@ -2,6 +2,7 @@ package com.spring.ex.admin.service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -44,7 +45,7 @@ public class TimeCardServiceImpl implements TimeCardService {
 	}
 
 	@Override
-	public List<TimeCardVO> getTimeCardCommand(HashMap<String, Integer> map) throws Exception {
+	public List<Map<String, Object>> getTimeCardCommand(HashMap<String, Integer> map) throws Exception {
 		return dao.getTimeCardCommand(map);
 	}
 

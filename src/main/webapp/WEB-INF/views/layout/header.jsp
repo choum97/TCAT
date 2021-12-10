@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,12 +51,12 @@
 				<h3>출퇴근 설정</h3>
 			</div>
 			<form action="#">
-				<input type="hidden" id="member_id" name="member_id" value="${member.member_id}">
+				<input type="hidden" id="member_no" name="member_no" value="${member.member_no}">
 				<div class="user-panel mt-2 pb-1 mb-2 d-flex">
 					<c:if test="${timeCardChcek eq null}">
 						<ul class="nav nav-pills nav-sidebar flex-column">
 							<li>
-								<font size="3px">근무형태 </font>
+								<font size="3px">근무형태  ${member.member_no}</font>
 							</li>
 							<li>
 								<input type="radio" name="work_pattern" id="work_pattern" value="본사"><font size="1px">본사</font>
@@ -71,6 +72,7 @@
 						</ul>
 					</c:if>
 					<c:if test="${timeCardChcek ne null}">
+						
 						<label for="content" class="form-label"><strong>비고</strong></label>
 						<textarea class="form-control h-25" rows="10" id="work_note" name="work_note"></textarea>
 					</c:if>
@@ -100,7 +102,7 @@
 		
 		$(document).ready(function() {
 			$('#submitBtn').click(function() {
-				var param = {'member_id':$("#member_id").val(), 'work_pattern': $("#work_pattern").val(), 'work_place': $("#work_place").val()};
+				var param = {'member_no':$("#member_no").val(), 'work_pattern': $("#work_pattern").val(), 'work_place': $("#work_place").val()};
 				$.ajax({
 					url: "timeCardAttendanceOn",
 					type: "POST",
@@ -118,7 +120,7 @@
 			})
 			
 			$('#submitBtn2').click(function() {
-				var param = {'member_id':$("#member_id").val(), 'work_note': $("#work_note").val()};
+				var param = {'member_no':$("#member_no").val(), 'work_note': $("#work_note").val()};
 				$.ajax({
 					url: "timeCardAttendanceOff",
 					type: "POST",
