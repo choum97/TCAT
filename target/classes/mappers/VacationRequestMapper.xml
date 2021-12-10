@@ -8,5 +8,5 @@
 	<select id="getVacationMainCount" resultType="int">
 		SELECT COUNT(*) FROM vacation_request WHERE vacation_ok = 1 AND CURDATE() BETWEEN vacation_start_day AND vacation_end_day
 	</select>
-	
+	<!--//////  -->
 </mapper>

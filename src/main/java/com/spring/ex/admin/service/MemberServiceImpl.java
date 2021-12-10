@@ -15,6 +15,7 @@ public class MemberServiceImpl implements MemberService {
 	@Inject
 	private MemberDAO dao;
 
+	//author 김요한
 	//회원 로그인
 	@Override
 	public MemberVO Login(MemberVO vo) throws Exception {
@@ -30,5 +31,5 @@ public class MemberServiceImpl implements MemberService {
 		out.println("<script>location.href='home';</script>");
 		out.close();
 	}
-	
+	//author 김요한
 }

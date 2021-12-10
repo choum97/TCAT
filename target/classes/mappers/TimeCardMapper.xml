@@ -56,7 +56,7 @@
 		SET work_day_end = SYSDATE(), work_note = #{work_note}, work_off_check = 1
 		WHERE member_id = #{member_id} AND date_format(work_day_start, '%Y-%m-%d') = CURDATE() AND work_off_check = 0
  	</update>
- 	
+ 	<!--//////  -->
  	
  	
  	<!-- 근태기록 -->

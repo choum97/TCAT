@@ -10,6 +10,7 @@ import com.spring.ex.vo.NoticeVO;
 @Service
 public interface NoticeService {
 	
+	//author 김요한
 	//공지사항 출력
 	public List<NoticeVO> NoticeList(HashMap<String, Integer> map) throws Exception;
 	

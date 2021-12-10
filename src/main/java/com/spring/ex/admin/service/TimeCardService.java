@@ -9,7 +9,7 @@ import com.spring.ex.vo.TimeCardVO;
 
 @Service
 public interface TimeCardService {
-	
+	//author 김요한
 	//메인 인원 카운트
 	public int getTimeCardCommandCount() throws Exception;
 	public int getTimeCardOutsideCount() throws Exception;
@@ -25,6 +25,8 @@ public interface TimeCardService {
 	public List<TimeCardVO> getTimeCardCommand(HashMap<String, Integer> map) throws Exception;
 	public List<TimeCardVO> getTimeCardOutside(HashMap<String, Integer> map) throws Exception;
 	public List<TimeCardVO> getTimeCardTrip(HashMap<String, Integer> map) throws Exception;
+	///author 김요한
+	
 	//근태기록 조회
 	public List<TimeCardVO> timeCardList() throws Exception;
 	

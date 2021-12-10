@@ -11,12 +11,12 @@ import com.spring.ex.admin.dao.VacationRequestDAO;
 public class VacationRequestServiceImpl implements VacationRequestService {
 	@Inject
 	private VacationRequestDAO dao;
-	
+	//author 김요한
 	//메인 휴가자 집계
 	@Override
 	public int getVacationMainCount() throws Exception {
 		return dao.getVacationMainCount();
 	}
-
+	///author 김요한
 	
 }

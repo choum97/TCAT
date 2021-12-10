@@ -12,12 +12,13 @@ public class VacationRequestDAOImpl implements VacationRequestDAO {
 	private SqlSession sqlSession;
 	private static final String namespace = "com.spring.ex.VacationRequestMapper";
 	
+	//author 김요한
 	//메인 휴가자 집계
 	@Override
 	public int getVacationMainCount() throws Exception {
 		return sqlSession.selectOne(namespace + ".getVacationMainCount");
 	}
-
+	///author 김요한
 	
 	
 }

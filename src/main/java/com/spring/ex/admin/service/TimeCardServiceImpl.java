@@ -15,6 +15,7 @@ public class TimeCardServiceImpl implements TimeCardService {
 	@Inject
 	private TimeCardDAO dao;
 
+	//author 김요한
 	@Override
 	public int getTimeCardCommandCount() throws Exception {
 		return dao.getTimeCardCommandCount();
@@ -56,7 +57,7 @@ public class TimeCardServiceImpl implements TimeCardService {
 	public List<TimeCardVO> getTimeCardTrip(HashMap<String, Integer> map) throws Exception {
 		return dao.getTimeCardTrip(map);
 	}
-	
+	///author 김요한
 	
 	//근태기록 조회
 	@Override

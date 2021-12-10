@@ -9,11 +9,12 @@ import com.spring.ex.vo.MemberVO;
 @Service
 public interface MemberService {
 	
-	
+	//author 김요한
 	//회원 로그인
 	public MemberVO Login(MemberVO vo) throws Exception;
 	
 	//회원 로그아웃
 	public void logout(HttpServletResponse response) throws Exception;
 	
+	///author 김요한 
 }

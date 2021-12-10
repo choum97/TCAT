@@ -16,6 +16,7 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 	private SqlSession sqlSession;
 	private static final String namespace = "com.spring.ex.ScheduleMapper";
 	
+	//author 김요한
 	//일정 출력
 	@Override
 	public List<ScheduleVO> ScheduleList() throws Exception {
@@ -27,5 +28,6 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 	public ScheduleVO ScheduleDetailView(int schedule_id) throws Exception {
 		return sqlSession.selectOne(namespace + ".ScheduleDetailView", schedule_id);
 	}
+	///author 김요한
 	
 }

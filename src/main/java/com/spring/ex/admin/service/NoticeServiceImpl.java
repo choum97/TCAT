@@ -12,7 +12,7 @@ import com.spring.ex.vo.NoticeVO;
 
 @Service
 public class NoticeServiceImpl implements NoticeService {
-	
+	//author 김요한
 	@Inject
 	private NoticeDAO dao;
 	

@@ -8,7 +8,7 @@ import com.spring.ex.vo.ScheduleVO;
 
 @Service
 public interface ScheduleService {
-	
+	//author 김요한
 	//일정 출력
 	public List<ScheduleVO> ScheduleList() throws Exception;
 	

@@ -12,6 +12,7 @@ import com.spring.ex.vo.NoticeVO;
 
 @Repository
 public class NoticeDAOImpl implements NoticeDAO {
+	//author 김요한
 	
 	@Inject
 	private SqlSession sqlSession;

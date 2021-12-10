@@ -14,10 +14,12 @@ import com.spring.ex.vo.TimeCardVO;
 @Repository
 public class TimeCardDAOImpl implements TimeCardDAO {
 	
+	
 	@Inject
 	private SqlSession sqlSession;
 	private static final String namespace = "com.spring.ex.TimeCardMapper";
 
+	//author 김요한
 	@Override
 	public int getTimeCardCommandCount() throws Exception {
 		return sqlSession.selectOne(namespace + ".getTimeCardCommandCount");
@@ -59,6 +61,7 @@ public class TimeCardDAOImpl implements TimeCardDAO {
 	public List<TimeCardVO> getTimeCardTrip(HashMap<String, Integer> map) throws Exception {
 		return sqlSession.selectList(namespace + ".getTimeCardTrip",map);
 	}
+	//author 김요한
 	
 	//근태기록 조회
 	@Override

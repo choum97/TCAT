@@ -15,6 +15,7 @@ public class ScheduleServiceImpl implements ScheduleService {
 	@Inject
 	private ScheduleDAO dao;
 
+	//author 김요한
 	//일정 출력
 	@Override
 	public List<ScheduleVO> ScheduleList() throws Exception {
