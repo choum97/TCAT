@@ -1,9 +1,5 @@
 package com.spring.ex.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +7,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,10 +15,7 @@ import com.spring.ex.admin.service.NoticeService;
 import com.spring.ex.admin.service.ScheduleService;
 import com.spring.ex.admin.service.TimeCardService;
 import com.spring.ex.admin.service.VacationRequestService;
-import com.spring.ex.vo.MemberVO;
 import com.spring.ex.vo.NoticeVO;
-import com.spring.ex.vo.PagingVO;
-import com.spring.ex.vo.ScheduleVO;
 import com.spring.ex.vo.TimeCardVO;
 
 //author 김요한
@@ -40,11 +32,13 @@ public class MainController {
 
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main(NoticeVO vo, HttpServletRequest request, Model model) throws Exception {
-		List<Map<String, Object>> timeCardList = serviceTimeCard.getTimeCardCommand();
-		model.addAttribute("timeCardList", timeCardList); //인원 리스트 출력
-
 		model.addAttribute("NoticeList",  serviceNotice.NoticeList());						//한줄공지사항
+		
 		model.addAttribute("ScheduleList", serviceSchedule.ScheduleList()); 				//일정출력
+		
+		model.addAttribute("timeCardList", serviceTimeCard.getTimeCardCommand());			//인원 리스트 출력
+		
+		
 		model.addAttribute("commandCenterList",  serviceTimeCard.getTimeCardCommandCount());//본사 인원 수
 		model.addAttribute("outsideCount", serviceTimeCard.getTimeCardOutsideCount());		//외근 인원 수
 		model.addAttribute("tripCount", serviceTimeCard.getTimeCardTripCount());			//출장 인원 수
