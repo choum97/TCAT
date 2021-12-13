@@ -8,6 +8,8 @@
 		SELECT COUNT(*) FROM vacation_request WHERE vacation_ok = 1 AND CURDATE() BETWEEN vacation_start_day AND vacation_end_day
 	</select>
 	
+	 
+	
 	<select id="getVacationList" resultType="hashMap">
 		SELECT
 			V.`vacation_id`,
@@ -22,4 +24,24 @@
 		INNER JOIN member M ON V.member_no = M.member_no
 		WHERE vacation_ok = 1 AND CURDATE() BETWEEN V.vacation_start_day AND V.vacation_end_day
 	</select>
+	
+	
+	
+	 
+	 <!-- 게시물 목록 -->
+	<select id="vacation" resultType="com.spring.ex.vo.VacationRequestVO">
+	 select vacation_id, member_id, vacation_start_day, vacation_end_day, vacation_kind, vacation_reason, vacation_ok
+	 from vacation_request
+	</select>
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </mapper>

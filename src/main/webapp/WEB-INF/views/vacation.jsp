@@ -124,182 +124,22 @@
 								</tr>
 							</thead>
 							<tbody>
+								<c:forEach items="${vacation}" var="vacation">
 								<tr>
-									<td class="text-center">1</td>
-									<td class="text-center">2021-11-19</td>
-									<td class="text-center">
-									2021-11-24
-										<!-- 
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar2.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar3.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar4.png">
-											</li>
-										</ul>
-										
-																
-										 -->
-									</td>
+									<td class="text-center">${vacation.vacation_id}</td>
+									<td class="text-center">${vacation.vacation_start_day}</td>
+									<td class="text-center">${vacation.vacation_end_day}</td>						
+									<td class="text-center">${vacation.vacation_kind}</td>
+									<td class="text-center">${vacation.vacation_reason}</td>
+									<td class="text-center">${vacation.vacation_ok}</td>
 									
-									<td class="text-center">월차</td>
-									<td class="text-center">19일 월차 사용</td>
-									<td class="text-center">처리중</td>
-									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
+									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" onClick="location.href='vacation_view'"><i class="fas fa-folder"></i>상세보기</a> 
 									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
-									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
-									
-									</td>
-								</tr>				
-							</tbody>
-							<tbody>
-								<tr>
-									<td class="text-center">1</td>
-									<td class="text-center">2021-11-19</td>
-									<td class="text-center">
-									2021-11-24
-										<!-- 
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar2.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar3.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar4.png">
-											</li>
-										</ul>
-										
-																
-										 -->
+									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>									
 									</td>
 									
-									<td class="text-center">월차</td>
-									<td class="text-center">19일 월차 사용</td>
-									<td class="text-center">처리중</td>
-									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
-									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
-									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
-									
-									</td>
-								</tr>				
-							</tbody><tbody>
-								<tr>
-									<td class="text-center">1</td>
-									<td class="text-center">2021-11-19</td>
-									<td class="text-center">
-									2021-11-24
-										<!-- 
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar2.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar3.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar4.png">
-											</li>
-										</ul>
-										
-																
-										 -->
-									</td>
-									
-									<td class="text-center">월차</td>
-									<td class="text-center">19일 월차 사용</td>
-									<td class="text-center">처리중</td>
-									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
-									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
-									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
-									
-									</td>
-								</tr>				
-							</tbody><tbody>
-								<tr>
-									<td class="text-center">1</td>
-									<td class="text-center">2021-11-19</td>
-									<td class="text-center">
-									2021-11-24
-										<!-- 
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar2.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar3.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar4.png">
-											</li>
-										</ul>
-										
-																
-										 -->
-									</td>
-									
-									<td class="text-center">월차</td>
-									<td class="text-center">19일 월차 사용</td>
-									<td class="text-center">처리중</td>
-									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
-									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
-									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
-									
-									</td>
-								</tr>				
-							</tbody>
-							<tbody>
-								<tr>
-									<td class="text-center">1</td>
-									<td class="text-center">2021-11-19</td>
-									<td class="text-center">
-									2021-11-24
-										<!-- 
-										<ul class="list-inline">
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar2.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar3.png">
-											</li>
-											<li class="list-inline-item"><img alt="Avatar"
-												class="table-avatar" src="./resources/dist/img/avatar4.png">
-											</li>
-										</ul>
-										
-																
-										 -->
-									</td>
-									
-									<td class="text-center">월차</td>
-									<td class="text-center">19일 월차 사용</td>
-									<td class="text-center">처리중</td>
-									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>상세보기</a> 
-									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
-									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>
-									
-									</td>
-								</tr>				
+								</tr>		
+								</c:forEach>		
 							</tbody>
 							
 							

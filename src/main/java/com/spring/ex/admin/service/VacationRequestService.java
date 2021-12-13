@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import com.spring.ex.vo.VacationRequestVO;
+
 //author 손호영
 @Service
 public interface VacationRequestService {
@@ -13,6 +15,9 @@ public interface VacationRequestService {
 	public int getVacationMainCount() throws Exception;
 	//휴가 리스트 출력
 	public List<Map<String, Object>> getVacationList() throws Exception;
+	
+	
+	public List<VacationRequestVO> vacation2() throws Exception;
 	///author 김요한
 	
 }

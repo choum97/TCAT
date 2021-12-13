@@ -39,4 +39,15 @@
 	</bean>
 	
     <tx:annotation-driven transaction-manager="transactionManager" />
+    
+    
+    
+    <context:component-scan base-package="com.spring.ex.vo" />
+	<context:component-scan base-package="com.spring.ex.admin.dao" />
+	<context:component-scan base-package="com.spring.ex.admin.service" />
+    
+    
+    
+    
+    
 </beans>
