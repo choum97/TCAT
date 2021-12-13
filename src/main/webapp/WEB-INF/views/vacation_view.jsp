@@ -122,7 +122,7 @@
 							<textarea id="inputMessage" class="form-control" rows="4" readonly></textarea>
 						</div>
 						<div class="form-group">
-							<input type="submit" class="btn btn-danger" value="뒤로가기">
+							<input type="submit" class="btn btn-danger" value="뒤로가기" onClick="location.href='vacation'">
 							<input type="submit" class="btn btn-success" value="수정하기" style="float:right;">
 						</div>
 						

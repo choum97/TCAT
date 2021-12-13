@@ -103,7 +103,7 @@
 						<h3 class="card-title">신청내역</h3>
 						
 						<div class="card-tools">		
-							<button type="button" class="btn btn-success">신청하기</button>
+							<button type="button" class="btn btn-success" onClick="location.href='vacation_application'">신청하기</button>
 							<button type="button" class="btn btn-tool"
 								data-card-widget="collapse" title="Collapse">
 								<i class="fas fa-minus"></i>
