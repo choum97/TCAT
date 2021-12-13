@@ -1,6 +1,5 @@
 package com.spring.ex.vo;
 
-//author 손호영
 public class VacationRequestVO {
 	private int vacation_id;
 	private String member_id;

@@ -1,6 +1,5 @@
 package com.spring.ex.vo;
 
-//author 김요한
 public class ScheduleVO {
 	/*
 	 * 일정 번호

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import com.spring.ex.vo.ScheduleVO;
 
-//author 손호영
 @Repository
 public interface ScheduleDAO {
 	//author 김요한
