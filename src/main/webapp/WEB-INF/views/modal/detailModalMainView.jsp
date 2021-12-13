@@ -38,7 +38,7 @@
 		<div>
 			<div class="form-title text-center">
 			<br>
-				<h4><%=now %>일 일정등록</h4><br>
+				<h4>일정확인</h4><br>
 			</div>
 			
 			<div class="containerTop">
@@ -66,27 +66,22 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><b>작성자</b></span>
 								</div>
-								<input type="text" value="${member.member_id}" class="form-control" >
+								<input type="text" value="${scheduleDetailView.getMember_id()}" class="form-control" >
 							</div>
 						</div>
 						
 					</div>
-					<hr>
 					
 					<!-- 개요 -->
 					내용
 					<div class="form-group">
 						<textarea class="form-control" rows="5" id="content" name="content">${scheduleDetailView.schedule_content}</textarea>	
 					</div>
-					코드
-					<div>
-						<textarea id="myTextarea" class="p-3"></textarea>
-					</div>
 					
 					<hr style=background-color:#368AFF;>
 					<!-- 이전, 수정 버튼 -->
 					<div align="right">
-						<button type="button" class="btn btn-primary" onclick="">확인</button>
+						<button type="button" class="btn btn-primary" onclick="scheduleDetailGo(${scheduleDetailView.schedule_id});">등록하기</button>
 						<button type="button" class="btn btn-secondary" onclick="self.close();">취소</button>
 			        </div>
 			        <br>
@@ -100,6 +95,12 @@
 	  var editor = CodeMirror.fromTextArea(myTextarea, {
 	    lineNumbers: true
 	  });
+
+	  function scheduleDetailGo(sId) { 
+		  var popup = window.open('ScheduleDetailView?schedule_id='+sId , 'a', 'width=800px,height=840px,left=300,top=100');
+	  }
+
+	 
 	</script>
 </body>
 
