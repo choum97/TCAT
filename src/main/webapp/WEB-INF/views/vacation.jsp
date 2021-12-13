@@ -133,7 +133,7 @@
 									<td class="text-center">${vacation.vacation_reason}</td>
 									<td class="text-center">${vacation.vacation_ok}</td>
 									
-									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" onClick="location.href='vacation_view'"><i class="fas fa-folder"></i>상세보기</a> 
+									<td class="project-actions text-right"><a class="btn btn-primary btn-sm" onClick="location.href='vacation_view?vacation_id=${vacation.vacation_id}'"><i class="fas fa-folder"></i>상세보기</a> 
 									<a class="btn btn-info btn-sm" href="#"> <i class="fas fa-pencil-alt"> </i>수정</a> 
 									<a class="btn btn-danger btn-sm" href="#"> <i class="fas fa-trash"></i>삭제</a>									
 									</td>
