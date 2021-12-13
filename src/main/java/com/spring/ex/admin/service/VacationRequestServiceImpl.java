@@ -7,8 +7,8 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.spring.ex.admin.dao.TimeCardDAO;
 import com.spring.ex.admin.dao.VacationRequestDAO;
+import com.spring.ex.vo.VacationRequestVO;
 
 //author 손호영
 @Service
@@ -22,9 +22,17 @@ public class VacationRequestServiceImpl implements VacationRequestService {
 		return dao.getVacationMainCount();
 	}
 	//휴가 리스트 출력
+	
 	@Override
 	public List<Map<String, Object>> getVacationList() throws Exception {
 		return dao.getVacationList();
 	}
+	
 	///author 김요한
+	
+	
+	@Override
+	public List<VacationRequestVO> vacation2() throws Exception{
+		return dao.vacation();
+	}
 }

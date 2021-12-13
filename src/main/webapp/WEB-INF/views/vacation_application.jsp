@@ -129,6 +129,7 @@
 						</div>
 						<div class="form-group">
 							<input type="submit" class="btn btn-success" value="작성확인">
+							<input type="submit" class="btn btn-danger" value="뒤로가기" style="float:right;" onClick="location.href='vacation'">
 						</div>
 						
 						

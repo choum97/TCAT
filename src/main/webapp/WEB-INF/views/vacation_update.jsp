@@ -76,7 +76,7 @@
 								(주)<strong>포커스리더</strong>
 							</h2>
 							<br> <br>
-							<p class="lead mb-5">신청할 휴가를 작성해주세요.</p>
+							<p class="lead mb-5">신청할 휴가를 수정해주세요.</p>
 						</div>
 					</div>
 					<div class="col-7">
@@ -128,8 +128,8 @@
 							<textarea id="inputMessage" class="form-control" rows="4"></textarea>
 						</div>
 						<div class="form-group">
-							<input type="submit" class="btn btn-success" value="수정확인">
-							<input type="submit" class="btn btn-danger" value="취소하기" style="float:right;">
+							<input type="submit" class="btn btn-success" value="수정확인" onClick="location.href='vacation'">
+							<input type="submit" class="btn btn-danger" value="취소하기" style="float:right;" onClick="location.href='vacation'">
 						</div>
 						
 						
