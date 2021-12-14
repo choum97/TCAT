@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.spring.ex.vo.ScheduleVO;
+import com.spring.ex.vo.ScheduleWorkVO;
 
 @Repository
 public class ScheduleDAOImpl implements ScheduleDAO {
@@ -28,6 +29,14 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 	public ScheduleVO ScheduleDetailView(int schedule_id) throws Exception {
 		return sqlSession.selectOne(namespace + ".ScheduleDetailView", schedule_id);
 	}
+
+	//사원 Schedule Work 일정 작성
+	@Override
+	public int ScheduleWorkInsert(ScheduleWorkVO vo) throws Exception {
+		return sqlSession.insert(namespace + ".ScheduleWorkInsert", vo);
+	}
+	
+	
 	///author 김요한
 	
 }

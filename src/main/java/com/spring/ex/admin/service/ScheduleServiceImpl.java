@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.spring.ex.admin.dao.ScheduleDAO;
 import com.spring.ex.vo.ScheduleVO;
+import com.spring.ex.vo.ScheduleWorkVO;
 
-//author 손호영
 @Service
 public class ScheduleServiceImpl implements ScheduleService {
 	
@@ -27,6 +27,12 @@ public class ScheduleServiceImpl implements ScheduleService {
 	@Override
 	public ScheduleVO ScheduleDetailView(int schedule_id) throws Exception {
 		return dao.ScheduleDetailView(schedule_id);
+	}
+	
+	//사원 Schedule Work 일정 작성
+	@Override
+	public int ScheduleWorkInsert(ScheduleWorkVO vo) throws Exception {
+		return dao.ScheduleWorkInsert(vo);
 	}
 
 }

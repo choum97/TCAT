@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.ex.admin.service.ScheduleService;
 import com.spring.ex.vo.ScheduleVO;
+import com.spring.ex.vo.ScheduleWorkVO;
 
 @Controller
 public class ScheduleController {
@@ -44,5 +45,12 @@ public class ScheduleController {
 		int schedule_id = Integer.parseInt(request.getParameter("schedule_id"));
 		model.addAttribute("scheduleDetailView", serviceSchedule.ScheduleDetailView(schedule_id));
 		return "modal/detailModalView";
+	}
+	
+	//사원 Schedule Work 일정 작성
+	@RequestMapping(value = "/ScheduleWorkInsert", method = RequestMethod.POST)
+	public int ScheduleWorkInsert(ScheduleWorkVO vo)  throws Exception {
+		int result = serviceSchedule.ScheduleWorkInsert(vo);		
+		return result;
 	}
 }

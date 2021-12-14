@@ -5,11 +5,29 @@
 
 	<!-- 일정 출력 -->
 	<select id="ScheduleList" resultType="ScheduleVO">
-		SELECT * FROM schedule
+		SELECT * FROM schedule WHERE schedule_share = 1
 	</select>
 	
 	<!-- 일정 조회  -->
 	<select id="ScheduleDetailView" parameterType="int" resultType="ScheduleVO">
 		SELECT * FROM schedule WHERE schedule_id = #{schedule_id}
 	</select>
+	
+	<!-- 사원 Schedule Work 일정 작성 -->
+	<insert id="ScheduleWorkInsert">
+		INSERT INTO schedule_work(
+			schedule_id,
+			member_no,
+			schedule_work_title,
+			schedule_work_content,
+			schedule_work_code,
+			schedule_work_day)
+		VALUES(
+			#{schedule_id},
+			#{member_no},
+			#{schedule_work_title},
+			#{schedule_work_content},
+			#{schedule_work_code},
+			CURDATE())
+	</insert>
 </mapper>
