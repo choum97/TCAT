@@ -80,23 +80,9 @@
 						</div>
 					</div>
 					<div class="col-7">
+						
 						<div class="form-group">
-							<label for="inputName">이름</label> <input type="text"
-								id="inputName" class="form-control" readonly />
-						</div>
-						<div class="form-group">
-							<label for="inputEmail">부서</label> <input type="email"
-								id="inputEmail" class="form-control" readonly />
-						</div>
-						<div class="form-group">
-							<label for="inputSubject">직급</label> <input type="text"
-								id="inputSubject" class="form-control" readonly />
-						</div>
-
-
-						<div class="form-group">
-							<label>분류</label> <select class="form-control select2bs4"
-								data-dropdown-css-class="select2-danger" style="width: 100%;">
+							<label>분류</label> <select class="form-control select2bs4" data-dropdown-css-class="select2-danger" style="width: 100%;">
 								<option selected="selected">월차</option>
 								<option>연차</option>
 								<option>공가(公暇)</option>
@@ -111,21 +97,19 @@
 
 					 <div class="form-group">
                			 <label>시작일</label>
-						<input type="date" class="form-control" value="<%=beginMonth%>-01" id="start_date" name="start_date" max="<%=now%>">
+						<input type="date" class="form-control"  id="start_date" name="start_date" value="${vacation_view.vacation_start_day}">
 					</div>	
 					
-					
-						
-						
+									
 					 <div class="form-group">	
 						<label>종료일</label>
-						<input type="date" class="form-control" value="<%=now%>" id="end_date" name="end_date" max="<%=now%>">
+						<input type="date" class="form-control"  id="end_date" name="end_date" value="${vacation_view.vacation_end_day}">
 					</div>
 					
 					
 						<div class="form-group">
 							<label for="inputMessage">내용</label>
-							<textarea id="inputMessage" class="form-control" rows="4"></textarea>
+							<textarea id="inputMessage" class="form-control" rows="4">${vacation_view.vacation_reason}</textarea>
 						</div>
 						<div class="form-group">
 							<input type="submit" class="btn btn-success" value="수정확인" onClick="location.href='vacation'">

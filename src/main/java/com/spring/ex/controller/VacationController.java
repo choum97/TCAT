@@ -41,12 +41,6 @@ public class VacationController {
 	}
 	
 	
-	// 휴가신청 수정
-	@RequestMapping("/vacation_update")
-	public String vacation_update() {
-		return ("/vacation_update");
-	}
-	
 	
 	// 휴가신청 상세보기
 	@RequestMapping(value = "/vacation_view", method = RequestMethod.GET)
@@ -54,6 +48,16 @@ public class VacationController {
 		VacationRequestVO vo = service.vacation_view(vacation_id);
 		model.addAttribute("vacation_view", vo);
 	}
+	
+	
+	// 휴가신청 수정하기
+	@RequestMapping(value = "/vacation_update", method = RequestMethod.GET)
+	public void vacation_update(@RequestParam("vacation_id") int vacation_id, Model model) throws Exception {
+		VacationRequestVO vo = service.vacation_view(vacation_id);
+		model.addAttribute("vacation_view", vo);
+	}
+	
+	
 	
 	
 	
