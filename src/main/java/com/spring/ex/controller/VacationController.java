@@ -7,8 +7,10 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.ex.admin.service.VacationRequestService;
 import com.spring.ex.vo.VacationRequestVO;
@@ -47,9 +49,10 @@ public class VacationController {
 	
 	
 	// 휴가신청 상세보기
-	@RequestMapping("/vacation_view")
-	public String vacation_view() {
-		return ("/vacation_view");
+	@RequestMapping(value = "/vacation_view", method = RequestMethod.GET)
+	public void vacation_view(@RequestParam("vacation_id") int vacation_id, Model model) throws Exception {
+		VacationRequestVO vo = service.vacation_view(vacation_id);
+		model.addAttribute("vacation_view", vo);
 	}
 	
 	

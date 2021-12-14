@@ -28,10 +28,18 @@
 	
 	
 	 
-	 <!-- 게시물 목록 -->
+	 <!-- 휴가신청 목록 -->
 	<select id="vacation" resultType="com.spring.ex.vo.VacationRequestVO">
-	 select vacation_id, member_id, vacation_start_day, vacation_end_day, vacation_kind, vacation_reason, vacation_ok
-	 from vacation_request
+		 select vacation_id, member_id, vacation_start_day, vacation_end_day, vacation_kind, vacation_reason, vacation_ok
+		 from vacation_request
+	</select>
+	
+	
+	<!-- 휴가신청 상세화면 -->
+	<select id="vacation_view" parameterType="int" resultType="com.spring.ex.vo.VacationRequestVO">
+	 	select vacation_id, member_id, vacation_start_day, vacation_end_day, vacation_kind, vacation_reason, vacation_ok <!-- vacation_id, vacation_start_day, vacation_end_day,  vacation_kind, vacation_reason 로 줄여도 됌 -->
+	 	from vacation_request
+	 	where vacation_id = #{vacation_id}   
 	</select>
 		
 	

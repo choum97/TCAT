@@ -31,8 +31,17 @@ public class VacationRequestServiceImpl implements VacationRequestService {
 	///author 김요한
 	
 	
+	//author 손호영
 	@Override
 	public List<VacationRequestVO> vacation2() throws Exception{
 		return dao.vacation();
+	}
+	
+	//author 손호영
+	//휴가 리스트 출력
+	// 게시물 조회
+	@Override
+	public VacationRequestVO vacation_view(int vacation_id) throws Exception{
+		return dao.vacation_view(vacation_id);
 	}
 }

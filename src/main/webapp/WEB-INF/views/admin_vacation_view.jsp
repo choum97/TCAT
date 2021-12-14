@@ -80,28 +80,46 @@
 							<p class="lead mb-5">신청한 휴가의 상세적인 내용입니다.</p>
 						</div>
 					</div>
-					<div class="col-7">		
+					<div class="col-7">
+						<div class="form-group">
+							<label for="inputName">이름</label> <input type="text"
+								id="inputName" class="form-control" readonly />
+						</div>
+						<div class="form-group">
+							<label for="inputEmail">부서</label> <input type="email"
+								id="inputEmail" class="form-control" readonly />
+						</div>
+						<div class="form-group">
+							<label for="inputSubject">직급</label> <input type="text"
+								id="inputSubject" class="form-control" readonly />
+						</div>
+
+
 						<div class="form-group">
 							<label>분류</label>
-							<input type="text" id="inputSubject" class="form-control" value="${vacation_view.vacation_kind}" readonly />		 
+							<input type="text"
+								id="inputSubject" class="form-control" readonly />
+							 
 						</div>
 
 
 					 <div class="form-group">
                			 <label>시작일</label>
-						<input type="date" class="form-control"  id="start_date" name="start_date" value="${vacation_view.vacation_start_day}" readonly>
+						<input type="date" class="form-control"  id="start_date" name="start_date" readonly>
 					</div>	
 					
-									
+					
+						
+						
 					 <div class="form-group">	
 						<label>종료일</label>
-						<input type="date" class="form-control"  id="end_date" name="end_date" value="${vacation_view.vacation_end_day}" readonly>
+						<input type="date" class="form-control"  id="end_date" name="end_date" readonly>
 					</div>
 					
 					
 						<div class="form-group">
 							<label for="inputMessage">내용</label>
-							<textarea id="inputMessage" class="form-control" rows="4" readonly>${vacation_view.vacation_reason}</textarea>
+							<textarea id="inputMessage" class="form-control" rows="4" readonly></textarea>
 						</div>
 						<div class="form-group">
 							<input type="submit" class="btn btn-danger" value="뒤로가기" onClick="location.href='vacation'">
