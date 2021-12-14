@@ -37,12 +37,17 @@ public class VacationRequestDAOImpl implements VacationRequestDAO {
 	
 	///author 김요한
 	
-	
+	//author 손호영
 	//휴가 리스트 출력
-	
 	@Override
 	public List<VacationRequestVO> vacation() throws Exception{
 		return sqlSession.selectList(namespace + ".vacation");
+	}
+	
+	//휴가 상세화면
+	@Override
+	public VacationRequestVO vacation_view(int vacation_id) throws Exception{
+		 return sqlSession.selectOne(namespace + ".vacation_view", vacation_id);
 	}
 	
 }

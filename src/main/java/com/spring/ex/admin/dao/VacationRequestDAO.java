@@ -20,9 +20,14 @@ public interface VacationRequestDAO {
 	public List<Map<String, Object>> getVacationList() throws Exception;
 	///author 김요한
 	
+	
+	//author 손호영
 	//휴가 리스트 출력
 	public List<VacationRequestVO> vacation() throws Exception;
 	
+	
+	//휴가 상세화면
+	public VacationRequestVO vacation_view(int vacation_id) throws Exception;
 	
 }
 
