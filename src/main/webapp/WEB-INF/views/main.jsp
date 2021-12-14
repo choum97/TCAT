@@ -15,6 +15,7 @@
 <!--공지사항 rolling css-->
 <link href='<c:url value="/resources/css/rolling.css"/>' rel='stylesheet' />
 
+
 </head>
 
 <body>
@@ -154,6 +155,7 @@
 				events: [
 					<c:forEach items="${ScheduleList}" var="ScheduleVO">
 						{
+							id :'${ScheduleVO.schedule_id}',
 							title : '${ScheduleVO.schedule_title}',
 							start : '${ScheduleVO.schedule_start_day}',
 							end : '${ScheduleVO.schedule_end_day}',
@@ -163,8 +165,10 @@
 				   {
 				     title  : 'default',
 				   }
-				 ],
-				end : 'today prev,next',
+				],
+			  	eventClick: function(info) {
+			  		var popup = window.open('ScheduleDetailMainView?schedule_id='+info.event.id , 'a', 'width=800px,height=490px,left=300,top=100,scrollbars=yes');
+				},
 			});
 			calendar.render();
 		});

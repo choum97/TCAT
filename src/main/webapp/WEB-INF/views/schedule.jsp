@@ -81,9 +81,7 @@
 					<c:forEach items="${ScheduleList}" var="ScheduleVO">
 						{
 							id :'${ScheduleVO.schedule_id}',
-							//memberId : '${ScheduleVO.member_id}',
 							title : '${ScheduleVO.schedule_title}',
-							//content : '${ScheduleVO.schedule_content}',
 							start : '${ScheduleVO.schedule_start_day}',
 							end : '${ScheduleVO.schedule_end_day}',
 							color : '${ScheduleVO.schedule_color}'
@@ -93,34 +91,11 @@
 				     title  : 'default',
 				   }
 				],
+				dateClick: function(info) {
+					console.log(info.dateStr);
+				},
 			  	eventClick: function(info) {
-			  		 console.log(info);
-			  		 scheduleId = info.event.id;
-			  		 //sessionStorage.setItem("scheduleId", scheduleId);
-			  		 //console.log(scheduleId);
-			  		 //console.log( sessionStorage.getItem("scheduleId"));
-			  	 	 
-			  		 
-			  		 //let memberId = info.event.memberId;
-			  		 let title = info.event.title; 
-			  		 //let start = getFormatDate(info.event.start);
-			  		 //let end = getFormatDate(info.event.end);
-			  		 let start = info.event.start;
-			  		 let end = info.event.end;
-			  		 //let share = ${ScheduleList.get(scheduleId).schedule_share};
-			  		 console.log(scheduleId);
-			  		 //console.log(memberId);
-			  		 let color = "${ScheduleList.get(scheduleId).schedule_color}";
-			  		 let content = "${ScheduleList.get(scheduleId).schedule_content}";
-			  		 console.log(content);
-			  		 //$("#flag").val(share).prop("selected", true);
-			  		 $("#colorSelect").val(color).prop("selected", true);
-			  		 $("#title").val(title);
-			  		 $("#content").val(content);
-			  		 $("#start_date").val(start);
-			  		 $("#end_date").val(end); 
-			  		 $("#myModal5").modal('show');
-			  		 //scheduleModalView();
+			  		var popup = window.open('ScheduleDetailView?schedule_id='+info.event.id , 'a', 'width=800px,height=840px,left=300,top=100');
 				},
 			});
 			calendar.render();
@@ -132,37 +107,8 @@
 			date.setHours(date.getHours() + 9); 
 			return date.toISOString().replace('T', ' ').substring(0, 16);
 		}*/
-		
-		function scheduleModalView() {
-			var param = {'schedule_id':sessionStorage.getItem("scheduleId")};
-			$.ajax({
-				url: "ScheduleDetailView",
-				type: "GET",
-				data: param,
-				success: function(data) {
-					//console.log(data);
-					$("#myModal5").modal('show');
- 					if (data == 1) {
-						 $("#myModal5").modal('show');
-					}
-					else {
-						alert('오류 : 관리자에게 문의해주세요.');
-					}
-				}
-			});
-		}
-		
-	  	function closeModal() {
-	  		$("#title").val("");
-	  		$("#content").val("");
-			$("#datetimepicker").val("");
-			$("#datetimepicker2").val("");
-	  		$("#myModal5").modal('hide');
- 		};
- 	
 	
 	</script>
-	<jsp:include page="modal/detailModalView.jsp"/>
 	<!-- fullcalendar CDN -->
 	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
 	<!-- fullcalendar 언어 CDN -->

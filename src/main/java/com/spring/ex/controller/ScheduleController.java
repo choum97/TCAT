@@ -30,22 +30,19 @@ public class ScheduleController {
 	}
 	
 	//author 김요한
-	//게시글 조회 - 상세페이지 출력
-	@RequestMapping(value = "/ScheduleDetailView", method = RequestMethod.GET)
-	public @ResponseBody int ScheduleDetailView(Model model, HttpServletRequest request)  throws Exception {
-		int result = 0;
+	//일정 조회 페이지
+	@RequestMapping(value = "/ScheduleDetailMainView", method = RequestMethod.GET)
+	public String ScheduleDetailMainView(Model model, HttpServletRequest request)  throws Exception {
 		int schedule_id = Integer.parseInt(request.getParameter("schedule_id"));
-		//int schedule_id = 2;
-		ScheduleVO scheduleDetailView = serviceSchedule.ScheduleDetailView(schedule_id);
-		
-		if(scheduleDetailView != null) {
-			result = 1;
-		}
-		System.out.println(scheduleDetailView.getSchedule_title());
-		
-		model.addAttribute("scheduleDetailView", scheduleDetailView);
-		
-		return result;
-		
+		model.addAttribute("scheduleDetailView", serviceSchedule.ScheduleDetailView(schedule_id));
+		return "modal/detailModalMainView";
+	}
+	
+	//일정 등록 페이지
+	@RequestMapping(value = "/ScheduleDetailView", method = RequestMethod.GET)
+	public String ScheduleDetailView(Model model, HttpServletRequest request)  throws Exception {
+		int schedule_id = Integer.parseInt(request.getParameter("schedule_id"));
+		model.addAttribute("scheduleDetailView", serviceSchedule.ScheduleDetailView(schedule_id));
+		return "modal/detailModalView";
 	}
 }
