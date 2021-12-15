@@ -49,7 +49,7 @@ public class ScheduleController {
 	
 	//사원 Schedule Work 일정 작성
 	@RequestMapping(value = "/ScheduleWorkInsert", method = RequestMethod.POST)
-	public int ScheduleWorkInsert(ScheduleWorkVO vo)  throws Exception {
+	public @ResponseBody int ScheduleWorkInsert(ScheduleWorkVO vo)  throws Exception {
 		int result = serviceSchedule.ScheduleWorkInsert(vo);		
 		return result;
 	}

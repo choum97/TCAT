@@ -8,7 +8,7 @@ public class ScheduleWorkVO {
 	private String schedule_work_title;
 	private String schedule_title;
 	private String schedule_work_content;
-	private Object schedule_work_code;
+	private String schedule_work_code;
 	private Object schedule_work_day;
 	public int getSchedule_work_id() {
 		return schedule_work_id;
@@ -46,10 +46,10 @@ public class ScheduleWorkVO {
 	public void setSchedule_work_content(String schedule_work_content) {
 		this.schedule_work_content = schedule_work_content;
 	}
-	public Object getSchedule_work_code() {
+	public String getSchedule_work_code() {
 		return schedule_work_code;
 	}
-	public void setSchedule_work_code(Object schedule_work_code) {
+	public void setSchedule_work_code(String schedule_work_code) {
 		this.schedule_work_code = schedule_work_code;
 	}
 	public Object getSchedule_work_day() {

@@ -91,6 +91,8 @@
 						</div>
 					</div>
 					<hr>
+					<input type="hidden" name="schedule_id" id="schedule_id" value="${scheduleDetailView.schedule_id}">
+					<input type="hidden" name="member_no" id="member_no" value="${member.member_no}">
 					기본정보
 					<div class="form-group row">
 						<div class="col-xs-6 col-md-6">
@@ -98,7 +100,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><b>제목</b></span>
 								</div>
-								<input type="text" value="" class="form-control" >
+								<input type="text" id="schedule_work_title" name="schedule_work_title" class="form-control" >
 							</div>
 						</div>
 						<div class="col-xs-6 col-md-6">
@@ -115,11 +117,11 @@
 					<!-- 개요 -->
 					내용
 					<div class="form-group">
-						<textarea class="form-control" rows="5" id="content" name="content"></textarea>	
+						<textarea class="form-control" rows="5" id="schedule_work_content" name="schedule_work_content"></textarea>	
 					</div>
 					코드
 					<div>
-						<textarea id="myTextarea" class="p-3"></textarea>
+						<textarea class="form-control" id="schedule_work_code" name="schedule_work_code" class="p-3"></textarea>
 					</div>
 					
 					<hr style=background-color:#368AFF;>
@@ -136,24 +138,26 @@
 
 
 	<script> 
-	  var editor = CodeMirror.fromTextArea(myTextarea, {
+	  var editor = CodeMirror.fromTextArea(schedule_work_code, {
 	    lineNumbers: true
 	  });
 	  
 	  
 		function scheduleWorkInsert() {
-			var param = {'schedule_id,':$("#m_userId").val(), 'm_pw': $("#m_pw").val(), };
+			var param = {'schedule_id':$("#schedule_id").val(), 'member_no': $("#member_no").val(), 'schedule_work_title': $("#schedule_work_title").val(),
+					'schedule_work_content': $("#schedule_work_content").val(),'schedule_work_code': $("#schedule_work_code").val() };
 			$.ajax({
 				url: "ScheduleWorkInsert",
 				type: "POST",
-				data: param,
+				data : param,
 				success: function(data) {
 					if (data != 1) {
 						alert('등록 실패 : 관리자에게 문의해주세요.');
 					}
 					else {
 						alert('등록 되었습니다.');
-						location.href = "home"
+					    opener.location.reload();
+					    window.close();
 					}
 				}
 			});
