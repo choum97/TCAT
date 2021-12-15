@@ -1,10 +1,12 @@
 package com.spring.ex.controller;
 
 
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,10 +49,39 @@ public class ScheduleController {
 		return "modal/detailModalView";
 	}
 	
+	/*
 	//사원 Schedule Work 일정 작성
 	@RequestMapping(value = "/ScheduleWorkInsert", method = RequestMethod.POST)
 	public @ResponseBody int ScheduleWorkInsert(ScheduleWorkVO vo)  throws Exception {
 		int result = serviceSchedule.ScheduleWorkInsert(vo);		
 		return result;
+	}
+	*/
+	
+	//사원 Schedule Work 일정 작성
+	@RequestMapping(value = "/ScheduleWorkInsert", method = RequestMethod.POST)
+	public void ScheduleWorkInsert(ScheduleWorkVO vo, HttpServletResponse response)  throws Exception {
+		int result = serviceSchedule.ScheduleWorkInsert(vo);
+		
+		if (result == 1) {
+			//session.setAttribute("member", vo);
+			response.setContentType("text/html;charset=utf-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('등록 되었습니다.');");
+			out.println("opener.location.reload();");
+			out.println("window.close();");
+			out.println("</script>");
+			out.close();
+		} else {
+			response.setContentType("text/html;charset=utf-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('등록 실패 : 관리자에게 문의해주세요.');");
+			out.println("window.close();");
+			out.println("</script>");
+			out.close();
+		}
+		
 	}
 }

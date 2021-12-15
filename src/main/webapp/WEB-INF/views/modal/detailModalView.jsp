@@ -57,7 +57,7 @@
 			
 			<hr style=background-color:#368AFF;>
 			<div class="d-flex flex-column">
-				<form>
+				<form action="ScheduleWorkInsert" method="POST">
 					<div>
 						<div>
 						<i class="fa fa-plus-square" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></i>
@@ -127,6 +127,7 @@
 					<hr style=background-color:#368AFF;>
 					<!-- 이전, 수정 버튼 -->
 					<div align="right">
+						<input type="submit" class="btn btn-primary" value="등록">
 						<button type="button" class="btn btn-primary" onclick="scheduleWorkInsert()">확인</button>
 						<button type="button" class="btn btn-secondary" onclick="self.close();">취소</button>
 			        </div>
@@ -138,7 +139,7 @@
 
 
 	<script> 
-	  
+	  /*
 		function scheduleWorkInsert() {
 			var param = {'schedule_id':$("#schedule_id").val(), 'member_no': $("#member_no").val(), 'schedule_work_title': $("#schedule_work_title").val(),
 					'schedule_work_content': $("#schedule_work_content").val(),'schedule_work_code': $("#schedule_work_code").val()};
@@ -159,10 +160,11 @@
 				}
 			});
 		}
+	  */
 		
-		  var editor = CodeMirror.fromTextArea(schedule_work_code, {
-			    lineNumbers: true
-			  });
+	  var editor = CodeMirror.fromTextArea(schedule_work_code, {
+		    lineNumbers: true
+		  });
 	</script>
 </body>
 
