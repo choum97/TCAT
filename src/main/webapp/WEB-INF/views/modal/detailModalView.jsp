@@ -108,7 +108,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><b>작성자</b></span>
 								</div>
-								<input type="text" value="${member.member_id}" class="form-control" >
+								<input type="text" value="${member.member_id}" class="form-control"  disabled>
 							</div>
 						</div>
 						
@@ -121,7 +121,7 @@
 					</div>
 					코드
 					<div>
-						<textarea class="form-control" id="schedule_work_code" name="schedule_work_code" class="p-3"></textarea>
+						<textarea id="schedule_work_code" name="schedule_work_code" class="p-3"></textarea>
 					</div>
 					
 					<hr style=background-color:#368AFF;>
@@ -138,14 +138,11 @@
 
 
 	<script> 
-	  var editor = CodeMirror.fromTextArea(schedule_work_code, {
-	    lineNumbers: true
-	  });
-	  
 	  
 		function scheduleWorkInsert() {
 			var param = {'schedule_id':$("#schedule_id").val(), 'member_no': $("#member_no").val(), 'schedule_work_title': $("#schedule_work_title").val(),
-					'schedule_work_content': $("#schedule_work_content").val(),'schedule_work_code': $("#schedule_work_code").val() };
+					'schedule_work_content': $("#schedule_work_content").val(),'schedule_work_code': $("#schedule_work_code").val()};
+			console.log($("#schedule_work_code").val());
 			$.ajax({
 				url: "ScheduleWorkInsert",
 				type: "POST",
@@ -162,6 +159,10 @@
 				}
 			});
 		}
+		
+		  var editor = CodeMirror.fromTextArea(schedule_work_code, {
+			    lineNumbers: true
+			  });
 	</script>
 </body>
 
